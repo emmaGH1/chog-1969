@@ -1,12 +1,14 @@
-# Pip — round two: 12 verified casting options
+# Meet the twelve — Pip character gallery
 
 **No candidate selected. Awaiting your approval.** Pip is a fictional role, not an official metadata rename or project endorsement. This is casting, not shopping: no price or rarity ranking.
 
-[Android visual preview](review/pip-round2-android.jpg) · [Desktop visual preview](review/pip-round2-desktop.jpg) · [Genesis collection](https://opensea.io/collection/chog-genesis) · [Canonical contract](https://monadvision.com/address/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763) · [Complete provenance packet](../public/nft-candidates/provenance.json)
+[Polished Android preview](review/pip-gallery-polished-android.jpg) · [Polished desktop preview](review/pip-gallery-polished-desktop.jpg) · [Genesis collection](https://opensea.io/collection/chog-genesis) · [Canonical contract](https://monadvision.com/address/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763) · [Complete provenance packet](../public/nft-candidates/provenance.json)
 
 **Monad mainnet 143 · block 115063901** · hash `0xc3959c32422d7e3965d35bef9846a922d424b49fcf9bf0c9faf186230532a488` · verified 2026-10-20T14:30:42.617Z. Existence and tokenURI were read at this single block; owner addresses were discarded. All files are unaltered originals from the actual tokenURI, not generated approximations. Local SHA-256 hashes are recorded, but IPFS CID verification is not independently performed.
 
 **Verification: 12/12 passed; 0 failed.** No candidates excluded. The eight marketplace-preliminary options are now independently RPC/metadata/file-verified, alongside the original four.
+
+The consolidated app gallery at `/archive/pip-candidates` has one card per original, search by ID/name/trait, four archetype filters, expandable complete traits and provenance. It runs locally from this branch; no deployment is implied by these GitHub previews. [Independent recheck of the additional eight](PIP_ROUND2_RECHECK.json).
 
 ## Compare the cast
 

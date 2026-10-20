@@ -2,6 +2,18 @@
 
 Issue #11 implementation on `feat/nft-memory`, extending PR #7. No user selection, holder identity publication, wallet prompt, site deployment, live contract deployment, gas spend or transaction.
 
+## Polished unified gallery follow-up
+
+The current `/archive/pip-candidates` replaces the former thumbnail sheet + repeated dossiers with **one card per character**: unaltered original image, onchain ID, metadata name, actual trait highlights, fictional personality, expandable full traits and provenance, and original-token source link. Search accepts token IDs, display names and traits; four archetype filters combine with search; the empty state resets to all twelve. No selection is recorded or persisted.
+
+- [Polished full Android-width gallery](review/pip-gallery-polished-android.jpg) · [Polished full desktop gallery](review/pip-gallery-polished-desktop.jpg). Both are local browser captures containing all twelve cards, not deployment claims.
+- 14 current test cases passed (13 app/data/search tests and one local-EVM suite), typecheck and production build passed.
+- Final production build tested with Android-emulated Pixel 7 settings at 360/375/412px and desktop 1440px. All twelve unaltered 1000×1000 WebPs loaded; no horizontal overflow or page JS errors; token-ID search, display-name search, trait search, combined filtering, empty state/reset, complete traits and provenance controls passed. Source/disclosure/filter controls were checked at 44px minimum height.
+- Axe automated checks tagged WCAG 2 A/AA and 2.1 AA reported zero violations on each tested viewport with an expanded trait panel. This is not a claim of full accessibility conformance or physical-device QA. Keyboard focus indicators and live result counts are included; reduced-motion users receive no added animation.
+- Gallery source uses exactly the frozen verified data; no artwork bytes or onchain state changed. Verification results below remain the original dated snapshot, with the subsequent fresh eight-ID recheck separately recorded in `PIP_ROUND2_RECHECK.json`.
+
+The remainder records the initial round-two verification and comparison-sheet QA for historical context; the polished screenshots above supersede the earlier sheet layout.
+
 ## Verification outcome
 
 **12/12 requested candidates passed; zero unresolved failures; zero duplicate IDs or original artwork hashes.** All eight marketplace-preliminary display names match the actual metadata; no arithmetic conversion was used.
