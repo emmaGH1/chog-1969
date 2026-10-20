@@ -6,7 +6,7 @@
 
 All Chog characters must originate from verified Chog Genesis NFTs. **Pip is only a fictional nickname for one actual, explicitly user-selected NFT.** The fabricated violet creature in batch 01 is rejected, not a candidate, approved adaptation or token image. Keep its historical files only to preserve the review record; do not generate, integrate or use them as Chog identity references.
 
-No token selection is approved in the inspected discussions. Chain's requested 3–5-candidate shortlist is a dependency, not a completed media deliverable. Token ID 1969 / metadata display CHOG #1461 is merely one candidate mentioned by Chain/main, not automatically Pip. Do not infer a token from the project title or use display numbering as onchain ID.
+No token selection is approved in the inspected discussions. **Chain has now delivered four candidates:** onchain 1969 → CHOG #1461, 969 → CHOG #461, 42 → CHOG #1503, 1968 → CHOG #1460. [Pinned gallery](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md). Media inspected the gallery/traits and matched all four 1000×1000 WebP originals to Chain's recorded SHA-256 hashes at that commit; no images were copied here and no new RPC/CID certification is claimed. User choice remains the blocker. Token ID 1969 / metadata display CHOG #1461 is not automatically Pip. Do not infer a token from the project title or use display numbering as onchain ID.
 
 Branch: `feat/media-assets`. Ownership remains media/docs/media scripts only. No application/contract changes, deployment, purchases, paid generation calls, wallet actions or secrets. The pre-existing untracked `package-lock.json` remains untouched.
 
@@ -25,7 +25,7 @@ All 36 existing SVG/raster files retain their original recorded SHA-256 values. 
 
 ## New handoff / coordination
 
-- Chain request: [PR #7 comment](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061). Requested actual IDs distinct from names, original images/traits, raw metadata and hashes, verification block/hash/time and public links, without holder identity.
+- Chain request: [PR #7 comment](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061); [receipt acknowledged](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291795303). Pinned shortlist/provenance/screenshot links and the four candidate ID/name pairs are in `public/media/hero/selection.json`. Chain reports block 115047581 at 2026-10-20T13:05:53.713Z. Raw metadata bytes/hash and verification block hash requested as a follow-up for the eventual chosen token, not as a reason to delay user selection. No holder identity requested or reproduced.
 - Pending machine-readable record: `public/media/hero/selection.json`. Token ID, selected display name, source art, traits, verification, approvals and output paths remain **null**. No fixture or invented artwork stands in for the selection.
 - Single-hero brief: `docs/HERO_SCENE_APPROVAL.md`. A significantly more cinematic low three-quarter archive encounter with weighted hands/record contact, real depth, expressive adult Neri and the chosen authentic Chog. Proposed wide + portrait versions are one event, not a new art batch. No render exists yet.
 - Current gallery: `public/media/review.html`. Human references first; rejected invented Pip separately labeled; every legacy composition marked reference-only. It is not a candidate gallery, deployed product or integration proof.
@@ -71,5 +71,7 @@ Do not use the previous `all`/`references`/`scenes` rebuild instructions. They a
 ## Validation scope
 
 The updated media checker validates preservation hashes/dimensions, local gallery links, explicit rejected/reference-only statuses and the renderer freeze. A passing file check is **not art approval** or NFT verification. The hero-handoff checker reports pending inputs and fails `--require-ready` while they are absent. The exact dialogue checker still compares all eight lines to the existing brief. No new NFT verification, phone capture, art generation, recording or final hero is claimed.
+
+Review-response checks passed: legacy preservation/freeze checker; valid pending handoff; expected exit 2 for `--require-ready`; eight exact line/direction checks; current `npm run typecheck`; and direct byte comparison against reviewed commit `690aee9` for **37 art/contact files plus 16 text/performance files**, all unchanged. No new build was needed for the docs/metadata/guard-only changes.
 
 Historical local `npm run typecheck` and `npm run build` passed for batch 01, with the existing CSS `end`/`flex-end` warning. Those results are not a claim that current main is integrated, audited or deployed. This response makes no application changes.

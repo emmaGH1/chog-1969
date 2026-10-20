@@ -2,9 +2,13 @@
 
 **Deliverable now:** editorial plan, not a recorded or rendered video. Target **2:40 / 160 seconds**, hard ceiling **3:00 / 180 seconds**. Source capture must prove real interactions. No fabricated browser UI, simulated wallet success, unverified holder decision or implied deployed contract.
 
+## Canonical character review override
+
+The first art batch was reviewed and **not approved as final**. Preserve human designs, scripts and compositions as references; the invented Pip is rejected. Every Chog role must come from a verified Genesis NFT. Pip is a fictional nickname for the user's selected real token, not a separately invented spirit. No token is selected in the pending media record, and no cinematic hero or footage exists yet. `docs/HERO_SCENE_APPROVAL.md` is the active one-hero brief; `public/media/hero/selection.json` records the hold. This storyboard remains an editorial reference, not authority to render more scenes, synthesize voices or present legacy Pip as collectible art.
+
 ## Capture readiness / stop gates
 
-- A local review gallery is delivered at `public/media/review.html`; that is **not** an integrated chapter. Story/app owner must approve and integrate the first art batch before describing the chapter as illustrated. At least two illustrated interactive moments remain an application-owner integration task. Until then, describe the visuals as drafts and the application as a development build.
+- A historical layout gallery remains at `public/media/review.html`; that is **not** approved final art, a verified candidate gallery or an integrated chapter. Its invented Pip must not ship. Story/app owner must approve and integrate the first art batch before describing the chapter as illustrated. At least two illustrated interactive moments remain an application-owner integration task. Until then, describe the visuals as drafts and the application as a development build.
 - Run app checks and an actual desktop + phone reading pass on the exact commit used for recording. Build/typecheck alone do not establish a running server. A hosted URL must be real and reachable; a local build must visibly be called local.
 - Chain owner verifies the current real collection, chain ID, contract and token data before capture. The supplied project brief names Monad mainnet chain ID `143` and Chog Genesis token `1969`; this media plan does **not** independently certify either a live read or token ownership. Record the actual returned values and capture time.
 - Only perform a holder write with a consenting real holder, tested wallet flow and separate explicit transaction/spend approval. No purchase of a Genesis NFT is required. Never borrow another person's wallet or use an unrelated address as proof of authorization.

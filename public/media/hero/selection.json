@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "hold-awaiting-chain-shortlist-and-user-selection",
+  "status": "hold-awaiting-user-token-selection",
   "role": "Pip",
   "roleMeaning": "Fictional story nickname for one user-selected, verified Chog Genesis NFT; never an official metadata rename or an invented replacement.",
   "canonicalCollection": {
@@ -11,10 +11,21 @@
   "coordination": {
     "chainPullRequest": "https://github.com/emmaGH1/chog-1969/pull/7",
     "handoffRequest": "https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061",
-    "shortlistUrl": null,
-    "shortlistCommit": null,
-    "candidateCount": 0,
-    "note": "Token ID 1969 / display CHOG #1461 was mentioned by Chain and main as a possible candidate only. It is not selected or certified by this record. Do not infer choice from the project title."
+    "shortlistUrl": "https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md",
+    "shortlistCommit": "9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0",
+    "sourceProvenanceUrl": "https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/public/nft-candidates/provenance.json",
+    "galleryScreenshotUrl": "https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/review/pip-gallery-desktop.jpg",
+    "handoffAcknowledgement": "https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291795303",
+    "candidateCount": 4,
+    "candidateSummary": [
+      { "tokenId": "1969", "metadataDisplayName": "CHOG #1461" },
+      { "tokenId": "969", "metadataDisplayName": "CHOG #461" },
+      { "tokenId": "42", "metadataDisplayName": "CHOG #1503" },
+      { "tokenId": "1968", "metadataDisplayName": "CHOG #1460" }
+    ],
+    "chainReportedSnapshot": { "blockNumber": "115047581", "verifiedAtUtc": "2026-10-20T13:05:53.713Z" },
+    "mediaInspection": "Inspected the gallery/traits and matched all four original WebP files at the pinned commit to Chain's artwork SHA-256 records; all are 1000x1000. This is a source-byte inspection, not independent RPC/CID verification, selection, rights or art approval. No images copied into this media asset set.",
+    "note": "Four candidates are available; none selected. Token ID 1969 / display CHOG #1461 is not automatically Pip. Raw metadata bytes/hash and verification block hash requested for the eventually selected token. Do not infer choice from the project title."
   },
   "selection": {
     "tokenId": null,

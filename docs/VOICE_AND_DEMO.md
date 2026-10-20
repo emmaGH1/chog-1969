@@ -3,10 +3,11 @@ Target: 2:35–2:45, absolutely <=3:00. Only authentic browser footage to prove 
 
 ## Production handoff status
 
-- Character sheets and the first four compositions are delivered as **editable vector review drafts**, with lossless WebP and PNG fallbacks; they are not approved final manga or integrated app screenshots. Open `public/media/review.html` or `public/media/contact-sheet.png`. Exact files and alt text: `public/media/manifest.json`.
-- All eight lines below now have exact text files and SSML-like performance direction in `public/audio/lines/`, indexed by `public/audio/voice-plan.json`. **No recorded audio exists**; `audioFile` remains null. Casting, consent/license and provider spend approval are required first. See `public/audio/README.md`.
+- **PR #8 review override:** the first four vector compositions are **not approved as final**. Human designs, exact scripts and layouts remain references; invented Pip is rejected, not a valid Chog identity or NFT. All Chog characters must originate from verified Genesis NFTs. Pip is only a fictional nickname for the user's explicitly selected real token. See `docs/HERO_SCENE_APPROVAL.md` and pending `public/media/hero/selection.json`; no choice or new hero is claimed.
+- Legacy files remain unchanged for reference, with rejection/reference-only labels in `public/media/review.html` and `public/media/manifest.json`. The original `public/media/contact-sheet.png` has outdated embedded approval-pending wording. Do not integrate it as final art or regenerate the invented Chog.
+- All eight lines below now have exact text files and SSML-like performance direction in `public/audio/lines/`, indexed by `public/audio/voice-plan.json`. **No recorded audio exists**; `audioFile` remains null. NFT selection and the single hero's art approval must precede voice production; casting, consent/license and separate provider spend approval are also required. Existing performance directions are preserved references, not claims about actual NFT traits. See `public/audio/README.md`.
 - The 2:40 storyboard, authentic capture checklist and honest holder-proof fallback paths are in `docs/DEMO_STORYBOARD.md`. **No demo footage or video has been recorded/rendered.**
-- Production/provenance/review gates: `docs/MEDIA_PRODUCTION.md`. Optional finishing briefs (not executed image-generation jobs): `docs/MEDIA_FINISHING_PROMPTS.md`.
+- Production/provenance/review gates: `docs/MEDIA_PRODUCTION.md`. Single-hero production brief: `docs/HERO_SCENE_APPROVAL.md`; superseded prompt history and selection-bound preparation notes: `docs/MEDIA_FINISHING_PROMPTS.md`.
 - Audio remains opt-in. No secrets, purchased tracks, recurring browser TTS calls, deployment or chain writes were introduced.
 
 ## In-app prerecorded voice lines

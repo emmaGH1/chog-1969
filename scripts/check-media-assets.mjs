@@ -58,9 +58,13 @@ for(const scene of ['cover','archive','neri-closeup','pip-awakening']){
  assert.notEqual(await fs.readFile(path.join(base,pair[0].files.source),'utf8'),await fs.readFile(path.join(base,pair[1].files.source),'utf8'),'Must recompose portrait, not duplicate wide');
 }
 const gallery=await fs.readFile(path.join(base,'media/review.html'),'utf8');
-for(const match of gallery.matchAll(/(?:href|src|srcset)="([^"]+)"/g)){
- const target=match[1];if(target.startsWith('#'))continue;
- assert.ok(!target.includes('://'),'Gallery must work offline');
+for(const match of gallery.matchAll(/(href|src|srcset)="([^"]+)"/g)){
+ const target=match[2];if(target.startsWith('#'))continue;
+ if(target.includes('://')){
+  assert.equal(match[1],'href','Rendered assets must remain local/offline');
+  assert.equal(target,'https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md','Only the pinned Chain gallery reference may be external');
+  continue;
+ }
  await fs.access(path.join(base,'media',target));
 }
 const contact=await sharp(path.join(base,'media/contact-sheet.png')).metadata();

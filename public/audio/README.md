@@ -1,4 +1,6 @@
-# Optional voice — script package only
+# Optional voice — preserved script references, production held
+
+**Gate 1 override:** no voice synthesis or recording batch before the actual Genesis character selection and one-hero art approval. Pip and the Chog witness each require a verified real NFT identity; Pip is a fictional nickname, not an invented replacement. `voice-plan.json` keeps both bindings null. The exact existing lines and editorial direction files remain unchanged as references; their old performance descriptions do not define the actual NFT's appearance or canonical personality. See `docs/HERO_SCENE_APPROVAL.md`.
 
 **No recordings exist in this delivery.** No `.mp3`, `.wav`, music bed, cloned voice or sound effect is supplied. `voice-plan.json` uses `audioFile: null` deliberately; `plannedOutput` names are future deliverables, not URLs for application playback.
 
@@ -14,6 +16,8 @@ node scripts/prepare-voice-lines.mjs --check
 ```
 
 ## Recording approval gate
+
+**Prerequisite:** user-selected verified NFT identities and approved hero art; separate voice permission and budget follow, not precede, those gates.
 
 1. Approve voice casting, original/consenting voice talent or a provider-licensed synthetic voice, provider terms for intended distribution, and the maximum budget. No celebrity or identifiable character impersonation. No voice cloning without verified consent.
 2. Confirm pronunciation with the story/brand owner. Keep Sera's two lines and Pip's two lines on their respective same voices.

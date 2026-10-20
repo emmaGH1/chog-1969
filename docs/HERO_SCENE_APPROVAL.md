@@ -10,7 +10,7 @@ All Chog characters must originate from actual verified Genesis NFTs, not just P
 
 ## Chain coordination / selection packet
 
-Request sent to [Chog Chain on PR #7](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061). The last inspected Chain head `f4172d2a474dec17b0112b7cec21ffe64af14c43` contained verification docs but no 3–5-candidate gallery; no completed shortlist or user selection was present in the inspected PR discussion. Recheck when Chain replies; do not treat this snapshot as a permanent capability claim.
+Request sent to [Chog Chain on PR #7](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061). **Shortlist now received:** [four authentic candidates](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md), [gallery screenshot](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/review/pip-gallery-desktop.jpg), [machine-readable provenance](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/public/nft-candidates/provenance.json), pinned to gallery commit `9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0` (current inspected Chain head `62e6851bdb92a8684f53ba3837bdba0404ce3de3`). Chain reports block `115047581`, UTC `2026-10-20T13:05:53.713Z`; this is a dated read-only snapshot, not holder consent. Media inspected the gallery/traits and independently matched all four original files to Chain's SHA-256 values and 1000×1000 WebP dimensions. No new RPC/CID verification is claimed and no original image was copied into our asset set. [Acknowledged receipt](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291795303); requested raw metadata bytes/hash and block hash for the eventual selected-token production packet. **No user selection exists yet.**
 
 Chain owns verification and the shortlist. Media does not select on the user's behalf. For each candidate request:
 
@@ -21,6 +21,19 @@ Chain owns verification and the shortlist. Media does not select on the user's b
 5. Source/trait review and rights evidence. Chain authenticity is not adaptation, reproduction or publication permission. No holder names, wallet addresses, holder likeness or endorsement claims in the creative packet.
 
 Pending state: `public/media/hero/selection.json`. All token, image, verification and output fields remain null until real evidence exists. The canonical collection address there is supplied project configuration, not a new independent RPC certification. Do not populate it with fixture data to unblock production.
+
+### Candidate-dependent art constraints — no selection implied
+
+These are alternative constraints on the **same** proposed hero event, not four commissioned scenes. Exact full traits remain in Chain's pinned provenance; the summaries below are not replacements for it.
+
+| Actual token ID → metadata name | Preserve if the user chooses it | Consequence for the one hero |
+| --- | --- | --- |
+| 1969 → CHOG #1461 | Chog Cap with its existing lettering, Bubblegum mouth, Smirk eyes, Coin accessory, dark jacket, Side Left; original colors/background/aura | Let authentic smirk/bubblegum carry the comedy against Neri's surprise. Frame the cap, bubblegum and coin clearly. Do not invent an open grin, greeting hand or replace cap lettering with generated text. Move Neri/camera rather than mirror the art. |
+| 969 → CHOG #461 | Round Tear eyes, normal smile, Mon Cap, Cream Tuxedo, Yellow skin, Side Right; original colors/background/aura | Play Neri's alarm against the token's actual vulnerable expression. Keep tears and tuxedo visible; do not erase tears into generic glossy eyes to fit the boast. The existing line may read as fictional bravado, not a canonical trait change. |
+| 42 → CHOG #1503 | Plumber headwear, BTC Coin mouth, Base eyes, dark jacket, Pink skin, Side Left; original colors/background/aura | Protect headwear and coin-mouth silhouette in both framings. Use Neri's grounded inspection pose and record mechanics for discovery; no invented prop or redraw that silently removes the coin. |
+| 1968 → CHOG #1460 | Demon Horn, Red Round Eye, Red skin, White Sleeveless, Radioactive base/background, Burning Aura, Side Left | Authentic red/radioactive colors override the proposed violet preference. Stage a restrained monochrome Neri reaction without adding a new threatening monster expression, extra horns or unverified anatomy. No whole-environment purple recolor. |
+
+Do not choose on creative fit alone or substitute metadata display numbers for token IDs. None of the candidate originals authorizes inventing an unseen full body, changing expression/pose or extracting a mascot silhouette without portrayal/rights review.
 
 ## Preserve / supersede
 
@@ -84,4 +97,4 @@ One physical illustrated interaction: inspect/lift the folio to reveal the genui
 - [ ] Original NFT art versus scene interpretation clearly distinguished; rights, attribution, method and any spend evidenced.
 - [ ] Exactly one hero event, no additional scenes or audio generated; user art approval recorded before shipping.
 
-**Next required input:** Chain's candidate gallery, then the user's token selection. The present commit delivers safeguards and a significantly more cinematic production brief, not the conditional finished hero artwork.
+**Next required input:** the user's explicit token selection from Chain's delivered four-candidate gallery (or a request for another shortlist), then selected-source/traits, rights and execution approvals. The present commit delivers safeguards and a significantly more cinematic production brief, not the conditional finished hero artwork.

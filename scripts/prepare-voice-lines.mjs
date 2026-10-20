@@ -12,6 +12,13 @@ const checking=process.argv.includes('--check');
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 const plain=s=>s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
 assert.equal(plan.recordingsExist,false);
+assert.equal(plan.status,'reference-only-held-until-genesis-selection-and-hero-approval');
+for(const role of ['pip','chog-witness']){
+ const binding=plan.chogRoleBindings[role];
+ assert.ok(binding,'Every Chog voice role needs an explicit NFT binding slot');
+ if(binding.tokenId===null)assert.equal(binding.userSelectionApprovalUrl,null);
+ else {assert.match(binding.tokenId,/^(0|[1-9][0-9]*)$/);assert.ok(binding.userSelectionApprovalUrl);}
+}
 assert.equal(plan.lines.length,8);
 assert.equal(new Set(plan.lines.map(l=>l.id)).size,8);
 await fs.mkdir(path.join(dir,'lines'),{recursive:true});

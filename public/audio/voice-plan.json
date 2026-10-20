@@ -1,6 +1,11 @@
 {
   "schemaVersion": 1,
-  "status": "script-ready-recording-not-authorized",
+  "status": "reference-only-held-until-genesis-selection-and-hero-approval",
+  "chogRoleBindings": {
+    "pip": { "tokenId": null, "userSelectionApprovalUrl": null },
+    "chog-witness": { "tokenId": null, "userSelectionApprovalUrl": null }
+  },
+  "productionGate": "Exact dialogue and old performance directions are preserved as references. All Chog roles require real verified Genesis identities. No voice synthesis before selected-NFT and hero-art approvals; directions are not assertions of actual NFT traits.",
   "language": "en",
   "source": "docs/VOICE_AND_DEMO.md",
   "recordingsExist": false,
