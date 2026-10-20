@@ -4,7 +4,7 @@
 An independent, fan-made interactive motion-manga experience for Chogathon. The pale world has forgotten the Chogs. Their real Genesis NFTs are the surviving identities.
 
 ## Status
-**Tested integration pilot, not a finished manga or public release.** On `integration/pilot`, the six-scene guest chapter has validated local saves and two routes; the read-only archive retrieves real Genesis artwork, traits and block-pinned ownership. The owner-only MemoryLedger is locally tested but **undeployed**; wallet writes remain disabled. Approved narrative artwork, voice, physical-phone QA, consenting-holder live writes and demo video remain outstanding. See [Gate 0 results and security assessment](docs/INTEGRATION_GATE0.md).
+**Tested integration pilot, not a finished manga or public release.** On `integration/pilot`, the six-scene guest chapter has validated local saves and two routes; the read-only archive retrieves real Genesis artwork, traits and block-pinned ownership. The owner-only MemoryLedger is locally tested but **undeployed**; wallet writes remain disabled. Approved narrative artwork, voice, physical-phone QA, consenting-holder live writes and demo video remain outstanding. See [Gate 0 results and security assessment](docs/INTEGRATION_GATE0.md). The next checkpoint adds [default-off holder wallet controls](docs/WALLET_GATE.md) and a [2:40 genuine-app demo checklist](docs/DEMO_CHECKLIST.md); no deployed awakening or captured demo is claimed.
 
 ## Run
 1. Use Node.js 22 (CI baseline) and run `npm ci`.

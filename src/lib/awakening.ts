@@ -1,4 +1,4 @@
-import {isAddress, type Address, type Hash} from 'viem';
+import {decodeEventLog,isAddress,parseAbi,type Address,type Hash,type Log} from 'viem';
 import {GENESIS_CONTRACT} from './monad';
 
 export type WriteConfig = {enabled:boolean; ledger:Address|null};
@@ -8,6 +8,16 @@ export function writeConfig(env:Record<string,string|undefined>):WriteConfig {
   return {enabled:env.MEMORY_WRITES_APPROVED==='true' && valid,ledger:valid?ledger as Address:null};
 }
 export type Choice = 1|2;
+export const AWAKEN_ABI=parseAbi(['function awaken(uint256 tokenId,uint8 choice)','event Awakened(uint256 indexed tokenId,address indexed owner,uint8 choice)']);
+export function hasAwakenedEvent(logs:Pick<Log,'address'|'data'|'topics'>[],expected:{address:Address;args:readonly [bigint,number];account:Address}):boolean {
+  return logs.some(log=>{
+    if(log.address.toLowerCase()!==expected.address.toLowerCase())return false;
+    try {
+      const event=decodeEventLog({abi:AWAKEN_ABI,eventName:'Awakened',data:log.data,topics:log.topics});
+      return event.args.tokenId===expected.args[0] && event.args.choice===expected.args[1] && event.args.owner.toLowerCase()===expected.account.toLowerCase();
+    }catch{return false;}
+  });
+}
 export interface AwakeningIO {
   context():Promise<{account:Address;chainId:number}>;
   inspect(ledger:Address,tokenId:bigint):Promise<{owner:Address;genesis:Address;choice:number}>;

@@ -1,8 +1,8 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {prepareAwakening,submitAwakening,walletError,writeConfig,type AwakeningIO,type WriteConfig} from '../src/lib/awakening';
+import {AWAKEN_ABI,hasAwakenedEvent,prepareAwakening,submitAwakening,walletError,writeConfig,type AwakeningIO,type WriteConfig} from '../src/lib/awakening';
 import {GENESIS_CONTRACT} from '../src/lib/monad';
-import type {Address,Hash} from 'viem';
+import {encodeAbiParameters,encodeEventTopics,type Address,type Hash} from 'viem';
 const account='0x1111111111111111111111111111111111111111' as Address;
 const ledger='0x2222222222222222222222222222222222222222' as Address;
 const hash=('0x'+'a'.repeat(64)) as Hash;
@@ -54,6 +54,22 @@ for(const failure of ['revert','timeout'] as const) test(`${failure} retains sub
   const {io,state}=harness();const review=await prepareAwakening(io,enabled,BigInt(1969),1);
   state.status='reverted';state.receiptError=failure==='timeout';let submitted='';
   await assert.rejects(submitAwakening(io,enabled,review,()=>{},h=>{submitted=h;}));assert.equal(submitted,hash);
+});
+test('receipt proof requires the exact ledger, token, owner and choice event',()=>{
+  const expected={address:ledger,args:[BigInt(1969),1] as const,account};
+  const log={address:ledger,topics:encodeEventTopics({abi:AWAKEN_ABI,eventName:'Awakened',args:{tokenId:BigInt(1969),owner:account}}) as [Hash,...Hash[]],data:encodeAbiParameters([{type:'uint8'}],[1])};
+  assert.equal(hasAwakenedEvent([log],expected),true);
+  assert.equal(hasAwakenedEvent([],expected),false);
+  assert.equal(hasAwakenedEvent([{...log,address:account}],expected),false);
+  assert.equal(hasAwakenedEvent([log],{...expected,args:[BigInt(1),1]}),false);
+  assert.equal(hasAwakenedEvent([log],{...expected,args:[BigInt(1969),2]}),false);
+  assert.equal(hasAwakenedEvent([log],{...expected,account:ledger}),false);
+  assert.equal(hasAwakenedEvent([{...log,data:'0x'}],expected),false);
+});
+test('signature rejection never publishes a transaction hash',async()=>{
+  const {io}=harness();const review=await prepareAwakening(io,enabled,BigInt(1969),1);
+  io.send=async()=>{throw {code:4001};};let submitted=false;
+  await assert.rejects(submitAwakening(io,enabled,review,()=>{},()=>{submitted=true;}));assert.equal(submitted,false);
 });
 test('wallet rejection and unsupported-chain errors are explicit',()=>{
   assert.match(walletError({code:4001}),/rejected/);assert.match(walletError({code:4902}),/not configured/);

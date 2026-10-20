@@ -1,11 +1,10 @@
 "use client";
 import {useEffect,useRef,useState} from 'react';
-import {createPublicClient,createWalletClient,custom,http,formatEther,parseAbi,decodeEventLog,type Address,type EIP1193Provider,type Hash} from 'viem';
+import {createPublicClient,createWalletClient,custom,http,formatEther,type Address,type EIP1193Provider,type Hash} from 'viem';
 import {ERC721_READ,GENESIS_CONTRACT,MEMORY_READ,monad} from '@/lib/monad';
-import {prepareAwakening,submitAwakening,walletError,type AwakeningIO,type Choice,type Prepared,type WriteConfig} from '@/lib/awakening';
+import {AWAKEN_ABI as abi,hasAwakenedEvent,prepareAwakening,submitAwakening,walletError,type AwakeningIO,type Choice,type Prepared,type WriteConfig} from '@/lib/awakening';
 
 type Provider=EIP1193Provider & {on?:(event:string,listener:()=>void)=>void;removeListener?:(event:string,listener:()=>void)=>void};
-const abi=parseAbi(['function awaken(uint256 tokenId,uint8 choice)','event Awakened(uint256 indexed tokenId,address indexed owner,uint8 choice)']);
 const read=createPublicClient({chain:monad,transport:http('https://rpc.monad.xyz',{timeout:10000,retryCount:1})});
 function provider():Provider {
   const injected=(window as Window & {ethereum?:Provider}).ethereum;
@@ -47,13 +46,7 @@ function adapter(p:Provider):AwakeningIO {
       const receipt=await read.waitForTransactionReceipt({hash,confirmations:1,timeout:120000});
       if(receipt.status==='success') {
         const expected=sent;
-        const matches=expected && receipt.logs.some(log=>{
-          if(log.address.toLowerCase()!==expected.address.toLowerCase())return false;
-          try {
-            const event=decodeEventLog({abi,eventName:'Awakened',data:log.data,topics:log.topics});
-            return event.args.tokenId===expected.args[0] && event.args.choice===expected.args[1] && event.args.owner.toLowerCase()===expected.account.toLowerCase();
-          }catch{return false;}
-        });
+        const matches=expected && hasAwakenedEvent(receipt.logs,expected);
         if(!matches)throw new Error('Receipt has no matching Awakened event. Replacement or cancellation is not awakening proof; inspect the submitted hash.');
       }
       return receipt;
