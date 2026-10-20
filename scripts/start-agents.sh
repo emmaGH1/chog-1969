@@ -5,6 +5,20 @@ MAIN="$ROOT/chog-1969"
 command -v git >/dev/null || { echo "git is missing"; exit 1; }
 command -v tmux >/dev/null || { echo "tmux is missing"; exit 1; }
 command -v pi >/dev/null || { echo "Pi CLI is not in the VPS PATH; open T3 Code in each worktree instead."; exit 1; }
+# A Pi session can remember an unavailable model. Refuse silent fallback to the
+# last-used model when creating new sessions. Existing Pi sessions can be
+# repaired interactively with /model (see docs/PI_MODEL_RECOVERY.md).
+MODEL="${CHOG_PI_MODEL:-}"
+if [[ -z "$MODEL" ]]; then
+  echo "Set CHOG_PI_MODEL to a model listed by: pi --list-models"
+  echo "Example: CHOG_PI_MODEL=openai-codex/gpt-6.1-sol bash scripts/start-agents.sh"
+  echo "Choose your already-authenticated ChatGPT/Codex provider; no paid API key needed."
+  exit 2
+fi
+if [[ ! "$MODEL" =~ ^[A-Za-z0-9_./:-]+$ ]]; then
+  echo "Invalid model selector. Use provider/model-id with no spaces."
+  exit 2
+fi
 cd "$MAIN"
 git pull --ff-only origin main
 echo "Preparing three clean agent worktrees..."
@@ -26,8 +40,8 @@ for info in "chog-story:docs/AGENT_STORY.md" "chog-chain:docs/AGENT_CHAIN.md" "c
   fi
   dir="$ROOT/$session"
   prompt="Read $promptfile in this repository and begin the assigned work immediately. Work only in your branch. Commit frequently and do not deploy or spend money without approval."
-  tmux send-keys -t "$session" "cd '$dir' && pi '$prompt'" C-m
-  echo "Started $session"
+  tmux send-keys -t "$session" "cd '$dir' && pi --model '$MODEL' '$prompt'" C-m
+  echo "Started $session using $MODEL"
 done
 echo
 echo "Check each tmux session first: tmux attach -t chog-story"
