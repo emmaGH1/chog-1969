@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="06-witness-close-the-door" speaker="chog-witness" status="script-only">
+  <direction>A distinct mature witness, weary and lucid; plain testimony, no supernatural growl. Stress toward only enough to overturn the official history. Closing the door was an urgent act of protection. Any memory-space reverb belongs in a later mix, never printed into the dry source.</direction>
+  <speak xml:lang="en"><prosody rate="92%">We ran <emphasis level="moderate">toward</emphasis> the sea, not away from it.<break time="400ms"/> We were trying to close the door.</prosody></speak>
+</performance>

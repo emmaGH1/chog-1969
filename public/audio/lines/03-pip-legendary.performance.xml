@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="03-pip-legendary" speaker="pip" status="script-only">
+  <direction>Small mischievous spirit, nimble and self-important rather than shrill. Offended interruption on Excuse me, a comic half-beat, then absurdly sincere pride. Smile through legendary. Use an original consenting voice, not a recognizable cartoon impersonation.</direction>
+  <speak xml:lang="en"><prosody rate="104%">Excuse me?<break time="300ms"/> I'm a <emphasis level="moderate">legendary</emphasis> being of unimaginable power.</prosody></speak>
+</performance>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="05-sera-place-the-drawing" speaker="sera" status="script-only">
+  <direction>Controlled captain, adult and precise, mid-low register. The command is quiet because she expects obedience. Pause, then sincere danger beneath the authority; no shouting, hissing or villain caricature. Keep this voice identical to line 08.</direction>
+  <speak xml:lang="en"><prosody rate="94%">Place the drawing on the floor.<break time="350ms"/> Your life depends on what you do <emphasis level="moderate">next</emphasis>.</prosody></speak>
+</performance>
