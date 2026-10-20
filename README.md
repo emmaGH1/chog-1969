@@ -4,13 +4,13 @@
 An independent, fan-made interactive motion-manga experience for Chogathon. The pale world has forgotten the Chogs. Their real Genesis NFTs are the surviving identities.
 
 ## Status
-**Foundation scaffold committed, not a finished application.** The chapter, read-only NFT proof and local-state player journey are development starting points. Artwork, voice, wallet-gated decisions, contract deployment, live testing and demo video are not finished.
+**Tested integration pilot, not a finished manga or public release.** On `integration/pilot`, the six-scene guest chapter has validated local saves and two routes; the read-only archive retrieves real Genesis artwork, traits and block-pinned ownership. The owner-only MemoryLedger is locally tested but **undeployed**; wallet writes remain disabled. Approved narrative artwork, voice, physical-phone QA, consenting-holder live writes and demo video remain outstanding. See [Gate 0 results and security assessment](docs/INTEGRATION_GATE0.md).
 
 ## Run
-1. Install Node.js 20+ and run npm install.
+1. Use Node.js 22 (CI baseline) and run `npm ci`.
 2. Copy .env.example to .env.local (optional; public Monad RPC default is configured).
-3. Run npm run dev and visit localhost:3000.
-4. Run npm run typecheck and npm run build before merging.
+3. For a private production preview, run `npm run build` then `npm run start -- --hostname 127.0.0.1 --port 3103`; visit http://127.0.0.1:3103. Do not expose a development server publicly.
+4. Run `npm test`, `npm run typecheck`, `npm run build` and `npm audit --omit=dev` before proposing integration changes. See the Gate 0 report for remaining development-only audit findings.
 
 Routes: / (cover), /chapter/1 (interactive pilot), /archive (read-only Genesis chain verification).
 

@@ -21,7 +21,7 @@ Branch: `feat/story-engine` · issue [#1](https://github.com/emmaGH1/chog-1969/i
 ## Preview
 ```sh
 npm run build
-npm run start -- --hostname 0.0.0.0 --port 3101
+npm run start -- --hostname 127.0.0.1 --port 3101
 ```
 Open `/chapter/1` (locally: `http://localhost:3101/chapter/1`). The verification server in this worktree is bound to **127.0.0.1:3101**, not a public deployment. SSH tunnel if needed: `ssh -L 3101:127.0.0.1:3101 <your-vps>`.
 
