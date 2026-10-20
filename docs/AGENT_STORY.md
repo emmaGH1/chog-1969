@@ -1,0 +1,4 @@
+# Agent A: interactive manga
+Your branch is feat/story-engine and working directory is ~/projects/chog-story. Read docs/START_HERE.md and docs/ART_DIRECTION.md, then implement GitHub issue #1.
+Goal: complete responsive Chapter One playable in mobile browser. Fix interaction bugs, save and restore progress, add cinematic transition direction and substantive illustrated scenes. User must approve sample art direction; do not generate 20 inconsistent images. You own chapter and related UI only. Never fake an NFT or onchain action. Do not touch contracts or NFT API.
+Make incremental commits on your feature branch, run npm run typecheck and npm run build, and open a PR if possible. When done, report exact result, blocked tasks, preview instructions and links to commits. Seek approval only for consequential creative or security choices.
