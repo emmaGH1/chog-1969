@@ -1,0 +1,27 @@
+.reader { --reading-ink: #161220; }
+.saveStatus { margin: 0 0 14px; color: #c9bed7; font-size: 12px; line-height: 1.5; }
+.scene { scroll-margin-top: 20px; }
+.scene:focus { outline: none; }
+.scene:focus-visible { outline: 3px solid #ff7fc7; outline-offset: 4px; }
+.sceneHeader { animation: pageIn 240ms ease-out both; }
+@keyframes pageIn { from { opacity: .5; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.navigation { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+.navigation button { min-height: 48px; }
+.back { color: #54317f; border: 1px solid #9274b5; background: transparent; padding: 12px 18px; border-radius: 8px; font-weight: 700; }
+.gateHint { font-size: 13px; line-height: 1.5; color: #5b466f; }
+.artNotice { display: block; padding: 8px 14px; background: #25202c; color: #d2c6df; font-size: 11px; line-height: 1.5; }
+.evidence, .escapePlan { color: var(--reading-ink); margin-top: 16px; }
+.evidence svg, .escapePlan svg { display: block; width: 100%; height: auto; }
+.evidenceTabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.evidenceTabs button { border: 2px solid #161220; background: #fffdf6; color: #161220; min-height: 48px; padding: 12px; font-weight: 750; box-shadow: 3px 3px 0 #161220; }
+.evidenceTabs button[aria-pressed="true"] { background: #e5d5ff; box-shadow: none; }
+.evidenceNote { min-height: 3em; line-height: 1.6; font-size: 14px; }
+.escapePlan button[aria-pressed="true"] { border: 2px solid #794cfa; background: #e5d5ff; opacity: 1; }
+.reader input { scroll-margin-bottom: 100px; }
+.reader :global(.manga-stage) { align-items: flex-end; }
+.reader :global(.chapter-top) { flex-wrap: wrap; }
+.reader :global(.quiet) { min-height: 44px; padding: 10px; }
+.reader :global(.story-panel .link) { color: #5e329c; }
+.reader :global(.advance:hover) { background: #5431af; color: white; }
+@media(max-width: 400px) { .evidenceTabs { grid-template-columns: 1fr; } }
+@media(prefers-reduced-motion: reduce) { .sceneHeader { animation: none; } }
