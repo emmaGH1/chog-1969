@@ -1,0 +1,15 @@
+{
+  "name": "chog-contract-tests",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Isolated local-only EVM tests. Never deploy or expose this tooling.",
+  "scripts": {
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "devDependencies": {
+    "ganache": "7.9.2",
+    "solc": "0.8.30",
+    "tsx": "4.23.15",
+    "viem": "2.57.7"
+  }
+}

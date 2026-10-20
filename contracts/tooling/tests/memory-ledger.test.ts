@@ -17,7 +17,7 @@ contract MockGenesis {
 }`;
 
 test("MemoryLedger local EVM: owner authorization, permanence and transfer inheritance", async () => {
- const output = JSON.parse(solc.compile(JSON.stringify({language:"Solidity", sources:{"MemoryLedger.sol":{content:readFileSync("contracts/MemoryLedger.sol","utf8")},"MockGenesis.sol":{content:mock}}, settings:{evmVersion:"shanghai",outputSelection:{"*":{"*":["abi","evm.bytecode.object"]}}}})));
+ const output = JSON.parse(solc.compile(JSON.stringify({language:"Solidity", sources:{"MemoryLedger.sol":{content:readFileSync("../MemoryLedger.sol","utf8")},"MockGenesis.sol":{content:mock}}, settings:{evmVersion:"shanghai",outputSelection:{"*":{"*":["abi","evm.bytecode.object"]}}}})));
  assert.deepEqual((output.errors ?? []).filter((e: {severity:string})=>e.severity==="error"), []);
  const provider = ganache.provider({logging:{quiet:true},chain:{hardfork:"shanghai"},wallet:{totalAccounts:3}});
  const transport = custom(provider);
