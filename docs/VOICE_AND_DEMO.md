@@ -1,6 +1,14 @@
 # Voices and demo production
 Target: 2:35–2:45, absolutely <=3:00. Only authentic browser footage to prove interactions. Screen recording shows a genuine NFT on Monad; holder decisions are shown only if a real transaction can be performed and verified. Otherwise openly label a local test and avoid mainnet claims.
 
+## Production handoff status
+
+- Character sheets and the first four compositions are delivered as **editable vector review drafts**, with lossless WebP and PNG fallbacks; they are not approved final manga or integrated app screenshots. Open `public/media/review.html` or `public/media/contact-sheet.png`. Exact files and alt text: `public/media/manifest.json`.
+- All eight lines below now have exact text files and SSML-like performance direction in `public/audio/lines/`, indexed by `public/audio/voice-plan.json`. **No recorded audio exists**; `audioFile` remains null. Casting, consent/license and provider spend approval are required first. See `public/audio/README.md`.
+- The 2:40 storyboard, authentic capture checklist and honest holder-proof fallback paths are in `docs/DEMO_STORYBOARD.md`. **No demo footage or video has been recorded/rendered.**
+- Production/provenance/review gates: `docs/MEDIA_PRODUCTION.md`. Optional finishing briefs (not executed image-generation jobs): `docs/MEDIA_FINISHING_PROMPTS.md`.
+- Audio remains opt-in. No secrets, purchased tracks, recurring browser TTS calls, deployment or chain writes were introduced.
+
 ## In-app prerecorded voice lines
 - Narrator (authoritarian but natural): "Two centuries ago, the world survived the creatures that nearly destroyed it. Their name was Chog. Their memory was the last danger we erased."
 - Neri: "If they're all gone, why are we still hunting them?"
