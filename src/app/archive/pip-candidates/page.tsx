@@ -6,12 +6,13 @@ export default function PipCandidates(){
  return <main className={styles.gallery}>
   <header><p className="eyebrow">CHOG / 1969 · CAST APPROVAL SHEET</p>
    <h1>Who could Pip be?</h1>
-   <p className={styles.intro}>Four authentic Chog Genesis candidates. <strong>No candidate has been selected.</strong> Pip would be a fictional nickname—not an official metadata rename, project endorsement, or claim about a holder.</p>
+   <p className={styles.intro}>A cheeky scout, an innocent-looking prankster, a sly tinkerer, or a theatrical troublemaker? Four authentic Chog Genesis candidates for a mischievous Pip. <strong>No candidate has been selected.</strong> Pip would be a fictional nickname—not an official metadata rename, project endorsement, or claim about a holder.</p>
    <p className={styles.provenance}>Monad mainnet {sheet.chainId} · block {sheet.blockNumber} · verified {sheet.verifiedAt}<br/>
     Collection: <a href={`https://monadvision.com/address/${sheet.collection}`} target="_blank" rel="noreferrer">{sheet.collection}</a><br/>
     Token existence and tokenURI were read at this block. This is a dated read-only snapshot; no holder addresses are published.</p>
   </header>
-  <div className={styles.grid}>{sheet.candidates.map(candidate=><article className={styles.card} key={candidate.tokenId}>
+  <nav className={styles.jump} aria-label="Jump to candidate">{sheet.candidates.map(candidate=><a key={candidate.tokenId} href={`#token-${candidate.tokenId}`}>Token {candidate.tokenId}</a>)}</nav>
+  <div className={styles.grid}>{sheet.candidates.map(candidate=><article className={styles.card} id={`token-${candidate.tokenId}`} key={candidate.tokenId}>
    <div className={styles.label}>ONCHAIN TOKEN {candidate.tokenId} <span>AWAITING APPROVAL</span></div>
    <img className={styles.art} src={candidate.localArtwork} alt={`Original ${candidate.metadata.name} artwork, onchain token ${candidate.tokenId}`} width={1000} height={1000}/>
    <div className={styles.body}>
@@ -19,14 +20,16 @@ export default function PipCandidates(){
     <h2>{candidate.metadata.name}</h2>
     <p className={styles.id}>Onchain ID <strong>{candidate.tokenId}</strong> ≠ artwork/display label above.</p>
     <p>{candidate.metadata.description}</p>
-    <div className={styles.fit}><h3>Fictional character fit</h3><p>{candidate.fictionalFit}</p><small>Story interpretation only; not a metadata trait or an approved casting decision.</small></div>
+    <div className={styles.fit}><h3>Why this could be a mischievous Pip</h3><p>{candidate.fictionalFit}</p><small>Story interpretation only; not a metadata trait or an approved casting decision.</small></div>
     <h3>Original collection traits</h3>
     <dl className={styles.traits}>{candidate.metadata.attributes.map((trait,index)=><div key={index}><dt>{trait.trait_type}</dt><dd>{trait.value}</dd></div>)}</dl>
     <details><summary>Source URIs & file provenance</summary>
-     <dl className={styles.sources}><dt>Onchain tokenURI</dt><dd>{candidate.tokenURI}</dd><dt>Original artwork URI</dt><dd>{candidate.metadata.image}</dd><dt>Local original file SHA-256</dt><dd>{candidate.artworkSha256}</dd></dl>
+     <dl className={styles.sources}><dt>Onchain tokenURI</dt><dd>{candidate.tokenURI}</dd><dt>Original artwork URI</dt><dd>{candidate.metadata.image}</dd><dt>Original file format / dimensions</dt><dd>{candidate.artworkMime} · {candidate.artworkWidth} × {candidate.artworkHeight}</dd><dt>Local original file SHA-256</dt><dd>{candidate.artworkSha256}</dd><dt>Raw metadata SHA-256</dt><dd>{candidate.metadataSha256}</dd><dt>Verification block hash</dt><dd>{sheet.blockHash}</dd></dl>
      <p>Artwork bytes were downloaded unchanged from the linked gateway, with no crop, recolor or generated replacement. SHA-256 identifies this local copy; it is not independent verification of the IPFS CID.</p>
     </details>
     <nav className={styles.links} aria-label={`Token ${candidate.tokenId} sources`}>
+     <a href="https://opensea.io/collection/chog-genesis" target="_blank" rel="noreferrer">Genesis collection ↗</a>
+     <a href={candidate.localMetadata}>Frozen raw metadata ↗</a>
      <a href={candidate.metadataSource} target="_blank" rel="noreferrer">Metadata JSON ↗</a>
      <a href={candidate.imageSource} target="_blank" rel="noreferrer">Original artwork ↗</a>
      <a href={`https://opensea.io/item/monad/${sheet.collection}/${candidate.tokenId}`} target="_blank" rel="noreferrer">OpenSea token ↗</a>
