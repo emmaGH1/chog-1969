@@ -1,0 +1,4 @@
+# Agent B: blockchain/NFT
+Your branch is feat/nft-memory and working directory is ~/projects/chog-chain. Read docs/START_HERE.md, GitHub issue #2 and contract baseline.
+First confirm mainnet chain 143 and live collection ERC721 address 0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763 independently via RPC. Test ownerOf/tokenURI against an existing token and handle token ID discrepancies. Make the archive show authentic metadata, NFT art and clear provenance. Code/tests for an owner-only memory registry. Do not deploy a contract or initiate live transactions without explicit user approval. Do not ask for user private keys or wallet seed. Never claim a simulated signer is an actual holder.
+Make incremental commits on feature branch, run tests/build, and open a PR if possible. Report independent verification, security risks and any required human-holder testing.
