@@ -1,21 +1,25 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-/// @notice UNREVIEWED DEMO SOURCE. DO NOT DEPLOY BEFORE TESTS AND HOLDER APPROVAL.
+/// @notice Unaudited source. Deployment requires explicit review and approval.
 interface IChogGenesis {
     function ownerOf(uint256 tokenId) external view returns (address);
 }
+/// @notice One permanent decision per Genesis token, inherited on transfer.
+/// @dev Only the current owner may awaken; ERC721 approvals grant no rights here.
+/// No admin, reset, payments or upgrade mechanism. awakenedBy is historical attribution.
 contract MemoryLedger {
     IChogGenesis public immutable genesis;
     enum Choice { None, Reveal, Protect }
     struct Memory { Choice choice; address awakenedBy; uint64 at; }
     mapping(uint256 => Memory) private memories;
+    error InvalidCollection();
     error NotOwner();
     error AlreadyAwakened();
     error BadChoice();
     event Awakened(uint256 indexed tokenId,address indexed owner,Choice choice);
     constructor(address collection){
-        require(collection != address(0),"zero collection");
+        if (collection.code.length == 0) revert InvalidCollection();
         genesis = IChogGenesis(collection);
     }
     function awaken(uint256 tokenId,Choice choice) external {
