@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {AWAKEN_ABI,hasAwakenedEvent,prepareAwakening,submitAwakening,walletError,writeConfig,type AwakeningIO,type WriteConfig} from '../src/lib/awakening';
+import {AWAKEN_ABI,hasAwakenedEvent,parsePending,verifyHolder,prepareAwakening,submitAwakening,walletError,writeConfig,type AwakeningIO,type WriteConfig} from '../src/lib/awakening';
 import {GENESIS_CONTRACT} from '../src/lib/monad';
 import {encodeAbiParameters,encodeEventTopics,type Address,type Hash} from 'viem';
 const account='0x1111111111111111111111111111111111111111' as Address;
@@ -11,6 +11,7 @@ function harness(){
   const state={account,chainId:143,owner:account,genesis:GENESIS_CONTRACT as Address,choice:0,gas:BigInt(100),fee:BigInt(2),sends:0,status:'success',simulateError:false,receiptError:false};
   const io:AwakeningIO={
     async context(){return {account:state.account,chainId:state.chainId};},
+    async ownership(){return {owner:state.owner,blockNumber:BigInt(42)};},
     async inspect(){return {owner:state.owner,genesis:state.genesis,choice:state.choice};},
     async prepare(){if(state.simulateError)throw new Error('Simulation reverted');return {gas:state.gas,feePerGas:state.fee,request:{}};},
     async send(){state.sends++;return hash;},
@@ -70,6 +71,25 @@ test('signature rejection never publishes a transaction hash',async()=>{
   const {io}=harness();const review=await prepareAwakening(io,enabled,BigInt(1969),1);
   io.send=async()=>{throw {code:4001};};let submitted=false;
   await assert.rejects(submitAwakening(io,enabled,review,()=>{},()=>{submitted=true;}));assert.equal(submitted,false);
+});
+test('ownership verification is read-only and independent of deployment approval',async()=>{
+  const {io,state}=harness();
+  assert.equal((await verifyHolder(io,BigInt(1969))).isOwner,true);
+  state.owner=ledger;assert.equal((await verifyHolder(io,BigInt(1969))).isOwner,false);
+  state.chainId=1;await assert.rejects(verifyHolder(io,BigInt(1969)),/Monad/);
+  assert.equal(state.sends,0);
+});
+test('ownership verification rejects wallet changes during the read',async()=>{
+  const {io,state}=harness();io.ownership=async()=>{state.account=ledger;return {owner:account,blockNumber:BigInt(42)};};
+  await assert.rejects(verifyHolder(io,BigInt(1969)),/context changed/);
+});
+test('receipt recovery hints are scoped, validated and never treated as success',()=>{
+  const hint={hash,ledger,account,tokenId:'1969',choice:1};
+  assert.deepEqual(parsePending(JSON.stringify({...hint,success:true}),'1969',ledger),hint);
+  for(const raw of [null,'{','null',JSON.stringify({...hint,choice:0}),JSON.stringify({...hint,hash:'0xno'}),JSON.stringify({...hint,account:'not an address'})])assert.equal(parsePending(raw,'1969',ledger),null);
+  assert.equal(parsePending(JSON.stringify(hint),'1',ledger),null);
+  assert.equal(parsePending(JSON.stringify(hint),'1969',account),null);
+  assert.equal(parsePending(JSON.stringify(hint),'1969',null),null);
 });
 test('wallet rejection and unsupported-chain errors are explicit',()=>{
   assert.match(walletError({code:4001}),/rejected/);assert.match(walletError({code:4902}),/not configured/);

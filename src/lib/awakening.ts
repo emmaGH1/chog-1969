@@ -8,6 +8,15 @@ export function writeConfig(env:Record<string,string|undefined>):WriteConfig {
   return {enabled:env.MEMORY_WRITES_APPROVED==='true' && valid,ledger:valid?ledger as Address:null};
 }
 export type Choice = 1|2;
+export type PendingAwakening={hash:Hash;ledger:Address;account:Address;tokenId:string;choice:Choice};
+// Browser storage is only a recovery hint. It never proves onchain success.
+export function parsePending(raw:string|null,tokenId:string,ledger:Address|null):PendingAwakening|null {
+  try {
+    const p=JSON.parse(raw??'null');
+    if(!ledger || !p || p.ledger!==ledger || p.tokenId!==tokenId || !/^\d{1,78}$/.test(p.tokenId) || BigInt(p.tokenId)>=BigInt(2)**BigInt(256) || !isAddress(p.account) || !/^0x[0-9a-f]{64}$/i.test(p.hash) || (p.choice!==1 && p.choice!==2))return null;
+    return {hash:p.hash,ledger,account:p.account,tokenId,choice:p.choice};
+  }catch{return null;}
+}
 export const AWAKEN_ABI=parseAbi(['function awaken(uint256 tokenId,uint8 choice)','event Awakened(uint256 indexed tokenId,address indexed owner,uint8 choice)']);
 export function hasAwakenedEvent(logs:Pick<Log,'address'|'data'|'topics'>[],expected:{address:Address;args:readonly [bigint,number];account:Address}):boolean {
   return logs.some(log=>{
@@ -20,10 +29,19 @@ export function hasAwakenedEvent(logs:Pick<Log,'address'|'data'|'topics'>[],expe
 }
 export interface AwakeningIO {
   context():Promise<{account:Address;chainId:number}>;
+  ownership(tokenId:bigint):Promise<{owner:Address;blockNumber:bigint}>;
   inspect(ledger:Address,tokenId:bigint):Promise<{owner:Address;genesis:Address;choice:number}>;
   prepare(ledger:Address,tokenId:bigint,choice:Choice,account:Address):Promise<{gas:bigint;feePerGas:bigint;request:unknown}>;
   send(request:unknown):Promise<Hash>;
   receipt(hash:Hash):Promise<{status:string;transactionHash:Hash}>;
+}
+export async function verifyHolder(io:Pick<AwakeningIO,'context'|'ownership'>,tokenId:bigint) {
+  const before=await io.context();
+  if(before.chainId!==143)throw new Error('Switch your wallet to Monad (143).');
+  const proof=await io.ownership(tokenId);
+  const after=await io.context();
+  if(after.chainId!==143 || before.account.toLowerCase()!==after.account.toLowerCase())throw new Error('Wallet context changed. Verify ownership again.');
+  return {...proof,account:after.account,isOwner:proof.owner.toLowerCase()===after.account.toLowerCase()};
 }
 export type Prepared = {ledger:Address;tokenId:bigint;choice:Choice;account:Address;gas:bigint;feePerGas:bigint};
 async function validate(io:AwakeningIO,config:WriteConfig,tokenId:bigint,expected?:Address) {

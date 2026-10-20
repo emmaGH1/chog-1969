@@ -20,6 +20,28 @@ jobs:
       - name: Audit production dependencies
         if: always()
         run: npm audit --omit=dev --json > production-audit.json
+      - name: Install isolated browser test tooling
+        run: |
+          npm install --prefix "$RUNNER_TEMP/chog-browser" --no-audit --no-fund playwright-core@1.64.0
+          node "$RUNNER_TEMP/chog-browser/node_modules/playwright-core/cli.js" install --with-deps chromium
+          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/chog-browser/node_modules/playwright-core/index.mjs" >> "$GITHUB_ENV"
+          CHROME_PATH=$(node -p "require('$RUNNER_TEMP/chog-browser/node_modules/playwright-core').chromium.executablePath()")
+          echo "CHROME_PATH=$CHROME_PATH" >> "$GITHUB_ENV"
+      - name: Production browser regression (mocked wallets, no real transactions)
+        env:
+          STORY_BASE_URL: http://127.0.0.1:3103
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3103 > /tmp/chog-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail "$STORY_BASE_URL" > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --silent --fail "$STORY_BASE_URL" > /dev/null
+          node tests/holder.browser.mjs
+          node tests/holder-flow.browser.mjs
+          node src/components/chapter/browser.test.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

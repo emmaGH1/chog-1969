@@ -68,10 +68,10 @@ export default function Archive(){
       {data.memory.status==="awakened"&&<><p>Permanent choice: <strong>{data.memory.choice}</strong></p><p className="break">Historically awakened by {data.memory.awakenedBy} at Unix timestamp {data.memory.at}. This decision follows the token on transfer; the original signer need not be its current owner.</p></>}
       {data.memory.ledger&&<p className="break">Configured ledger: <a className="link" href={`https://monadvision.com/address/${data.memory.ledger}`} target="_blank" rel="noreferrer">{data.memory.ledger}</a></p>}
       <p className="muted">Owner-only, one-time Reveal or Protect. Local contract tests are not a live awakening. Holder controls below are feature-gated pending explicit deployment approval and real-holder testing; a connection alone is not ownership proof.</p>
-      <HolderAwakening key={data.tokenId} tokenId={data.tokenId} onRefresh={async()=>{
+      <HolderAwakening key={data.tokenId} tokenId={data.tokenId} memory={data.memory} onRefresh={async()=>{
        const sequence=++request.current;
        const res=await fetch('/api/nft/'+data.tokenId,{cache:'no-store'});
-       if(!res.ok)throw new Error('Receipt confirmed, but dossier refresh failed. Refresh the archive to verify memory.');
+       if(!res.ok)throw new Error('Dossier refresh failed. Memory status is not refreshed; retry the public read.');
        const refreshed=await res.json();
        if(sequence===request.current)setData(refreshed);
       }}/>
