@@ -29,7 +29,7 @@ export default function Archive(){
   <div className="eyebrow">THE FORBIDDEN ARCHIVE / MONAD MAINNET</div>
   <h1>THE <em>1,969</em><br/>SURVIVING SEALS.</h1>
   <p>Read a real Chog Genesis NFT. Enter the <strong>onchain token ID</strong>, not its artwork or marketplace display number. Token 1969 resolves to artwork named CHOG #1461; these numbers are not interchangeable.</p>
-  <p><Link className="link" href="/archive/pip-candidates">View four authentic Pip candidates — awaiting your selection ↗</Link></p>
+  <p><Link className="link" href="/archive/pip-candidates">View 12 authentic Pip candidates — awaiting your selection ↗</Link></p>
   <form className="lookup" onSubmit={e=>{e.preventDefault();void inspect();}}>
    <label htmlFor="token">onchain token id</label>
    <div className="lookup-row"><input id="token" required inputMode="numeric" pattern="[0-9]+" maxLength={78} value={tokenId} onChange={e=>setTokenId(e.target.value)} placeholder="1969"/>

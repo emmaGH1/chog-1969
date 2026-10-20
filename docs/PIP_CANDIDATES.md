@@ -1,4 +1,6 @@
-# Pip — authentic Chog Genesis candidate gallery
+# Pip — initial four authentic Chog Genesis candidates
+
+**Round two is ready: [open the current 12-candidate gallery](PIP_ROUND2_GALLERY.md).** This page preserves the original four-option casting notes; the shared provenance packet now contains the newer 12-candidate verification snapshot. No candidate has been chosen.
 
 **Awaiting user approval. No candidate selected.** Pip is a fictional nickname, not an official collection rename, endorsement, or statement about a holder. Confirm artwork usage rights before publishing derivative story art; NFT existence/ownership alone is not a copyright license.
 

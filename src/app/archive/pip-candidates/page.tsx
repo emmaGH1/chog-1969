@@ -3,20 +3,30 @@ import sheet from "../../../../public/nft-candidates/provenance.json";
 import styles from "./gallery.module.css";
 
 export default function PipCandidates(){
+ const failures=sheet.verificationFailures as {tokenId:string;stage:string;reason:string}[];
+ const archetypes=["Playful adventure companion","Mystery / secret-keeper","Dry comic relief","Dangerous-looking ally"];
+ const candidates=archetypes.flatMap(group=>sheet.candidates.filter(candidate=>candidate.archetype===group));
  return <main className={styles.gallery}>
   <header><p className="eyebrow">CHOG / 1969 · CAST APPROVAL SHEET</p>
    <h1>Who could Pip be?</h1>
-   <p className={styles.intro}>A cheeky scout, an innocent-looking prankster, a sly tinkerer, or a theatrical troublemaker? Four authentic Chog Genesis candidates for a mischievous Pip. <strong>No candidate has been selected.</strong> Pip would be a fictional nickname—not an official metadata rename, project endorsement, or claim about a holder.</p>
+   <p className={styles.intro}>A cheeky scout, a sly secret-keeper, dry comic relief, or a dangerous-looking ally? {candidates.length} authentic Chog Genesis candidates for a mischievous Pip. <strong>No candidate has been selected.</strong> Pip would be a fictional nickname—not an official metadata rename, project endorsement, or claim about a holder.</p>
    <p className={styles.provenance}>Monad mainnet {sheet.chainId} · block {sheet.blockNumber} · verified {sheet.verifiedAt}<br/>
     Collection: <a href={`https://monadvision.com/address/${sheet.collection}`} target="_blank" rel="noreferrer">{sheet.collection}</a><br/>
     Token existence and tokenURI were read at this block. This is a dated read-only snapshot; no holder addresses are published.</p>
   </header>
-  <nav className={styles.jump} aria-label="Jump to candidate">{sheet.candidates.map(candidate=><a key={candidate.tokenId} href={`#token-${candidate.tokenId}`}>Token {candidate.tokenId}</a>)}</nav>
-  <div className={styles.grid}>{sheet.candidates.map(candidate=><article className={styles.card} id={`token-${candidate.tokenId}`} key={candidate.tokenId}>
+  <p className={styles.provenance}>{sheet.candidates.length}/{sheet.requestedTokenIds.length} requested candidates verified · {sheet.verificationFailures.length} failed. Grouped by fictional role, not price or rarity. Marketplace listings were preliminary; the candidates below now have RPC, metadata and original-file verification.</p>
+  {sheet.verificationFailures.length>0&&<section aria-label="Verification failures"><h2>Not verified — excluded</h2>{failures.map(failure=><p key={failure.tokenId}>Token {failure.tokenId}: {failure.reason}</p>)}</section>}
+  <section className={styles.overview} aria-label="Compare all verified candidates">
+   <h2>Compare the cast</h2><p>Tap an original artwork to jump to its complete traits, story fit and source links. No choice is recorded.</p>
+   {archetypes.map(group=><section key={group}><h3>{group}</h3><div className={styles.contactGrid}>{candidates.filter(candidate=>candidate.archetype===group).map(candidate=><a href={`#token-${candidate.tokenId}`} key={candidate.tokenId} aria-label={`Token ${candidate.tokenId}, ${candidate.metadata.name}, details`}><img src={candidate.localArtwork} alt={`Original ${candidate.metadata.name}`} width={1000} height={1000}/><strong>Token {candidate.tokenId}</strong><span>{candidate.metadata.name}</span></a>)}</div></section>)}
+  </section>
+  <h2>Full candidate dossiers</h2>
+  <div className={styles.grid}>{candidates.map(candidate=><article className={styles.card} id={`token-${candidate.tokenId}`} key={candidate.tokenId}>
    <div className={styles.label}>ONCHAIN TOKEN {candidate.tokenId} <span>AWAITING APPROVAL</span></div>
    <img className={styles.art} src={candidate.localArtwork} alt={`Original ${candidate.metadata.name} artwork, onchain token ${candidate.tokenId}`} width={1000} height={1000}/>
    <div className={styles.body}>
     <p className="eyebrow">{candidate.collectionName} / ORIGINAL METADATA</p>
+    <p className={styles.id}>{candidate.archetype} · fictional grouping</p>
     <h2>{candidate.metadata.name}</h2>
     <p className={styles.id}>Onchain ID <strong>{candidate.tokenId}</strong> ≠ artwork/display label above.</p>
     <p>{candidate.metadata.description}</p>
