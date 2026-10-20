@@ -3,6 +3,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
@@ -41,12 +42,12 @@ function head(kind='neri',angle='front',expr='neutral'){
   return p('M-43 -119 Q39 -133 62 -85 L62 -44 83 -14 65 -7 70 18 60 29 59 51 Q47 88 8 105 L-25 112 -67 54 -84 -31Z',P,3)+p(hair,I,3)+p('M47 -32 L63 -30 M61 26 L69 22 M-27 31 Q-9 6 0 31 L-6 52','none',3)+p('M-65 -101 Q-94 -22 -66 36','none',2,G)+(s?rect(-11,45,8,24,P,2):r?ellipse(-19,46,8,12,'none',3):rect(14,-55,24,7,P,1));
  }
  const q=angle==='three-quarter';
- let face=p('M-86 -83 Q-105 -26 -82 39 L-65 73 Q-34 105 0 121 Q40 108 70 70 L88 31 Q106 -35 83 -92 Q5 -145 -86 -83Z',P,3.5);
+ let face=p(r?'M-86 -83 Q-105 -26 -91 39 L-77 82 -37 112 17 116 76 77 91 31 Q106 -35 83 -92 Q5 -145 -86 -83Z':'M-86 -83 Q-105 -26 -82 39 L-65 73 Q-34 105 0 121 Q40 108 70 70 L88 31 Q106 -35 83 -92 Q5 -145 -86 -83Z',P,3.5);
  face+=p('M-88 0 Q-112 -13 -105 28 Q-101 49 -81 48 M88 -1 Q112 -14 103 29 Q99 48 81 47',P,3);
  face+=p('M-95 -4 L-86 33 -78 15 M94 -6 L86 32 79 15','none',1.4);
  face+=p('M70 21 L57 67 6 112 40 101 70 71 86 33Z','url(#fine)',0);
  face+=eye(q?-46:-45,-12,1,expr,kind)+g(q?42:45,-12,q?.78:1,eye(0,0,-1,expr,kind));
- face+=p(q?'M18 4 L10 37 26 41 M19 45 L24 43':'M5 7 L-3 38 10 42 M-7 45 L0 47','none',2);
+ face+=p(r?(q?'M19 4 L7 35 30 42 M13 46 L25 47':'M7 5 L-7 34 16 41 M-8 43 L4 47'):q?'M18 4 L10 37 26 41 M19 45 L24 43':'M5 7 L-3 38 10 42 M-7 45 L0 47','none',2);
  face+=p(expr==='surprised'?'M-9 72 Q2 58 14 71 Q17 86 1 88 Q-11 86 -9 72Z':r?'M-31 70 Q6 89 37 59 Q19 89 -8 84Z':expr==='worried'?'M-24 79 Q2 66 23 78':s?'M-20 77 L22 77':'M-21 75 Q2 80 24 72',expr==='surprised'||r?I:'none',2);
  if(n) face+=ellipse(56,44,2.5,2.5,I,0);
  if(r)face+=ellipse(-104,42,8,12,'none',3)+p('M-49 62 L-42 72 M38 50 L42 59 M-1 100 L12 102','none',1.5);
@@ -142,8 +143,11 @@ async function save(id,folder,w,h,source,alt,extra={}){
  await sharp(buf).png({compressionLevel:9,palette:true,colours:128}).toFile(path.join(OUT,`${rel}.png`));
  await sharp(buf).webp({lossless:true,effort:6}).toFile(path.join(OUT,`${rel}.webp`));
  const files={source:`/media/${rel}.svg`,webp:`/media/${rel}.webp`,fallback:`/media/${rel}.png`};
- const bytes={};for(const [k,v]of Object.entries(files)) bytes[k]=(await fs.stat(path.join(ROOT,'public',v))).size;
- assets.push({id,width:w,height:h,files,bytes,alt,status:'draft-awaiting-visual-approval',...extra});
+ const bytes={},sha256={};for(const [k,v]of Object.entries(files)){
+  const data=await fs.readFile(path.join(ROOT,'public',v));
+  bytes[k]=data.length;sha256[k]=createHash('sha256').update(data).digest('hex');
+ }
+ assets.push({id,width:w,height:h,files,bytes,sha256,alt,status:'draft-awaiting-visual-approval',...extra});
  console.log(`Wrote ${rel} (${w}×${h})`);
 }
 
@@ -268,7 +272,7 @@ async function main(){
  comps.push({input:await sharp(path.join(OUT,`frames/${name}-wide.png`)).resize(740,463).toBuffer(),left:x,top:y});
  }
  await sharp(Buffer.from(svg(1600,1180,'Batch 01 contact sheet','Four draft manga compositions awaiting review.',labels))).composite(comps).png({palette:true,colours:128,compressionLevel:9}).toFile(path.join(OUT,'contact-sheet.png'));
- await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify({schemaVersion:1,batch:'01',status:'draft-awaiting-visual-approval',previews:{gallery:'/media/review.html',contactSheet:'/media/contact-sheet.png'},method:'Original code-authored SVG; local Sharp rasterization; no paid generation',rights:'Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.',assets},null,2)+'\n');
+ await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify({schemaVersion:1,batch:'01',status:'draft-awaiting-visual-approval',previews:{gallery:'/media/review.html',contactSheet:'/media/contact-sheet.png'},provenanceDocument:'docs/MEDIA_PRODUCTION.md',generator:'scripts/build-media-assets.mjs',toolchain:{node:process.version,sharp:sharp.versions.sharp,vips:sharp.versions.vips},method:'Original code-authored SVG; local Sharp rasterization; no paid generation',rights:'Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.',assets},null,2)+'\n');
  }
 }
 await main();

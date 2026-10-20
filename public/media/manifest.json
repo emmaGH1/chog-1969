@@ -6,6 +6,13 @@
     "gallery": "/media/review.html",
     "contactSheet": "/media/contact-sheet.png"
   },
+  "provenanceDocument": "docs/MEDIA_PRODUCTION.md",
+  "generator": "scripts/build-media-assets.mjs",
+  "toolchain": {
+    "node": "v22.23.3",
+    "sharp": "0.34.5",
+    "vips": "8.17.3"
+  },
   "method": "Original code-authored SVG; local Sharp rasterization; no paid generation",
   "rights": "Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.",
   "assets": [
@@ -22,6 +29,11 @@
         "source": 29479,
         "webp": 67172,
         "fallback": 48170
+      },
+      "sha256": {
+        "source": "ffa4fd0a9a369e3984139144086ea295c03d8368b447bd75281498cdc2ec7d0a",
+        "webp": "6d0fc4531c5853c6b8718d460441ed4aa56b8de294fe7f5fb360deef63d90bdc",
+        "fallback": "09e5bece3967f5b5185d62e77e3a9c375db5ea5716f227aa39304b66faeb8dad"
       },
       "alt": "neri model study: four views, two expressions and continuity notes.",
       "status": "draft-awaiting-visual-approval",
@@ -42,6 +54,11 @@
         "webp": 73496,
         "fallback": 44817
       },
+      "sha256": {
+        "source": "a6a0ff0e8c3b0c6b3d000b803fa5569184a949eb3e9d4da86eb7ddb41e7e6558",
+        "webp": "b710ef66e760b9f40266137de16edc69f009bd9231eba1542f332ff992ee9243",
+        "fallback": "791626edbfe9cc001d708dd026cd21728ce4e0b3cb8d7dce333a3edad4658eb6"
+      },
       "alt": "pip model study: four views, two expressions and continuity notes.",
       "status": "draft-awaiting-visual-approval",
       "kind": "reference",
@@ -61,6 +78,11 @@
         "webp": 61340,
         "fallback": 44131
       },
+      "sha256": {
+        "source": "444263561dc617d7ddfe2045c98e730471e062e84d746cd9225e05d944303e31",
+        "webp": "95b42c9fce1259c0d90f98fa9bf64c1a4becaaed8d21e7dc2d6c350bed0a0ccf",
+        "fallback": "6c1d4f2f05f98beb4fa2b3be0dd986156771b0750c1ed0437b5c85592670a1b3"
+      },
       "alt": "sera model study: four views, two expressions and continuity notes.",
       "status": "draft-awaiting-visual-approval",
       "kind": "reference",
@@ -76,9 +98,14 @@
         "fallback": "/media/references/rook-sheet.png"
       },
       "bytes": {
-        "source": 27228,
-        "webp": 66372,
-        "fallback": 45478
+        "source": 27190,
+        "webp": 66938,
+        "fallback": 47801
+      },
+      "sha256": {
+        "source": "81c93d7b2e882536c7e0518c79425cfc7f5de365ed97dbe4ea2f6867d421a633",
+        "webp": "a9da1db25c2f320a773380c4f243fb033c248ffa78d34eced084084fb7db98ca",
+        "fallback": "7c19f8c5a2dfb6b4b92aa8ee33a34b129a51e0ba971ce4a77267fdb0483de5b1"
       },
       "alt": "rook model study: four views, two expressions and continuity notes.",
       "status": "draft-awaiting-visual-approval",
@@ -98,6 +125,11 @@
         "source": 45801,
         "webp": 80404,
         "fallback": 49895
+      },
+      "sha256": {
+        "source": "8e41ab5a9f16d24575fe0f2d85d674fb4a61b409c2c6437a68bc87daf974ffb9",
+        "webp": "82a81cba78df104c25ab3c465bd00aefe003a73a99492d61d34855cb52e18e43",
+        "fallback": "7bfde5c098e8c99bb300423963d1c0a5586aedfd4a427e9d4c70001a30ba34ea"
       },
       "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
       "status": "draft-awaiting-visual-approval",
@@ -119,6 +151,11 @@
         "webp": 97512,
         "fallback": 62395
       },
+      "sha256": {
+        "source": "dbeb88180d6733b5fdd8679c072df766edc9fb86c5f126159609a4d5d2f07416",
+        "webp": "ab85e9f7f0247878764244adf2fddbc6085eb4af158857fb3051817a39f664df",
+        "fallback": "f4bbacb0f8557bd76dc841c3e20b2e01e21ce871aa38774f5147a6645c6973fb"
+      },
       "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
       "status": "draft-awaiting-visual-approval",
       "kind": "story-frame",
@@ -138,6 +175,11 @@
         "source": 42358,
         "webp": 95306,
         "fallback": 60601
+      },
+      "sha256": {
+        "source": "ff76ab56edf554809356557a2bb16965d560dd5c8bca4c7bd3befa732e488eb6",
+        "webp": "0588584f9957098a900c8ef5e79f2d99489747dbc0013689c7b4ee57b8c28ec7",
+        "fallback": "ca0ae00b520f072f0f9df64070fd5710cb7fd4716b85718753f7bce5c20e0d35"
       },
       "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
       "status": "draft-awaiting-visual-approval",
@@ -159,6 +201,11 @@
         "webp": 112644,
         "fallback": 76237
       },
+      "sha256": {
+        "source": "520cff307c87f68467350fa51321e3cd8b70d93a096e8a61a980e9139765963d",
+        "webp": "a735bad1e475adbfa95eb0fa9c713807561613b45aee737b4f02463b8949516d",
+        "fallback": "87301838c89f91b2b652330fd5f31d934ad82ebac8a942f68703358b9ed83636"
+      },
       "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
       "status": "draft-awaiting-visual-approval",
       "kind": "story-frame",
@@ -178,6 +225,11 @@
         "source": 10443,
         "webp": 47300,
         "fallback": 33021
+      },
+      "sha256": {
+        "source": "6719c46c6916fe6c14e527ef01b7d63abf97bd3fb43adcec6b894a08c5f5c10d",
+        "webp": "1472ef871bdbf15edd71852cfe424aeefd088d53f9fc1186f6b76a0639ff32a8",
+        "fallback": "eeedd4a6afe3ec9a2520531b4ec18a8c05952f0a924ed8a9ac7db2e13e3a5f45"
       },
       "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
       "status": "draft-awaiting-visual-approval",
@@ -199,6 +251,11 @@
         "webp": 52380,
         "fallback": 37402
       },
+      "sha256": {
+        "source": "141674ffecba27d69bdf154dd591b26044917456090e70081a54d3fcb383a7f2",
+        "webp": "ab327d07e6543773fb29e242419ffc061dd364a7bdd3ccdb81eec433d36c1e80",
+        "fallback": "de4b678a68059c78797a2457f335cf05188e783bdf50e8601c32397b09c8cf5f"
+      },
       "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
       "status": "draft-awaiting-visual-approval",
       "kind": "story-frame",
@@ -219,6 +276,11 @@
         "webp": 83412,
         "fallback": 48489
       },
+      "sha256": {
+        "source": "6d17d212ed89ed5e583308a6251c6211f41d7276f481e205ea0405d36eba2637",
+        "webp": "689686072dfdd3cbbe405d1a4bd49929e6452a1bb89b5c1bb4dcd16860fdf737",
+        "fallback": "c1e348e231d3a6392e8965a85148f4b557b181ad39686e10288bee58a61aa720"
+      },
       "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
       "status": "draft-awaiting-visual-approval",
       "kind": "story-frame",
@@ -238,6 +300,11 @@
         "source": 21696,
         "webp": 104970,
         "fallback": 63201
+      },
+      "sha256": {
+        "source": "03a82163ee0b7c4ff3bfd474b30ef7dbeab5b5ed374a853e88eb273b33fd95be",
+        "webp": "867fd561b456e6a88c6431539ae618923b968a23d356bc55d2251fe67447b3da",
+        "fallback": "0292d9b707369d052c836fcb3bda33a17b2069e707e3068713ac65592ec22bc3"
       },
       "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
       "status": "draft-awaiting-visual-approval",

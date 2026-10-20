@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import sharp from 'sharp';
+import {createHash} from 'node:crypto';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
 const base=path.join(root,'public');
@@ -23,6 +24,7 @@ for(const a of manifest.assets){
   const filename=path.join(base,url);
   const stat=await fs.stat(filename);
   assert.equal(stat.size,a.bytes[kind],`Stale byte count: ${url}`);
+  assert.equal(createHash('sha256').update(await fs.readFile(filename)).digest('hex'),a.sha256[kind],`Stale asset hash: ${url}`);
   assert.ok(stat.size>1000,`Empty/placeholder asset: ${url}`);
   total+=stat.size;count++;
   if(kind==='source'){
