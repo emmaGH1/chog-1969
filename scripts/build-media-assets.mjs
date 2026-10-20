@@ -82,7 +82,7 @@ function human(kind='neri',angle='front',expr='neutral',full=true){
  if(!full)return head(kind,angle,expr);
  // Adult figure proportions: roughly 5.6 heads, not a child-sized/chibi body.
  const costume=body(kind,angle==='back');
- return g(0,-80,1,`<g transform="scale(${angle==='profile'?.62:1} 1.5)">${costume}</g>`+g(0,80,.6,head(kind,angle,expr)));
+ return g(0,-80,1,`<g transform="translate(0 -40) scale(${angle==='profile'?.62:1} 1.5)">${costume}</g>`+g(0,80,.6,head(kind,angle,expr)));
 }
 function pip(expr='smug',angle='front',full=true){
  let b=full?p('M-53 91 Q-87 119 -100 173 L-163 145 -177 165 Q-134 224 -81 211 L-50 174 -55 274 -31 298 1 278 29 297 60 275 51 174 98 151 87 124 43 103Z',V,4)+p('M-161 145 L-181 120 -188 125 -181 146 -203 135 -209 143 -186 165 -174 172Z',P,3)+p('M88 125 L102 105 108 110 104 125 124 112 130 120 111 145 98 151Z',P,3)+p('M-55 273 L-69 292 -29 304 -15 286 M29 283 L26 303 71 295 60 276',P,3):'';
@@ -140,7 +140,7 @@ async function save(id,folder,w,h,source,alt,extra={}){
  await fs.writeFile(path.join(OUT,`${rel}.svg`),source);
  const buf=Buffer.from(source);
  await sharp(buf).png({compressionLevel:9,palette:true,colours:128}).toFile(path.join(OUT,`${rel}.png`));
- await sharp(buf).webp({quality:86,effort:6}).toFile(path.join(OUT,`${rel}.webp`));
+ await sharp(buf).webp({lossless:true,effort:6}).toFile(path.join(OUT,`${rel}.webp`));
  const files={source:`/media/${rel}.svg`,webp:`/media/${rel}.webp`,fallback:`/media/${rel}.png`};
  const bytes={};for(const [k,v]of Object.entries(files)) bytes[k]=(await fs.stat(path.join(ROOT,'public',v))).size;
  assets.push({id,width:w,height:h,files,bytes,alt,status:'draft-awaiting-visual-approval',...extra});
@@ -161,12 +161,19 @@ function archive(w,h){
  }
  for(let j=0;j<7;j++){
  const t=j/7;
- const ya=h*(.19+t*.106),yb=cy+31+t*(h*.76-cy-31)/7;
+ const ya=h*(.19+j*.106),yb=cy+31+t*(h*.76-cy-31);
  b+=p(`M0 ${ya} L${cx-88} ${yb} M${w} ${ya} L${cx+105} ${yb}`,'none',j===0?8:6,P);
  }
  for(let j=0;j<19;j++){
  const t=j/19, xp=w*.43*t,top=cy*t,bottom=h-(h*.24*t);
  b+=p(`M${xp} ${top} L${xp} ${bottom} M${w-xp} ${top} L${w-xp} ${bottom}`,'none',j%4===0?7:2,P);
+ // Small spine bands and paper labels separate books from architectural rails.
+ for(let row=0;row<6;row++){
+ const u=xp/(cx-88),leftY=h*(.19+row*.106),endY=cy+31+(row/7)*(h*.76-cy-31);
+ const yy=leftY+(endY-leftY)*u+18*(1-u);
+ if(j%3!==0)b+=p(`M${xp+5} ${yy} l${20*(1-u)} ${3*u} M${w-xp-5} ${yy} l${-20*(1-u)} ${3*u}`,'none',2,P);
+ if((j+row)%5===0)b+=rect(xp+5,yy+8,12*(1-u),16*(1-u),P,0);
+ }
  if(j%4===0) b+=p(`M${xp+7} ${top+30} L${xp+7} ${bottom-12}`,'none',1,G);
  }
  b+=p(`M0 ${h} L${cx-90} ${h*.76} H${cx+105} L${w} ${h}Z`,'url(#dots)',3);
@@ -205,7 +212,10 @@ function frame(name,mobile=false){
  b=archive(w,h);
  const s=mobile?.79:.76, x=w*(mobile?.48:.48),y=h*(mobile?.51:.40);
  b+=g(x,y,s,human('neri','three-quarter'));
- b+=book(x+w*.11,y+h*.25,mobile?.80:.69);
+ const bx=x+w*.09,by=y+h*.23,bs=mobile?.80:.69;
+ b+=p(`M${x+50*s} ${y+195*s} Q${bx-65*bs} ${by+51*bs} ${bx-10*bs} ${by+65*bs} L${bx+2*bs} ${by+85*bs} Q${x+15*s} ${by+77*bs} ${x+20*s} ${y+247*s}Z`,I,3);
+ b+=book(bx,by,bs);
+ b+=g(bx-54*bs,by+60*bs,bs,p('M-17 1 Q-11 -13 2 -7 L31 1 Q36 10 27 15 L2 14 -16 8Z',P,3)+p('M0 0 L24 5 M-2 6 L21 11','none',1.5));
  // Foreground table and records anchor the human figure in the space.
  b+=p(`M0 ${h*.89} L${w*.28} ${h*.78} ${w*.39} ${h*.84} ${w*.18} ${h} H0Z`,I,4);
  b+=g(w*.11,h*.85,mobile?1.10:.83,book(0,0));
@@ -216,7 +226,7 @@ function frame(name,mobile=false){
  b+=p(`M0 0 H${w*.26} L${w*.14} ${h} H0Z`,I,0)+p(`M${w*.76} 0 H${w}V${h}H${w*.94}Z`,I,0);
  for(let j=0;j<9;j++)b+=p(`M0 ${j*h/9} L${w*.24} ${j*h/9+50} M${w*.85} ${j*h/9}H${w}`,'none',5,P);
  const s=mobile?3.45:2.8;
- b+=g(w*(mobile?.48:.49),h*(mobile?.47:.46),s,human('neri','three-quarter','worried'));
+ b+=g(w*(mobile?.48:.49),h*(mobile?.47:.50),s,body('neri')+head('neri','three-quarter','worried'));
  // A narrow inset eye study reads like a manga panel, not a UI card.
  if(!mobile) b+=rect(1120,55,420,205,P,6)+g(1310,148,3.6,eye(0,0,1,'worried','neri'));
  b+=book(w*(mobile?.58:.70),h*.95,mobile?1.4:1.15);
@@ -227,7 +237,7 @@ function frame(name,mobile=false){
  // A page's pale diagonal becomes a flat, constrained violet memory ribbon.
  b+=p(`M${w*.48} ${h*.83} Q${w*.77} ${h*.77} ${w*.72} ${h*.54} Q${w*.7} ${h*.46} ${w*.61} ${h*.48} L${w*.64} ${h*.53} Q${w*.77} ${h*.69} ${w*.49} ${h*.79}Z`,V,0);
  b+=g(w*(mobile?.63:.63),h*(mobile?.37:.36),mobile?1.65:1.33,pip());
- b+=g(w*(mobile?.06:.12),h*(mobile?.58:.50),mobile?1.45:1.1,human('neri','three-quarter','surprised'));
+ b+=g(w*(mobile?.13:.15),h*(mobile?.58:.50),mobile?1.45:1.1,human('neri','three-quarter','surprised'));
  // Falling scraps show a physical emergence instead of an unrelated floating mascot.
  for(const [x,y,s,rot]of [[.82,.61,.3,32],[.77,.79,.25,-24],[.43,.53,.19,22]])b+=`<g transform="translate(${w*x} ${h*y}) rotate(${rot}) scale(${s})">${p('M0 0 L120 -10 99 67 10 81Z',P,5)}${p('M18 20 L87 15','none',4)}</g>`;
  b+=p(`M${w*.87} ${h*.34} l15 -42 M${w*.90} ${h*.37}l36 -18`,'none',6,V);
@@ -251,7 +261,14 @@ async function main(){
  await save(`${name}-${mobile?'portrait':'wide'}`,'frames',w,h,source,frameNames[name].alt,{kind:'story-frame',scene:name,layout:mobile?'portrait':'wide'});
  }
  if(mode==='all'){
- await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify({schemaVersion:1,batch:'01',status:'draft-awaiting-visual-approval',method:'Original code-authored SVG; local Sharp rasterization; no paid generation',rights:'Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.',assets},null,2)+'\n');
+ const comps=[];let labels=text(40,48,'CHOG / 1969 — FIRST FOUR COMPOSITIONS',30)+text(40,79,'VECTOR REVIEW DRAFTS · NOT OFFICIAL NFT ART · VISUAL APPROVAL PENDING',15);
+ for(const [j,name]of Object.keys(frameNames).entries()){
+ const x=40+(j%2)*780,y=145+Math.floor(j/2)*520;
+ labels+=text(x,y-18,`${String(j+1).padStart(2,'0')} / ${frameNames[name].title}`,18);
+ comps.push({input:await sharp(path.join(OUT,`frames/${name}-wide.png`)).resize(740,463).toBuffer(),left:x,top:y});
+ }
+ await sharp(Buffer.from(svg(1600,1180,'Batch 01 contact sheet','Four draft manga compositions awaiting review.',labels))).composite(comps).png({palette:true,colours:128,compressionLevel:9}).toFile(path.join(OUT,'contact-sheet.png'));
+ await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify({schemaVersion:1,batch:'01',status:'draft-awaiting-visual-approval',previews:{gallery:'/media/review.html',contactSheet:'/media/contact-sheet.png'},method:'Original code-authored SVG; local Sharp rasterization; no paid generation',rights:'Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.',assets},null,2)+'\n');
  }
 }
 await main();

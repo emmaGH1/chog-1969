@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "batch": "01",
+  "status": "draft-awaiting-visual-approval",
+  "previews": {
+    "gallery": "/media/review.html",
+    "contactSheet": "/media/contact-sheet.png"
+  },
+  "method": "Original code-authored SVG; local Sharp rasterization; no paid generation",
+  "rights": "Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.",
+  "assets": [
+    {
+      "id": "neri-sheet",
+      "width": 1800,
+      "height": 1220,
+      "files": {
+        "source": "/media/references/neri-sheet.svg",
+        "webp": "/media/references/neri-sheet.webp",
+        "fallback": "/media/references/neri-sheet.png"
+      },
+      "bytes": {
+        "source": 29479,
+        "webp": 67172,
+        "fallback": 48170
+      },
+      "alt": "neri model study: four views, two expressions and continuity notes.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "reference",
+      "character": "neri"
+    },
+    {
+      "id": "pip-sheet",
+      "width": 1800,
+      "height": 1220,
+      "files": {
+        "source": "/media/references/pip-sheet.svg",
+        "webp": "/media/references/pip-sheet.webp",
+        "fallback": "/media/references/pip-sheet.png"
+      },
+      "bytes": {
+        "source": 17258,
+        "webp": 73496,
+        "fallback": 44817
+      },
+      "alt": "pip model study: four views, two expressions and continuity notes.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "reference",
+      "character": "pip"
+    },
+    {
+      "id": "sera-sheet",
+      "width": 1800,
+      "height": 1220,
+      "files": {
+        "source": "/media/references/sera-sheet.svg",
+        "webp": "/media/references/sera-sheet.webp",
+        "fallback": "/media/references/sera-sheet.png"
+      },
+      "bytes": {
+        "source": 26022,
+        "webp": 61340,
+        "fallback": 44131
+      },
+      "alt": "sera model study: four views, two expressions and continuity notes.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "reference",
+      "character": "sera"
+    },
+    {
+      "id": "rook-sheet",
+      "width": 1800,
+      "height": 1220,
+      "files": {
+        "source": "/media/references/rook-sheet.svg",
+        "webp": "/media/references/rook-sheet.webp",
+        "fallback": "/media/references/rook-sheet.png"
+      },
+      "bytes": {
+        "source": 27228,
+        "webp": 66372,
+        "fallback": 45478
+      },
+      "alt": "rook model study: four views, two expressions and continuity notes.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "reference",
+      "character": "rook"
+    },
+    {
+      "id": "cover-wide",
+      "width": 1600,
+      "height": 1000,
+      "files": {
+        "source": "/media/frames/cover-wide.svg",
+        "webp": "/media/frames/cover-wide.webp",
+        "fallback": "/media/frames/cover-wide.png"
+      },
+      "bytes": {
+        "source": 45801,
+        "webp": 80404,
+        "fallback": 49895
+      },
+      "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "cover",
+      "layout": "wide"
+    },
+    {
+      "id": "cover-portrait",
+      "width": 1200,
+      "height": 1600,
+      "files": {
+        "source": "/media/frames/cover-portrait.svg",
+        "webp": "/media/frames/cover-portrait.webp",
+        "fallback": "/media/frames/cover-portrait.png"
+      },
+      "bytes": {
+        "source": 45757,
+        "webp": 97512,
+        "fallback": 62395
+      },
+      "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "cover",
+      "layout": "portrait"
+    },
+    {
+      "id": "archive-wide",
+      "width": 1600,
+      "height": 1000,
+      "files": {
+        "source": "/media/frames/archive-wide.svg",
+        "webp": "/media/frames/archive-wide.webp",
+        "fallback": "/media/frames/archive-wide.png"
+      },
+      "bytes": {
+        "source": 42358,
+        "webp": 95306,
+        "fallback": 60601
+      },
+      "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "archive",
+      "layout": "wide"
+    },
+    {
+      "id": "archive-portrait",
+      "width": 1200,
+      "height": 1600,
+      "files": {
+        "source": "/media/frames/archive-portrait.svg",
+        "webp": "/media/frames/archive-portrait.webp",
+        "fallback": "/media/frames/archive-portrait.png"
+      },
+      "bytes": {
+        "source": 42300,
+        "webp": 112644,
+        "fallback": 76237
+      },
+      "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "archive",
+      "layout": "portrait"
+    },
+    {
+      "id": "neri-closeup-wide",
+      "width": 1600,
+      "height": 1000,
+      "files": {
+        "source": "/media/frames/neri-closeup-wide.svg",
+        "webp": "/media/frames/neri-closeup-wide.webp",
+        "fallback": "/media/frames/neri-closeup-wide.png"
+      },
+      "bytes": {
+        "source": 10443,
+        "webp": 47300,
+        "fallback": 33021
+      },
+      "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "neri-closeup",
+      "layout": "wide"
+    },
+    {
+      "id": "neri-closeup-portrait",
+      "width": 1200,
+      "height": 1600,
+      "files": {
+        "source": "/media/frames/neri-closeup-portrait.svg",
+        "webp": "/media/frames/neri-closeup-portrait.webp",
+        "fallback": "/media/frames/neri-closeup-portrait.png"
+      },
+      "bytes": {
+        "source": 9419,
+        "webp": 52380,
+        "fallback": 37402
+      },
+      "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "neri-closeup",
+      "layout": "portrait"
+    },
+    {
+      "id": "pip-awakening-wide",
+      "width": 1600,
+      "height": 1000,
+      "files": {
+        "source": "/media/frames/pip-awakening-wide.svg",
+        "webp": "/media/frames/pip-awakening-wide.webp",
+        "fallback": "/media/frames/pip-awakening-wide.png"
+      },
+      "bytes": {
+        "source": 21661,
+        "webp": 83412,
+        "fallback": 48489
+      },
+      "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "pip-awakening",
+      "layout": "wide"
+    },
+    {
+      "id": "pip-awakening-portrait",
+      "width": 1200,
+      "height": 1600,
+      "files": {
+        "source": "/media/frames/pip-awakening-portrait.svg",
+        "webp": "/media/frames/pip-awakening-portrait.webp",
+        "fallback": "/media/frames/pip-awakening-portrait.png"
+      },
+      "bytes": {
+        "source": 21696,
+        "webp": 104970,
+        "fallback": 63201
+      },
+      "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
+      "status": "draft-awaiting-visual-approval",
+      "kind": "story-frame",
+      "scene": "pip-awakening",
+      "layout": "portrait"
+    }
+  ]
+}
