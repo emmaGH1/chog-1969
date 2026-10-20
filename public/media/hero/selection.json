@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "status": "hold-awaiting-chain-shortlist-and-user-selection",
+  "role": "Pip",
+  "roleMeaning": "Fictional story nickname for one user-selected, verified Chog Genesis NFT; never an official metadata rename or an invented replacement.",
+  "canonicalCollection": {
+    "chainId": 143,
+    "contract": "0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763",
+    "source": "docs/ART_DIRECTION.md and Chain issue #2; this pending record is not an independent onchain verification"
+  },
+  "coordination": {
+    "chainPullRequest": "https://github.com/emmaGH1/chog-1969/pull/7",
+    "handoffRequest": "https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061",
+    "shortlistUrl": null,
+    "shortlistCommit": null,
+    "candidateCount": 0,
+    "note": "Token ID 1969 / display CHOG #1461 was mentioned by Chain and main as a possible candidate only. It is not selected or certified by this record. Do not infer choice from the project title."
+  },
+  "selection": {
+    "tokenId": null,
+    "metadataDisplayName": null,
+    "userApprovalUrl": null,
+    "fictionalRoleFit": null
+  },
+  "verification": {
+    "chainEvidenceUrl": null,
+    "blockNumber": null,
+    "blockHash": null,
+    "verifiedAtUtc": null,
+    "tokenURI": null,
+    "rawMetadataFile": null,
+    "rawMetadataSha256": null
+  },
+  "originalArtwork": {
+    "originalURI": null,
+    "sourceUrl": null,
+    "localFile": null,
+    "sha256": null,
+    "mime": null,
+    "width": null,
+    "height": null,
+    "traits": null,
+    "sourceAndTraitReviewUrl": null
+  },
+  "rights": {
+    "status": "pending",
+    "evidenceUrl": null,
+    "approvedScope": null,
+    "requiredAttribution": null,
+    "note": "Public metadata, ownership and download access are not adaptation or publication licenses. Do not include holder identity or imply endorsement."
+  },
+  "production": {
+    "scope": "One awakening hero composition, wide and separately staged portrait; no later scenes",
+    "brief": "docs/HERO_SCENE_APPROVAL.md",
+    "method": null,
+    "executionApprovalUrl": null,
+    "spendApprovalUrl": null,
+    "approvedBudget": null,
+    "note": "No paid service call, booking or model generation is authorized. Unknown cost is not zero cost. A no-spend execution method must be documented before production."
+  },
+  "hero": {
+    "status": "not-produced",
+    "wideFile": null,
+    "portraitFile": null,
+    "originalVersusAdaptationPreview": null,
+    "userArtApprovalUrl": null
+  },
+  "legacy": {
+    "manifest": "/media/manifest.json",
+    "inventedPipUsable": false,
+    "shippingPanelsApproved": false,
+    "note": "Keep Neri/Sera/Rook designs, exact scripts and first-batch staging as references. The invented Pip is rejected, not an NFT reference or a candidate."
+  }
+}

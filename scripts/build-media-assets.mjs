@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-/** Original editable vector art-direction drafts. Local-only: no network or generation API. */
+/** FROZEN legacy batch-01 renderer. Preserved as reference; invented Pip was rejected in PR #8.
+ * No invocation may regenerate these assets. See docs/HERO_SCENE_APPROVAL.md.
+ */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -275,4 +277,8 @@ async function main(){
  await fs.writeFile(path.join(OUT,'manifest.json'),JSON.stringify({schemaVersion:1,batch:'01',status:'draft-awaiting-visual-approval',previews:{gallery:'/media/review.html',contactSheet:'/media/contact-sheet.png'},provenanceDocument:'docs/MEDIA_PRODUCTION.md',generator:'scripts/build-media-assets.mjs',toolchain:{node:process.version,sharp:sharp.versions.sharp,vips:sharp.versions.vips},method:'Original code-authored SVG; local Sharp rasterization; no paid generation',rights:'Independent fan-story drafts. Original geometry; Chog character/brand rights remain with their owners. Fan-art clearance pending; not official NFT art.',assets},null,2)+'\n');
  }
 }
-await main();
+// Intentionally do NOT call main(): it would recreate the rejected invented Chog.
+// Human geometry and legacy layouts stay in source as references, not a production path.
+const freezeMessage='FROZEN: batch-01 layouts are reference-only; invented Pip is rejected. Await verified Genesis selection and one-hero execution approval. See docs/HERO_SCENE_APPROVAL.md.';
+if(process.argv.includes('--help')) console.log(freezeMessage);
+else { console.error(freezeMessage); process.exitCode=2; }

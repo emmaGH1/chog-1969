@@ -1,7 +1,17 @@
 {
   "schemaVersion": 1,
   "batch": "01",
-  "status": "draft-awaiting-visual-approval",
+  "status": "superseded-layout-studies-not-for-integration",
+  "productionGate": {
+    "rule": "Every Chog character must originate from a user-selected verified Chog Genesis NFT. Pip is a fictional nickname, not an invented replacement.",
+    "shippingPanelsApproved": false,
+    "legacyRendererFrozen": true,
+    "inventedPipUsable": false,
+    "selectionRecord": "/media/hero/selection.json",
+    "nextBrief": "docs/HERO_SCENE_APPROVAL.md",
+    "review": "https://github.com/emmaGH1/chog-1969/pull/8#pullrequestreview-5584906637",
+    "preservation": "Original SVG/raster files and their hashes are retained unchanged. Human designs, scripts and staging are references only; invented Pip is rejected."
+  },
   "previews": {
     "gallery": "/media/review.html",
     "contactSheet": "/media/contact-sheet.png"
@@ -36,7 +46,7 @@
         "fallback": "09e5bece3967f5b5185d62e77e3a9c375db5ea5716f227aa39304b66faeb8dad"
       },
       "alt": "neri model study: four views, two expressions and continuity notes.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "human-design-reference-only-not-final",
       "kind": "reference",
       "character": "neri"
     },
@@ -59,8 +69,8 @@
         "webp": "b710ef66e760b9f40266137de16edc69f009bd9231eba1542f332ff992ee9243",
         "fallback": "791626edbfe9cc001d708dd026cd21728ce4e0b3cb8d7dce333a3edad4658eb6"
       },
-      "alt": "pip model study: four views, two expressions and continuity notes.",
-      "status": "draft-awaiting-visual-approval",
+      "alt": "REJECTED invented Pip model study, retained only as historical evidence; not an NFT or a valid Chog character reference.",
+      "status": "rejected-invented-chog-do-not-use",
       "kind": "reference",
       "character": "pip"
     },
@@ -84,7 +94,7 @@
         "fallback": "6c1d4f2f05f98beb4fa2b3be0dd986156771b0750c1ed0437b5c85592670a1b3"
       },
       "alt": "sera model study: four views, two expressions and continuity notes.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "human-design-reference-only-not-final",
       "kind": "reference",
       "character": "sera"
     },
@@ -108,7 +118,7 @@
         "fallback": "7c19f8c5a2dfb6b4b92aa8ee33a34b129a51e0ba971ce4a77267fdb0483de5b1"
       },
       "alt": "rook model study: four views, two expressions and continuity notes.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "human-design-reference-only-not-final",
       "kind": "reference",
       "character": "rook"
     },
@@ -132,7 +142,7 @@
         "fallback": "7bfde5c098e8c99bb300423963d1c0a5586aedfd4a427e9d4c70001a30ba34ea"
       },
       "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-only-contains-rejected-invented-chog",
       "kind": "story-frame",
       "scene": "cover",
       "layout": "wide"
@@ -157,7 +167,7 @@
         "fallback": "f4bbacb0f8557bd76dc841c3e20b2e01e21ce871aa38774f5147a6645c6973fb"
       },
       "alt": "Neri stands in a towering monochrome archive with a forbidden page. A tiny, grinning violet Pip peeks beside her; the upper area is reserved for the title.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-only-contains-rejected-invented-chog",
       "kind": "story-frame",
       "scene": "cover",
       "layout": "portrait"
@@ -182,7 +192,7 @@
         "fallback": "ca0ae00b520f072f0f9df64070fd5710cb7fd4716b85718753f7bce5c20e0d35"
       },
       "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-reference-only-not-final",
       "kind": "story-frame",
       "scene": "archive",
       "layout": "wide"
@@ -207,7 +217,7 @@
         "fallback": "87301838c89f91b2b652330fd5f31d934ad82ebac8a942f68703358b9ed83636"
       },
       "alt": "Converging shelves and vaulted arches dwarf Neri as she examines an open record. Foreground ledgers frame the monochrome reading hall.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-reference-only-not-final",
       "kind": "story-frame",
       "scene": "archive",
       "layout": "portrait"
@@ -232,7 +242,7 @@
         "fallback": "eeedd4a6afe3ec9a2520531b4ec18a8c05952f0a924ed8a9ac7db2e13e3a5f45"
       },
       "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-reference-only-not-final",
       "kind": "story-frame",
       "scene": "neri-closeup",
       "layout": "wide"
@@ -257,7 +267,7 @@
         "fallback": "de4b678a68059c78797a2457f335cf05188e783bdf50e8601c32397b09c8cf5f"
       },
       "alt": "Neri looks up from a record with a doubtful expression. Her broken dark fringe, pale barrette, small under-eye mark and high archive collar remain visible.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-reference-only-not-final",
       "kind": "story-frame",
       "scene": "neri-closeup",
       "layout": "portrait"
@@ -282,7 +292,7 @@
         "fallback": "c1e348e231d3a6392e8965a85148f4b557b181ad39686e10288bee58a61aa720"
       },
       "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-only-contains-rejected-invented-chog",
       "kind": "story-frame",
       "scene": "pip-awakening",
       "layout": "wide"
@@ -307,7 +317,7 @@
         "fallback": "0292d9b707369d052c836fcb3bda33a17b2069e707e3068713ac65592ec22bc3"
       },
       "alt": "A grinning, spiky violet Pip springs from an illustrated page with a raised mitten hand. Neri recoils in surprise; loose paper flies across the black-and-white archive.",
-      "status": "draft-awaiting-visual-approval",
+      "status": "legacy-layout-only-contains-rejected-invented-chog",
       "kind": "story-frame",
       "scene": "pip-awakening",
       "layout": "portrait"
