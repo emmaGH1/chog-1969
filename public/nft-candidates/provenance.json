@@ -1,8 +1,10 @@
 {
   "chainId": 143,
   "collection": "0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763",
-  "blockNumber": "115047581",
-  "verifiedAt": "2026-10-20T13:05:53.713Z",
+  "blockNumber": "115054307",
+  "blockHash": "0x3e93129cdb9b0b84fc7a72a32a7f36c0171787a17a850d84a0bd168e676ffd49",
+  "blockTimestamp": "1792503547",
+  "verifiedAt": "2026-10-20T13:40:11.696Z",
   "approvalStatus": "Awaiting user selection; no candidate approved",
   "candidates": [
     {
@@ -75,10 +77,15 @@
       },
       "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1461.json",
       "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1969.json",
+      "metadataSha256": "d5f9d63b8d642f6b74216d9f70a137c26dc6825edf6493fdb52e9e61760b4cf5",
       "localArtwork": "/nft-candidates/token-1969.webp",
       "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1461.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
       "artworkSha256": "711ef9689122f1d03d65a1c1cef9b3efc3c73cc3de35e11b57c5f809c458d876",
-      "fictionalFit": "A smirking, bubblegum-chewing archive scout could give Pip a playful mask for moments of real danger."
+      "fictionalFit": "The Smirk, Bubblegum and Coin traits suggest a cheeky Pip who pockets an archive clue, blows a bubble, and pretends nothing happened."
     },
     {
       "tokenId": "969",
@@ -146,10 +153,15 @@
       },
       "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/461.json",
       "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-969.json",
+      "metadataSha256": "02a33cad15ae06d4e52767963b15c3a3cc3ddd00be81d119c9fe02d679e0f448",
       "localArtwork": "/nft-candidates/token-969.webp",
       "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/461.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
       "artworkSha256": "ff72b96ab121fec4b686fd1c4d335fd85b68cd904530b79830d5048101823664",
-      "fictionalFit": "The tearful eyes and cream tuxedo could make Pip a tender-hearted keeper of memories who finds courage beside Neri."
+      "fictionalFit": "The Round Tear eyes, normal smile and Cream Tuxedo could give a mischievous Pip an innocent-looking disguise for elaborate pranks and mock-apologetic escapes."
     },
     {
       "tokenId": "42",
@@ -217,10 +229,15 @@
       },
       "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1503.json",
       "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-42.json",
+      "metadataSha256": "fbe777b10b0e690d488a57209547a5a4adee62754f11aa6e105cc45fda8b2652",
       "localArtwork": "/nft-candidates/token-42.webp",
       "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1503.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
       "artworkSha256": "1639968a95ac12ab21c4d9acd9510812f0fc5d8b0a5f0d5336cb39e4bfbb0542",
-      "fictionalFit": "The plumber headwear and dark jacket could frame Pip as a practical escape-route tinkerer with an eye for hidden mechanisms."
+      "fictionalFit": "The Plumber headwear, BTC Coin and dark jacket could make Pip a sly gadget-tinkerer who rigs a harmless distraction before slipping through a secret exit."
     },
     {
       "tokenId": "1968",
@@ -284,10 +301,15 @@
       },
       "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1460.json",
       "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1968.json",
+      "metadataSha256": "95f215c6271cb9e82e2e442b95422c1b96b80461355e0cb4ecf5b187a9e1a617",
       "localArtwork": "/nft-candidates/token-1968.webp",
       "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1460.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
       "artworkSha256": "05bf2bac6eb6df26a0a6ec76b0c38dec6b4a138b9b9a3ddd94d7677c0009cb0d",
-      "fictionalFit": "The red palette, horns and burning aura could make Pip an intimidating-looking guardian whose loyalty surprises Neri."
+      "fictionalFit": "The Demon Horn, Burning Aura and Red Round Eye traits could suit a mischievous Pip who stages theatrical jump scares, then turns the fright into a joke."
     }
   ]
 }
