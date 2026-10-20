@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="07-rook-sent-to-find-you" speaker="rook" status="script-only">
+  <direction>Warm, quick harbor smuggler; a little air and a disarming half-smile. Begin conversationally, then drop the salesmanship for sent to find you. Do not assign a stereotyped accent or imitate a named actor.</direction>
+  <speak xml:lang="en"><prosody rate="102%">He's the reason I was <emphasis level="moderate">sent</emphasis> to find you.</prosody></speak>
+</performance>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="01-narrator-official-history" speaker="narrator" status="script-only">
+  <direction>Authoritarian but natural, like an archivist reading an uncontested public record. Mid-low register, measured breath, no movie-trailer growl. Small pause after the first sentence, isolate Chog, then let erased land coldly. Do not sound triumphant or imitate a real public figure.</direction>
+  <speak xml:lang="en"><prosody rate="92%">Two centuries ago, the world survived the creatures that nearly destroyed it.<break time="350ms"/> Their name was <emphasis level="moderate">Chog</emphasis>.<break time="450ms"/> Their memory was the last danger we <emphasis level="moderate">erased</emphasis>.</prosody></speak>
+</performance>

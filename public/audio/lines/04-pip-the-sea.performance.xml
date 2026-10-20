@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="04-pip-the-sea" speaker="pip" status="script-only">
+  <direction>Same voice as the boast, but the smile slips. Sea is a real sensory memory; door is discovered in the act of speaking. Final question is frightened and intimate, not a joke. Preserve natural breath rather than digital pitch manipulation.</direction>
+  <speak xml:lang="en"><prosody rate="91%">I remember the sea.<break time="350ms"/> And a door.<break time="500ms"/> Why can't I remember the rest?</prosody></speak>
+</performance>

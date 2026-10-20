@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="08-sera-my-mother" speaker="sera" status="script-only">
+  <direction>Same captain as line 05. No is controlled, a real pause, then a small private fracture on mother. Do not over-telegraph a reveal with sobbing. The weight comes from the contrast with her earlier precision.</direction>
+  <speak xml:lang="en"><prosody rate="88%">No.<break time="650ms"/> But my mother did.</prosody></speak>
+</performance>

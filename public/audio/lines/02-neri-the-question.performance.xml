@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Planning notation, not a provider-ready payload. Recordings do not exist. -->
+<performance id="02-neri-the-question" speaker="neri" status="script-only">
+  <direction>A 19-year-old adult, grounded and alert. Quiet question to herself, not a speech. Begin almost obediently; on still hunting let genuine doubt break through. Avoid a childlike anime squeak, melodrama or a shout.</direction>
+  <speak xml:lang="en"><prosody rate="97%">If they're all gone,<break time="230ms"/> why are we <emphasis level="moderate">still hunting</emphasis> them?</prosody></speak>
+</performance>

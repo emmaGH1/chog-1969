@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "status": "script-ready-recording-not-authorized",
+  "language": "en",
+  "source": "docs/VOICE_AND_DEMO.md",
+  "recordingsExist": false,
+  "provider": null,
+  "music": null,
+  "rights": "Text/performance directions authored for this fan-story project. No voice likeness, recording, stock music or provider license is supplied. Consent and provider budget approval required before recording or synthesis.",
+  "pronunciationProposals": {
+    "Neri": "NEH-ree (story-owner approval pending)",
+    "Pip": "pip",
+    "Sera": "SEH-rah (story-owner approval pending)",
+    "Rook": "rook, as in the chess piece",
+    "Chog": "chog, short o (brand pronunciation confirmation pending)"
+  },
+  "lines": [
+    {
+      "id": "01-narrator-official-history",
+      "speaker": "narrator",
+      "text": "Two centuries ago, the world survived the creatures that nearly destroyed it. Their name was Chog. Their memory was the last danger we erased.",
+      "scene": "official-history",
+      "direction": "Authoritarian but natural, like an archivist reading an uncontested public record. Mid-low register, measured breath, no movie-trailer growl. Small pause after the first sentence, isolate Chog, then let erased land coldly. Do not sound triumphant or imitate a real public figure.",
+      "rate": "92%",
+      "targetSecondsEstimate": [13, 17],
+      "markedText": "Two centuries ago, the world survived the creatures that nearly destroyed it.<break time=\"350ms\"/> Their name was <emphasis level=\"moderate\">Chog</emphasis>.<break time=\"450ms\"/> Their memory was the last danger we <emphasis level=\"moderate\">erased</emphasis>.",
+      "audioFile": null,
+      "plannedOutput": "01-narrator-official-history.mp3"
+    },
+    {
+      "id": "02-neri-the-question",
+      "speaker": "neri",
+      "text": "If they're all gone, why are we still hunting them?",
+      "scene": "neri-closeup",
+      "direction": "A 19-year-old adult, grounded and alert. Quiet question to herself, not a speech. Begin almost obediently; on still hunting let genuine doubt break through. Avoid a childlike anime squeak, melodrama or a shout.",
+      "rate": "97%",
+      "targetSecondsEstimate": [4, 6],
+      "markedText": "If they're all gone,<break time=\"230ms\"/> why are we <emphasis level=\"moderate\">still hunting</emphasis> them?",
+      "audioFile": null,
+      "plannedOutput": "02-neri-the-question.mp3"
+    },
+    {
+      "id": "03-pip-legendary",
+      "speaker": "pip",
+      "text": "Excuse me? I'm a legendary being of unimaginable power.",
+      "scene": "pip-awakening",
+      "direction": "Small mischievous spirit, nimble and self-important rather than shrill. Offended interruption on Excuse me, a comic half-beat, then absurdly sincere pride. Smile through legendary. Use an original consenting voice, not a recognizable cartoon impersonation.",
+      "rate": "104%",
+      "targetSecondsEstimate": [4, 6],
+      "markedText": "Excuse me?<break time=\"300ms\"/> I'm a <emphasis level=\"moderate\">legendary</emphasis> being of unimaginable power.",
+      "audioFile": null,
+      "plannedOutput": "03-pip-legendary.mp3"
+    },
+    {
+      "id": "04-pip-the-sea",
+      "speaker": "pip",
+      "text": "I remember the sea. And a door. Why can't I remember the rest?",
+      "scene": "memory-fragment-future-batch",
+      "direction": "Same voice as the boast, but the smile slips. Sea is a real sensory memory; door is discovered in the act of speaking. Final question is frightened and intimate, not a joke. Preserve natural breath rather than digital pitch manipulation.",
+      "rate": "91%",
+      "targetSecondsEstimate": [6, 9],
+      "markedText": "I remember the sea.<break time=\"350ms\"/> And a door.<break time=\"500ms\"/> Why can't I remember the rest?",
+      "audioFile": null,
+      "plannedOutput": "04-pip-the-sea.mp3"
+    },
+    {
+      "id": "05-sera-place-the-drawing",
+      "speaker": "sera",
+      "text": "Place the drawing on the floor. Your life depends on what you do next.",
+      "scene": "redactors",
+      "direction": "Controlled captain, adult and precise, mid-low register. The command is quiet because she expects obedience. Pause, then sincere danger beneath the authority; no shouting, hissing or villain caricature. Keep this voice identical to line 08.",
+      "rate": "94%",
+      "targetSecondsEstimate": [6, 8],
+      "markedText": "Place the drawing on the floor.<break time=\"350ms\"/> Your life depends on what you do <emphasis level=\"moderate\">next</emphasis>.",
+      "audioFile": null,
+      "plannedOutput": "05-sera-place-the-drawing.mp3"
+    },
+    {
+      "id": "06-witness-close-the-door",
+      "speaker": "chog-witness",
+      "text": "We ran toward the sea, not away from it. We were trying to close the door.",
+      "scene": "memory-seal",
+      "direction": "A distinct mature witness, weary and lucid; plain testimony, no supernatural growl. Stress toward only enough to overturn the official history. Closing the door was an urgent act of protection. Any memory-space reverb belongs in a later mix, never printed into the dry source.",
+      "rate": "92%",
+      "targetSecondsEstimate": [7, 10],
+      "markedText": "We ran <emphasis level=\"moderate\">toward</emphasis> the sea, not away from it.<break time=\"400ms\"/> We were trying to close the door.",
+      "audioFile": null,
+      "plannedOutput": "06-witness-close-the-door.mp3"
+    },
+    {
+      "id": "07-rook-sent-to-find-you",
+      "speaker": "rook",
+      "text": "He's the reason I was sent to find you.",
+      "scene": "harbor-future-batch",
+      "direction": "Warm, quick harbor smuggler; a little air and a disarming half-smile. Begin conversationally, then drop the salesmanship for sent to find you. Do not assign a stereotyped accent or imitate a named actor.",
+      "rate": "102%",
+      "targetSecondsEstimate": [3, 5],
+      "markedText": "He's the reason I was <emphasis level=\"moderate\">sent</emphasis> to find you.",
+      "audioFile": null,
+      "plannedOutput": "07-rook-sent-to-find-you.mp3"
+    },
+    {
+      "id": "08-sera-my-mother",
+      "speaker": "sera",
+      "text": "No. But my mother did.",
+      "scene": "photograph-cliffhanger",
+      "direction": "Same captain as line 05. No is controlled, a real pause, then a small private fracture on mother. Do not over-telegraph a reveal with sobbing. The weight comes from the contrast with her earlier precision.",
+      "rate": "88%",
+      "targetSecondsEstimate": [3, 5],
+      "markedText": "No.<break time=\"650ms\"/> But my mother did.",
+      "audioFile": null,
+      "plannedOutput": "08-sera-my-mother.mp3"
+    }
+  ]
+}
