@@ -1,7 +1,7 @@
 name: verify app
 on:
   push:
-    branches: [main, feat/story-engine, feat/nft-memory, feat/media-assets]
+    branches: [main, integration/pilot, feat/story-engine, feat/nft-memory, feat/media-assets]
   pull_request:
     branches: [main]
 jobs:
@@ -13,7 +13,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
+      - run: npm ci
       - run: npm test
       - run: npm run typecheck
       - run: npm run build
+      - name: Audit production dependencies
+        if: always()
+        run: npm audit --omit=dev --json > production-audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: production-dependency-audit
+          path: production-audit.json
