@@ -14,6 +14,7 @@ for info in "chog-story:chog-story" "chog-chain:chog-chain" "chog-media:chog-med
   test -d "$dir/.git" -o -f "$dir/.git" || { echo "Missing worktree $dir. Run bootstrap first"; exit 1; }
   git -C "$dir" fetch origin
   git -C "$dir" merge --ff-only origin/main || { echo "Could not advance $dirname; resolve this before starting"; exit 1; }
+  (cd "$dir" && npm install --no-audit --no-fund) || { echo "Dependency installation failed in $dirname"; exit 1; }
   tmux has-session -t "$session" 2>/dev/null || tmux new-session -d -s "$session" -c "$dir"
 done
 for info in "chog-story:docs/AGENT_STORY.md" "chog-chain:docs/AGENT_CHAIN.md" "chog-media:docs/AGENT_MEDIA.md"; do
