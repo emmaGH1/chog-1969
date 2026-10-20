@@ -1,7 +1,7 @@
 "use client";
 import {useEffect,useState} from "react";
+import {advanceProgress, canAdvance, INITIAL_PROGRESS, parseProgress, SAVE_KEY} from "./chapter/progress";
 import Link from "next/link";
-type Route="keep"|"burn"|null;
 const scenes=[
  {k:"s1",number:"01 / the official history",eyebrow:"VE YRA / CENTRAL ARCHIVE",headline:"HISTORY IS WRITTEN BY THE SURVIVORS.",body:"Two centuries ago, the world survived a terrible catastrophe. The Pale Accord says the Chogs caused it. Every scrap of their history was destroyed.",speaker:"neri",line:"if they're all gone, why are we still hunting them?"},
  {k:"s2",number:"02 / the sealed drawer",eyebrow:"RESTRICTED WING / AFTER DARK",headline:"SOME THINGS ARE NOT SUPPOSED TO BE FOUND.",body:"A discarded ledger points to a locked drawer. The only clue is that the first record reads 19 and the shipment label reads 69.",speaker:"neri",line:"who leaves a puzzle in a room full of forbidden records?"},
@@ -11,16 +11,28 @@ const scenes=[
  {k:"s6",number:"06 / the photograph",eyebrow:"FREEWAKE HARBOR / DEPARTURE",headline:"THE TRUTH HAS A PRICE.",body:"A smuggler named Rook helps Neri escape and hands her a photograph. Her missing brother stands beside Chog drawings. Someone has been waiting for her.",speaker:"sera",line:"no. but my mother did."},
 ] as const;
 export default function ChapterExperience(){
- const [index,setIndex]=useState(0),[code,setCode]=useState(""),[unlocked,setUnlocked]=useState(false),[wrong,setWrong]=useState(0),[route,setRoute]=useState<Route>(null);
- const [restored,setRestored]=useState(false);
- useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem("chog1969:pilot")||"{}");if(typeof saved.index==="number")setIndex(Math.min(Math.max(saved.index,0),5));if(saved.unlocked)setUnlocked(true);if(saved.route==="keep"||saved.route==="burn")setRoute(saved.route);}catch{}setRestored(true);},[]);
- useEffect(()=>{if(restored)localStorage.setItem("chog1969:pilot",JSON.stringify({index,unlocked,route}));},[index,unlocked,route,restored]);
+ const [progress,setProgress]=useState(INITIAL_PROGRESS);
+ const {index,unlocked,route}=progress;
+ const [code,setCode]=useState(""),[wrong,setWrong]=useState(0);
+ const [restored,setRestored]=useState(false),[saveError,setSaveError]=useState(false);
+ useEffect(()=>{
+   try {setProgress(parseProgress(localStorage.getItem(SAVE_KEY)));}
+   catch {setSaveError(true);}
+   setRestored(true);
+ },[]);
+ useEffect(()=>{
+   if(!restored)return;
+   try {localStorage.setItem(SAVE_KEY,JSON.stringify(progress));setSaveError(false);}
+   catch {setSaveError(true);}
+ },[progress,restored]);
  const scene=scenes[index];
- function next(){if(index<5)setIndex(v=>v+1);}
- function check(){if(code.trim()==="1969"){setUnlocked(true);}else setWrong(v=>v+1);}
+ function next(){setProgress(advanceProgress);}
+ function check(){if(code.trim()==="1969"){setProgress(p=>({...p,unlocked:true}));}else setWrong(v=>v+1);}
+ if(!restored)return <section className="chapter-shell" aria-busy="true"><p role="status">Opening your chapter…</p></section>;
  return <section className="chapter-shell">
-   <div className="chapter-top"><Link href="/" className="link">← back to cover</Link><div className="progress-meta">CHAPTER 01 <span>{index+1} / 6</span></div><button className="quiet" onClick={()=>{setIndex(0);setCode("");setUnlocked(false);setRoute(null);}}>restart</button></div>
-   <div className="progress-track"><div style={{width:((index+1)/6*100)+"%"}}/></div>
+   <div className="chapter-top"><Link href="/" className="link">← back to cover</Link><div className="progress-meta">CHAPTER 01 <span>{index+1} / 6</span></div><button className="quiet" onClick={()=>{if(window.confirm("Restart Chapter One? This replaces your saved progress.")){setProgress({...INITIAL_PROGRESS});setCode("");setWrong(0);}}}>restart</button></div>
+   <p className="save-status" role="status">{saveError?"Progress could not be saved on this device. Keep this tab open to continue.":"Progress saved on this device · no sound required"}</p>
+   <div className="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin={1} aria-valuemax={6} aria-valuenow={index+1}><div style={{width:((index+1)/6*100)+"%"}}/></div>
    <div className={"manga-stage manga-"+scene.k}>
      <div className="manga-corner">REDACTED HISTORY / ARCHIVE 1969</div>
      <div className="manga-sigil" aria-hidden="true">{index===2?"✺":index===4?"✷":index===5?"≋":"◈"}</div>
@@ -43,12 +55,12 @@ export default function ChapterExperience(){
      {index===1&&unlocked&&<p className="unlock-message">✓ The drawer clicks open. An absurd little drawing smiles at you.</p>}
      {index===3&&!route&&<div className="interaction">
        <strong>WHAT DOES NERI DO?</strong>
-       <div className="choice-grid"><button onClick={()=>setRoute("keep")} className="choice">Keep the evidence <span>escape through maintenance</span></button><button onClick={()=>setRoute("burn")} className="choice">Burn the records <span>smoke hides your escape</span></button></div>
+       <div className="choice-grid"><button onClick={()=>setProgress(p=>({...p,route:"keep"}))} className="choice">Keep the evidence <span>escape through maintenance</span></button><button onClick={()=>setProgress(p=>({...p,route:"burn"}))} className="choice">Burn the records <span>smoke hides your escape</span></button></div>
      </div>}
      {index===3&&route&&<p className="unlock-message">{route==="keep"?"You save the documents, but a guard catches a glimpse of your face.":"The smoke conceals your escape, but an important record about Neri's brother is lost."}</p>}
      {index===4&&<div className="interaction"><strong>A REAL CHOG SEAL</strong><p>The Genesis collection exists on Monad. You can inspect its authentic onchain identity. We will only activate holder decisions after the contract and wallet flow are tested.</p><Link href="/archive" className="link">inspect a real Genesis token ↗</Link></div>}
      {index===5&&<div className="interaction"><strong>END OF CHAPTER ONE</strong><p>Next: the city that never existed.</p><Link href="/archive" className="link">explore the surviving seals ↗</Link></div>}
-     {index<5&&<button className="btn btn-primary advance" onClick={next} disabled={(index===1&&!unlocked)||(index===3&&!route)}>continue the story <span>→</span></button>}
+     {index<5&&<button className="btn btn-primary advance" onClick={next} disabled={!canAdvance(progress)}>continue the story <span>→</span></button>}
    </article>
  </section>;
 }
