@@ -9,6 +9,8 @@ const mock = `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 contract MockGenesis {
  mapping(uint256 => address) public holders;
+ mapping(uint256 => address) public approved;
+ function approve(uint256 id, address operator) external { require(msg.sender==holders[id]); approved[id]=operator; }
  function mint(uint256 id, address holder) external { require(holders[id]==address(0)); holders[id]=holder; }
  function ownerOf(uint256 id) external view returns(address) { require(holders[id]!=address(0), "nonexistent"); return holders[id]; }
  function transfer(uint256 id, address to) external { require(msg.sender==holders[id]); holders[id]=to; }
@@ -31,7 +33,7 @@ test("MemoryLedger local EVM: owner authorization, permanence and transfer inher
  const genesis=await deploy("MockGenesis.sol","MockGenesis");
  const ledger=await deploy("MemoryLedger.sol","MemoryLedger",[genesis]);
  const abi=artifact("MemoryLedger.sol","MemoryLedger").abi;
- const mockAbi=parseAbi(["function mint(uint256,address)","function transfer(uint256,address)"]);
+ const mockAbi=parseAbi(["function mint(uint256,address)","function transfer(uint256,address)","function approve(uint256,address)"]);
  async function write(address:Address, abi:Abi, functionName:string,args:readonly unknown[],account=owner) {
   const hash=await wallet.writeContract({chain:null,address,abi,functionName,args,account,gas:BigInt(500000)});
   const receipt=await client.waitForTransactionReceipt({hash}); assert.equal(receipt.status,"success");return receipt;
@@ -50,14 +52,21 @@ test("MemoryLedger local EVM: owner authorization, permanence and transfer inher
   }
   await write(genesis,mockAbi,"mint",[BigInt(1969),owner]);
   assert.equal((await read(BigInt(1969))).choice,0);
-  await rejects("awaken",[BigInt(1969),1],stranger,"NotOwner");
+  await write(genesis,mockAbi,"approve",[BigInt(1969),stranger]);
+  await rejects("awaken",[BigInt(1969),1],stranger,"NotOwner"); // Even an approved ERC721 operator cannot awaken.
+  const rejectedHash=await wallet.writeContract({chain:null,address:ledger,abi,functionName:"awaken",args:[BigInt(1969),1],account:stranger,gas:BigInt(500000)});
+  assert.equal((await client.waitForTransactionReceipt({hash:rejectedHash})).status,"reverted");
+  assert.equal((await read(BigInt(1969))).choice,0);
   await rejects("awaken",[BigInt(1969),0],owner,"BadChoice");
   await rejects("awaken",[BigInt(1969),3]); // ABI enum decoding rejects out-of-range choices.
   await rejects("awaken",[BigInt(0),1]); // Nonexistent NFT.
   const receipt=await write(ledger,abi,"awaken",[BigInt(1969),1]);
   const event=decodeEventLog({abi,data:receipt.logs[0].data as Hex,topics:receipt.logs[0].topics});
   assert.equal(event.eventName,"Awakened");
-  assert.equal((event.args as unknown as {tokenId:bigint}).tokenId,BigInt(1969));
+  const eventArgs=event.args as unknown as {tokenId:bigint;owner:Address;choice:number};
+  assert.equal(eventArgs.tokenId,BigInt(1969));
+  assert.equal(eventArgs.owner.toLowerCase(),owner.toLowerCase());
+  assert.equal(eventArgs.choice,1);
   const memory=await read(BigInt(1969));
   assert.equal(memory.choice,1); assert.equal(memory.awakenedBy.toLowerCase(),owner.toLowerCase());
   assert.equal(memory.at,(await client.getBlock({blockNumber:receipt.blockNumber})).timestamp);
