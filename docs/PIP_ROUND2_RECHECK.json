@@ -1,0 +1,589 @@
+{
+  "chainId": 143,
+  "collection": "0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763",
+  "collectionName": "Chog Genesis",
+  "erc721InterfaceSupported": true,
+  "blockNumber": "115066469",
+  "blockHash": "0xeff23aa64b32bee8b3abc2fa38c90e159de24f2d80b8e2535770e7396e54999a",
+  "chainTimestamp": "1792507232",
+  "checkedAt": "2026-10-20T14:42:00.363Z",
+  "method": "Fresh read-only RPC and original IPFS metadata/artwork retrieval; holder addresses discarded; SHA-256 comparison, not independent IPFS CID verification.",
+  "results": [
+    {
+      "tokenId": "1552",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1044.json",
+      "metadataName": "CHOG #1044",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Lime Green"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Pink"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Left"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Army Vest"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Smile"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "XD"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Buttcoin Cap"
+        },
+        {
+          "trait_type": "Accessory",
+          "value": "Heart"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Uncommon"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1044.json",
+      "metadataSha256": "73bc53954011bfa8ee29e475c124315cf79ff17a96b45695af510ba8bdd84be4",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "30ef8605c9c80a91d1d7d6238200ecf3333faa388744e0d1b5b86834ba017aa6",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "1053",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/545.json",
+      "metadataName": "CHOG #545",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Fresh Green"
+        },
+        {
+          "trait_type": "Aura",
+          "value": "Light Purple"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Yellow"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Stripes"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Smile"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Happy"
+        },
+        {
+          "trait_type": "Head",
+          "value": "MMGA Cap"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/545.json",
+      "metadataSha256": "298de1bbc95adb946e40d9601a3b16bc2cfbb2e8d914819d49d132436d971037",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "47538955fbb298e3dc0b29f3f4e4f47f6a5c15f92f0e264295b59353be317b5c",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "1428",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/920.json",
+      "metadataName": "CHOG #920",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Aqua Mint"
+        },
+        {
+          "trait_type": "Aura",
+          "value": "Cool Aura"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Red"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Yellow Yukata"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Smile"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Tired"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Clown Nose"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/920.json",
+      "metadataSha256": "8101d3af4733435bfb94b3f231311242007162600a3b4baa0b16085822bea9b3",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "677d6f2b786ef702c0fa577cd977cadc03b69bac55917913c569ce42ded55835",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "846",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/338.json",
+      "metadataName": "CHOG #338",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Fresh Green"
+        },
+        {
+          "trait_type": "Aura",
+          "value": "Fire"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Yellow"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "White tuxedo"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Gold Tooth"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Dead"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Wizard Hat"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/338.json",
+      "metadataSha256": "41f997e777c57636e3669f56e70a825ffc0240efec51738e9d0ee5a33cb60cad",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "11da0323d2a63ff762a30eef6d229582c6cb00ab7c88484adffba285de6ec091",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "1848",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1340.json",
+      "metadataName": "CHOG #1340",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Fresh Green"
+        },
+        {
+          "trait_type": "Aura",
+          "value": "Royal Blue Aura"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Yellow"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Squid Game Guard"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Bubblegum"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Normal Eye"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Crown"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1340.json",
+      "metadataSha256": "a4cf87d325be25dfd8391e31897c719337291222559590a12f1325a06f5f3e76",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "74fb2f42d2d8dca692e95c8c0026fae7fb14c593de210b128315f0bc2580db75",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "467",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1928.json",
+      "metadataName": "CHOG #1928",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Peach Pink"
+        },
+        {
+          "trait_type": "Aura",
+          "value": "Mint"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Pink"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Red shirt"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Drooling"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Green laser"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Orange Bucket Cap"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1928.json",
+      "metadataSha256": "03ae8311668c1b16f0eadac0a4605bcf34fde4a573af68486deab3cebb2a20bc",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "d4a44ebca5a31a282d78fe5222f41b9c8fad66f314f81922f5b5bc31a4709e75",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "512",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/4.json",
+      "metadataName": "CHOG #4",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Rosy Pink"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Left"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Grey Shirt"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "Mon coin"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Chog Viper"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Choggie Beanie"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Uncommon"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/4.json",
+      "metadataSha256": "6122fa9685f22d7dfbf5c81aed61b1ec35e861b23fdaf4d12152530f4eeca659",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "c2054a4ecf68b5163a40d884997f07aff6b6caab970f6528a441305e4b0038b7",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    },
+    {
+      "tokenId": "1620",
+      "status": "verified-matching",
+      "existenceVerified": true,
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1112.json",
+      "metadataName": "CHOG #1112",
+      "description": "CHOG — a 1969-piece collection on Monad.",
+      "traits": [
+        {
+          "trait_type": "Background",
+          "value": "Light Purple"
+        },
+        {
+          "trait_type": "Base",
+          "value": "Origin"
+        },
+        {
+          "trait_type": "Skin",
+          "value": "Red"
+        },
+        {
+          "trait_type": "Side",
+          "value": "Right"
+        },
+        {
+          "trait_type": "Body",
+          "value": "Black Trackset"
+        },
+        {
+          "trait_type": "Mouth",
+          "value": "wo"
+        },
+        {
+          "trait_type": "Eyes",
+          "value": "Dead"
+        },
+        {
+          "trait_type": "Head",
+          "value": "Gray Bucket Cap"
+        },
+        {
+          "trait_type": "Form",
+          "value": "Chog"
+        },
+        {
+          "trait_type": "Tier",
+          "value": "Common"
+        },
+        {
+          "trait_type": "Naked",
+          "value": "No"
+        }
+      ],
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1112.json",
+      "metadataSha256": "bc6d98b4277abdbda06223e5952f243460ab6b92edd547913fd461502ac4a23d",
+      "artworkURI": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp",
+      "artworkSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "51c755095cb8bdd66ef5136455ea93062778a954f11c8e5ee588ba365474e763",
+      "comparisonToGallery": {
+        "tokenURI": true,
+        "metadataName": true,
+        "metadataSha256": true,
+        "artworkSha256": true,
+        "dimensions": true
+      }
+    }
+  ]
+}

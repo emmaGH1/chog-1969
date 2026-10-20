@@ -1,0 +1,942 @@
+{
+  "chainId": 143,
+  "collection": "0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763",
+  "blockNumber": "115063901",
+  "blockHash": "0xc3959c32422d7e3965d35bef9846a922d424b49fcf9bf0c9faf186230532a488",
+  "blockTimestamp": "1792506454",
+  "verifiedAt": "2026-10-20T14:30:42.617Z",
+  "approvalStatus": "Awaiting user selection; no candidate approved",
+  "requestedTokenIds": [
+    "1969",
+    "969",
+    "42",
+    "1968",
+    "1552",
+    "1053",
+    "1428",
+    "846",
+    "1848",
+    "467",
+    "512",
+    "1620"
+  ],
+  "verificationFailures": [],
+  "candidates": [
+    {
+      "tokenId": "1969",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1461.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1461",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1461.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1461.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1461.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Deep Blue"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Smoke"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Left"
+          },
+          {
+            "trait_type": "Body",
+            "value": "dark jacket"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Bubblegum"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Smirk"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Chog Cap"
+          },
+          {
+            "trait_type": "Accessory",
+            "value": "Coin"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Uncommon"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://ipfs.filebase.io/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1461.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1969.json",
+      "metadataSha256": "d5f9d63b8d642f6b74216d9f70a137c26dc6825edf6493fdb52e9e61760b4cf5",
+      "localArtwork": "/nft-candidates/token-1969.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1461.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "711ef9689122f1d03d65a1c1cef9b3efc3c73cc3de35e11b57c5f809c458d876",
+      "archetype": "Playful adventure companion",
+      "fictionalFit": "The Smirk, Bubblegum and Coin traits suggest a cheeky Pip who pockets an archive clue, blows a bubble, and pretends nothing happened."
+    },
+    {
+      "tokenId": "969",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/461.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #461",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/461.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/461.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/461.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Soft Lavender"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Light Purple"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Yellow"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Cream Tuxedo"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "normal smile"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Round Tear"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Mon Cap"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/461.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-969.json",
+      "metadataSha256": "02a33cad15ae06d4e52767963b15c3a3cc3ddd00be81d119c9fe02d679e0f448",
+      "localArtwork": "/nft-candidates/token-969.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/461.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "ff72b96ab121fec4b686fd1c4d335fd85b68cd904530b79830d5048101823664",
+      "archetype": "Playful adventure companion",
+      "fictionalFit": "The Round Tear eyes, normal smile and Cream Tuxedo could give a mischievous Pip an innocent-looking disguise for elaborate pranks and mock-apologetic escapes."
+    },
+    {
+      "tokenId": "42",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1503.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1503",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1503.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1503.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1503.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Deep Aqua"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Smoke"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Pink"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Left"
+          },
+          {
+            "trait_type": "Body",
+            "value": "dark jacket"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "BTC Coin"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Base"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Plumber"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Uncommon"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1503.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-42.json",
+      "metadataSha256": "fbe777b10b0e690d488a57209547a5a4adee62754f11aa6e105cc45fda8b2652",
+      "localArtwork": "/nft-candidates/token-42.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1503.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "1639968a95ac12ab21c4d9acd9510812f0fc5d8b0a5f0d5336cb39e4bfbb0542",
+      "archetype": "Mystery / secret-keeper",
+      "fictionalFit": "The Plumber headwear, BTC Coin and dark jacket could make Pip a sly gadget-tinkerer who rigs a harmless distraction before slipping through a secret exit."
+    },
+    {
+      "tokenId": "1968",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1460.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1460",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1460.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1460.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1460.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Radioactive"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Burning Aura"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Radioactive"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Red"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Left"
+          },
+          {
+            "trait_type": "Body",
+            "value": "White Sleeveless"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Red Round Eye"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Demon Horn"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Epic"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1460.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1968.json",
+      "metadataSha256": "95f215c6271cb9e82e2e442b95422c1b96b80461355e0cb4ecf5b187a9e1a617",
+      "localArtwork": "/nft-candidates/token-1968.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1460.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "05bf2bac6eb6df26a0a6ec76b0c38dec6b4a138b9b9a3ddd94d7677c0009cb0d",
+      "archetype": "Dangerous-looking ally",
+      "fictionalFit": "The Demon Horn, Burning Aura and Red Round Eye traits could suit a mischievous Pip who stages theatrical jump scares, then turns the fright into a joke."
+    },
+    {
+      "tokenId": "1552",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1044.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1044",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Lime Green"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Pink"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Left"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Army Vest"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Smile"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "XD"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Buttcoin Cap"
+          },
+          {
+            "trait_type": "Accessory",
+            "value": "Heart"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Uncommon"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1044.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1552.json",
+      "metadataSha256": "73bc53954011bfa8ee29e475c124315cf79ff17a96b45695af510ba8bdd84be4",
+      "localArtwork": "/nft-candidates/token-1552.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1044.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "30ef8605c9c80a91d1d7d6238200ecf3333faa388744e0d1b5b86834ba017aa6",
+      "archetype": "Playful adventure companion",
+      "fictionalFit": "The XD eyes, Smile and Heart accessory could make Pip an exuberant prankster whose Army Vest cannot hide a soft spot for Neri."
+    },
+    {
+      "tokenId": "1053",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/545.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #545",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Fresh Green"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Light Purple"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Yellow"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Stripes"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Smile"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Happy"
+          },
+          {
+            "trait_type": "Head",
+            "value": "MMGA Cap"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/545.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1053.json",
+      "metadataSha256": "298de1bbc95adb946e40d9601a3b16bc2cfbb2e8d914819d49d132436d971037",
+      "localArtwork": "/nft-candidates/token-1053.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/545.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "47538955fbb298e3dc0b29f3f4e4f47f6a5c15f92f0e264295b59353be317b5c",
+      "archetype": "Playful adventure companion",
+      "fictionalFit": "The Happy eyes, Smile and Stripes could suit a cheerful Pip who turns every forbidden passage into a mischievous adventure."
+    },
+    {
+      "tokenId": "1428",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/920.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #920",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Aqua Mint"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Cool Aura"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Red"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Yellow Yukata"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Smile"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Tired"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Clown Nose"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/920.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1428.json",
+      "metadataSha256": "8101d3af4733435bfb94b3f231311242007162600a3b4baa0b16085822bea9b3",
+      "localArtwork": "/nft-candidates/token-1428.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/920.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "677d6f2b786ef702c0fa577cd977cadc03b69bac55917913c569ce42ded55835",
+      "archetype": "Dry comic relief",
+      "fictionalFit": "The Tired eyes and Clown Nose could make Pip a deadpan trickster who insists the latest absurd distraction was entirely intentional."
+    },
+    {
+      "tokenId": "846",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/338.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #338",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Fresh Green"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Fire"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Yellow"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "White tuxedo"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Gold Tooth"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Dead"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Wizard Hat"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://ipfs.filebase.io/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/338.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-846.json",
+      "metadataSha256": "41f997e777c57636e3669f56e70a825ffc0240efec51738e9d0ee5a33cb60cad",
+      "localArtwork": "/nft-candidates/token-846.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/338.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "11da0323d2a63ff762a30eef6d229582c6cb00ab7c88484adffba285de6ec091",
+      "archetype": "Mystery / secret-keeper",
+      "fictionalFit": "The Wizard Hat, Gold Tooth and Dead eyes could frame Pip as a sly old secret-keeper who punctures ominous warnings with terrible jokes."
+    },
+    {
+      "tokenId": "1848",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1340.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1340",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Fresh Green"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Royal Blue Aura"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Yellow"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Squid Game Guard"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Bubblegum"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Normal Eye"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Crown"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1340.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1848.json",
+      "metadataSha256": "a4cf87d325be25dfd8391e31897c719337291222559590a12f1325a06f5f3e76",
+      "localArtwork": "/nft-candidates/token-1848.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1340.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "74fb2f42d2d8dca692e95c8c0026fae7fb14c593de210b128315f0bc2580db75",
+      "archetype": "Mystery / secret-keeper",
+      "fictionalFit": "The Crown, Bubblegum and Squid Game Guard outfit could suit a secretive Pip who mischievously impersonates authority to sneak Neri past a checkpoint."
+    },
+    {
+      "tokenId": "467",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1928.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1928",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Peach Pink"
+          },
+          {
+            "trait_type": "Aura",
+            "value": "Mint"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Pink"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Red shirt"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Drooling"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Green laser"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Orange Bucket Cap"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1928.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-467.json",
+      "metadataSha256": "03ae8311668c1b16f0eadac0a4605bcf34fde4a573af68486deab3cebb2a20bc",
+      "localArtwork": "/nft-candidates/token-467.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1928.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "d4a44ebca5a31a282d78fe5222f41b9c8fad66f314f81922f5b5bc31a4709e75",
+      "archetype": "Dangerous-looking ally",
+      "fictionalFit": "The Green laser eyes, Drooling and Orange Bucket Cap could make Pip a chaotic-looking ally whose ridiculous diversions hide surprisingly useful clues."
+    },
+    {
+      "tokenId": "512",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/4.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #4",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Rosy Pink"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Left"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Grey Shirt"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "Mon coin"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Chog Viper"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Choggie Beanie"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Uncommon"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/4.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-512.json",
+      "metadataSha256": "6122fa9685f22d7dfbf5c81aed61b1ec35e861b23fdaf4d12152530f4eeca659",
+      "localArtwork": "/nft-candidates/token-512.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/4.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "c2054a4ecf68b5163a40d884997f07aff6b6caab970f6528a441305e4b0038b7",
+      "archetype": "Mystery / secret-keeper",
+      "fictionalFit": "The Chog Viper eyes, Choggie Beanie and Mon coin could suit a sly archive thief whose coin obsession turns clue-hunting into mischief."
+    },
+    {
+      "tokenId": "1620",
+      "tokenURI": "ipfs://bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1112.json",
+      "collectionName": "Chog Genesis",
+      "existenceVerified": true,
+      "metadata": {
+        "name": "CHOG #1112",
+        "description": "CHOG — a 1969-piece collection on Monad.",
+        "image": "ipfs://bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp",
+        "imageUrls": [
+          "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp",
+          "https://ipfs.filebase.io/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp"
+        ],
+        "attributes": [
+          {
+            "trait_type": "Background",
+            "value": "Light Purple"
+          },
+          {
+            "trait_type": "Base",
+            "value": "Origin"
+          },
+          {
+            "trait_type": "Skin",
+            "value": "Red"
+          },
+          {
+            "trait_type": "Side",
+            "value": "Right"
+          },
+          {
+            "trait_type": "Body",
+            "value": "Black Trackset"
+          },
+          {
+            "trait_type": "Mouth",
+            "value": "wo"
+          },
+          {
+            "trait_type": "Eyes",
+            "value": "Dead"
+          },
+          {
+            "trait_type": "Head",
+            "value": "Gray Bucket Cap"
+          },
+          {
+            "trait_type": "Form",
+            "value": "Chog"
+          },
+          {
+            "trait_type": "Tier",
+            "value": "Common"
+          },
+          {
+            "trait_type": "Naked",
+            "value": "No"
+          }
+        ]
+      },
+      "metadataSource": "https://gateway.pinata.cloud/ipfs/bafybeid4ybujnscdipkno7ps5utqelp5ry5ryreqhay3zhgk3a6x4jruqu/1112.json",
+      "metadataWarning": null,
+      "localMetadata": "/nft-candidates/token-1620.json",
+      "metadataSha256": "bc6d98b4277abdbda06223e5952f243460ab6b92edd547913fd461502ac4a23d",
+      "localArtwork": "/nft-candidates/token-1620.webp",
+      "imageSource": "https://gateway.pinata.cloud/ipfs/bafybeihau2egcccbdxymeckmmbrqytbfor5gkt3en6d5fsbueymdbq7g6e/1112.webp",
+      "artworkMime": "image/webp",
+      "artworkWidth": 1000,
+      "artworkHeight": 1000,
+      "artworkSha256": "51c755095cb8bdd66ef5136455ea93062778a954f11c8e5ee588ba365474e763",
+      "archetype": "Dry comic relief",
+      "fictionalFit": "The Dead eyes, Gray Bucket Cap and Black Trackset could suit a dryly comic Pip who delivers one unimpressed remark while quietly orchestrating a prank."
+    }
+  ]
+}
