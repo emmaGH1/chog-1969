@@ -1,22 +1,23 @@
 # CHOG / 1969
-
 **the world forgot. the chain didn't.**
 
-An original fan-made, interactive motion-manga adventure for Chogathon 2026, built around authentic Chog Genesis NFTs on Monad.
-
-## Product
-- **Chapter 1:** The Drawing That Remembered. A reader-first mobile interactive story with archive investigation, a four-digit puzzle, Pip's awakening, branching escape and a cliffhanger.
-- **The Archive:** A public viewer of genuine Chog Genesis NFTs with separate actual NFT token IDs (do not confuse them with marketplace display numbers).
-- **Awakening:** Onchain canonical decisions can only be committed by the real owner of the corresponding token; the memory history remains tied to the token across transfers.
-- **Demo:** Under 3 minutes, showing real deployed interactions, and distinguishing tests from mainnet transactions.
+An independent, fan-made interactive motion-manga experience for Chogathon. The pale world has forgotten the Chogs. Their real Genesis NFTs are the surviving identities.
 
 ## Status
-Initial production setup. Do **not** claim a deployed contract, integrated NFT verification, artwork or completed chapters before those actually exist.
+**Foundation scaffold committed, not a finished application.** The chapter, read-only NFT proof and local-state player journey are development starting points. Artwork, voice, wallet-gated decisions, contract deployment, live testing and demo video are not finished.
 
-## Development
-See `docs/START_HERE.md` for agent handoffs and safe merge rules. Next.js app starts with `npm install && npm run dev`.
+## Run
+1. Install Node.js 20+ and run npm install.
+2. Copy .env.example to .env.local (optional; public Monad RPC default is configured).
+3. Run npm run dev and visit localhost:3000.
+4. Run npm run typecheck and npm run build before merging.
 
-**Official sites:** https://chog.xyz/ · https://chogathon.chog.xyz/  
-**Genesis NFT:** Monad ERC-721 at `0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763`
+Routes: / (cover), /chapter/1 (interactive pilot), /archive (read-only Genesis chain verification).
 
-This is an independent hackathon fan project, not official Chog canon. Never enter wallet seed phrases or private keys into an agent or repository.
+## Contract identity
+Monad mainnet chain ID 143; Chog Genesis ERC-721: 0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763. Do not confuse it with the CHOG fungible token. Verify these references before any deployment.
+
+## Docs
+Read docs/START_HERE.md and docs/ART_DIRECTION.md. Separate agents should only work on their designated branches and directories. Never commit secrets, pretend a guest has holder rights, or label simulated transactions as mainnet.
+
+This fan-created alternate-universe story is not official Chog canon.
