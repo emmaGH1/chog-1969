@@ -1,6 +1,8 @@
 # CHOG / 1969 — 2:40 genuine-app demo plan
 
-Issue #10 · source: `integration/pilot` · **script/shot plan only; no video captured or uploaded**.
+Issue #10 · source: `integration/pilot` · **shot plan + executable no-video rehearsal prepared; no final video captured or uploaded**.
+
+Runbook and guarded real-browser tooling: [`DEMO_CAPTURE_WORKFLOW.md`](DEMO_CAPTURE_WORKFLOW.md). Start with `npm run demo:preflight` and `npm run demo:check`; final recording stays blocked until genuine visual approval and integrated approved art.
 
 ## Capture gate
 
