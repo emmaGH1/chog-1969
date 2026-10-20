@@ -16,6 +16,7 @@
 .evidenceTabs button { border: 2px solid #161220; background: #fffdf6; color: #161220; min-height: 48px; padding: 12px; font-weight: 750; box-shadow: 3px 3px 0 #161220; }
 .evidenceTabs button[aria-pressed="true"] { background: #e5d5ff; box-shadow: none; }
 .evidenceNote { min-height: 3em; line-height: 1.6; font-size: 14px; }
+.escapePlan button:disabled { color: #161220; opacity: .7; }
 .escapePlan button[aria-pressed="true"] { border: 2px solid #794cfa; background: #e5d5ff; opacity: 1; }
 .reader input { scroll-margin-bottom: 100px; }
 .reader :global(.manga-stage) { align-items: flex-end; }
