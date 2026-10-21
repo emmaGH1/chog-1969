@@ -1,100 +1,66 @@
-# One cinematic Genesis hero — approval brief, not produced artwork
+# Approved Archivist Neri + authentic Pip — return storyboards/workflow for creative approval
 
-## Current decision / authority
+**DIRECTION APPROVED:** L2, The Drawer They Cleared, incorporating L1's erased-index-versus-surviving-record comparison. Four actual local PNG planning thumbnails now visualize this one event; see **`docs/AWAKENING_STORYBOARDS.md`** v3. They use labeled actor masses, not Neri illustration, and are not final art. Workflow/capability report: **`docs/AWAKENING_CREATIVE_WORKFLOW.md`** v3. The user requested a documentation-only push to `feat/media-assets`; no final render, private-image publication or deployment is authorized by that request.
 
-**HOLD. No token has been approved as Pip and no new scene has been rendered.** Read the review on [PR #8](https://github.com/emmaGH1/chog-1969/pull/8#pullrequestreview-5584906637) and the [next-sprint handoff](https://github.com/emmaGH1/chog-1969/pull/8#issuecomment-6291024795). The canonical NFT override in `docs/ART_DIRECTION.md`, read from main at `3438ab3`, supersedes the old invented-spirit design. Integration acceptance: `docs/INTEGRATION_SPRINT.md` on main / issue #9.
+## Current authority
 
-All Chog characters must originate from actual verified Genesis NFTs, not just Pip or the surviving-seal inserts. Pip is a fictional nickname/role for a **specific user-selected token**, not a new collectible, metadata rename, unverified token number or replacement mascot. The old invented Pip is rejected as character art. Token ID `1969` / metadata display `CHOG #1461` is only a possible candidate reported by Chain, **not** the user's choice.
+**Neri selection is complete. Do not redesign her or generate more concepts.** Main commit `d0027e8d98bc31a5440eda8239a5d16eb8880259`, copied unchanged as `docs/NERI_APPROVED_CANON.md`, and [latest PR #8 approval](https://github.com/emmaGH1/chog-1969/pull/8#issuecomment-6303520941) approve the exact **original Neri A / The Archivist, brown-and-cream design**. This is not the earlier written Restorer A, rejected vector schoolgirl, or later Chog-themed variants.
 
-**Scope after selection:** exactly ONE exceptional awakening composition, delivered as a wide shot and a separately staged portrait. No later scenes, second chapter, generic Pip redraw, voice synthesis, deployment or spending. This document is a production proposal, not an asset or proof of integration.
+The exact supplied JPEG was received and checked before any drawing:
 
-## Chain coordination / selection packet
+- Received: `neri-approved-reference.jpg`.
+- Canonical local copy: `public/media/neri/neri-approved-reference.jpg`.
+- SHA-256: `395fe4d78c74d0a60d3c483509b3daf71d5e7241369a44973ce54101e5a5ee8e` — matches canonical document; both files byte-identical.
+- Actual format/dimensions: JPEG, **1229×1536**, 466,534 bytes.
+- Reference manifest: `public/media/neri/manifest.json`; character/execution gate: `public/media/neri/design-gate.json`.
 
-Request sent to [Chog Chain on PR #7](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061). **Shortlist now received:** [four authentic candidates](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md), [gallery screenshot](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/review/pip-gallery-desktop.jpg), [machine-readable provenance](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/public/nft-candidates/provenance.json), pinned to gallery commit `9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0` (current inspected Chain head `62e6851bdb92a8684f53ba3837bdba0404ce3de3`). Chain reports block `115047581`, UTC `2026-10-20T13:05:53.713Z`; this is a dated read-only snapshot, not holder consent. Media inspected the gallery/traits and independently matched all four original files to Chain's SHA-256 values and 1000×1000 WebP dimensions. No new RPC/CID verification is claimed and no original image was copied into our asset set. [Acknowledged receipt](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291795303); requested raw metadata bytes/hash and block hash for the eventual selected-token production packet. **No user selection exists yet.**
+The reference image is local/untracked, not committed or published. No public or external-reference-upload permission is inferred from design approval. The original transferred file remains untouched.
 
-Chain owns verification and the shortlist. Media does not select on the user's behalf. For each candidate request:
+## Technical method accepted — creative production signoff required first
 
-1. Canonical chain ID/collection address, **actual onchain token ID**, exact metadata display name, tokenURI, verification block number/hash/UTC and public evidence links. Keep display numbering distinct from token ID.
-2. Raw metadata file and SHA-256; original unmodified image URI, gateway/source URL, local file, MIME, dimensions and SHA-256. Hash the downloaded originals before any optimization; keep verification raw files separate from scene exports.
-3. Exact original trait names/values and a public gallery displaying each original **unchanged**, with a one-sentence clearly fictional role fit. No guessed traits from a thumbnail.
-4. User choice recorded by an explicit approval link/comment. Neither the project title nor a convenient existing API sample is selection approval.
-5. Source/trait review and rights evidence. Chain authenticity is not adaptation, reproduction or publication permission. No holder names, wallet addresses, holder likeness or endorsement claims in the creative packet.
+User approved **user-managed ChatGPT artwork from the exact Neri reference**, then local compositing of unchanged Chain-verified Pip. **New third-party services budget is $0. No paid API or external illustration service.** The agent/pipeline does not call image generation or upload sources. Do not request another tool budget for this approved intake/local-composite workflow.
 
-Pending state: `public/media/hero/selection.json`. All token, image, verification and output fields remain null until real evidence exists. The canonical collection address there is supplied project configuration, not a new independent RPC certification. Do not populate it with fixture data to unblock production.
+Tool audit: **`docs/ILLUSTRATION_TOOL_AUDIT.md`**. Existing Node/Sharp finishing is available; no native Pi reference-conditioned illustration route was verified. User-managed ChatGPT remains an external handoff, conditional on actual reference/export/no-new-spend access and applicable terms—not a capability inferred from a login. No text-only Antigravity generation, even for backgrounds.
 
-### Candidate-dependent art constraints — no selection implied
+Final illustration inputs have not arrived. **L2 direction with L1 evidence is approved**, but the new four visual thumbnails are planning only; they do not resolve native illustration capability or grant final-render permission. The holds are production clearance, verification of the actual external drawing handoff and missing wide/portrait real illustration bundles. No finished scene or production review render exists. Full artist brief, asset/layer requirements and commands: **`docs/CHATGPT_AWAKENING_HANDOFF.md`**. Policy and private workspace: `private-media/awakening/workflow.json`.
 
-These are alternative constraints on the **same** proposed hero event, not four commissioned scenes. Exact full traits remain in Chain's pinned provenance; the summaries below are not replacements for it.
+Use `node scripts/awakening-pipeline.mjs status` now. Only after explicit storyboard/workflow creative signoff, request final illustrations; then inspect actual assets and seal per-layout receipts. Both complete bundles and creative approval are required before `render --confirm-private-review`. Outputs go to Git-ignored `private-media/awakening/review/`, outside `public/`, with actual source/output hashes, comparison board and offline gallery. No server is started. `--require-ready`, final-art intake and render stay at exit 2 while creative signoff is pending; after signoff, both actual illustration bundles are also required.
 
-| Actual token ID → metadata name | Preserve if the user chooses it | Consequence for the one hero |
-| --- | --- | --- |
-| 1969 → CHOG #1461 | Chog Cap with its existing lettering, Bubblegum mouth, Smirk eyes, Coin accessory, dark jacket, Side Left; original colors/background/aura | Let authentic smirk/bubblegum carry the comedy against Neri's surprise. Frame the cap, bubblegum and coin clearly. Do not invent an open grin, greeting hand or replace cap lettering with generated text. Move Neri/camera rather than mirror the art. |
-| 969 → CHOG #461 | Round Tear eyes, normal smile, Mon Cap, Cream Tuxedo, Yellow skin, Side Right; original colors/background/aura | Play Neri's alarm against the token's actual vulnerable expression. Keep tears and tuxedo visible; do not erase tears into generic glossy eyes to fit the boast. The existing line may read as fictional bravado, not a canonical trait change. |
-| 42 → CHOG #1503 | Plumber headwear, BTC Coin mouth, Base eyes, dark jacket, Pink skin, Side Left; original colors/background/aura | Protect headwear and coin-mouth silhouette in both framings. Use Neri's grounded inspection pose and record mechanics for discovery; no invented prop or redraw that silently removes the coin. |
-| 1968 → CHOG #1460 | Demon Horn, Red Round Eye, Red skin, White Sleeveless, Radioactive base/background, Burning Aura, Side Left | Authentic red/radioactive colors override the proposed violet preference. Stage a restrained monochrome Neri reaction without adding a new threatening monster expression, extra horns or unverified anatomy. No whole-environment purple recolor. |
+No fallback drawing, text-only lookalike, Neri cutout posed as a new illustration, SVG replacement, generated Pip, extra scene, service call, source upload, new model/package install, deployment or publication. Both historical SVG renderers remain permanently frozen.
 
-Do not choose on creative fit alone or substitute metadata display numbers for token IDs. None of the candidate originals authorizes inventing an unseen full body, changing expression/pose or extracting a mascot silhouette without portrayal/rights review.
+## Exact appearance locks
 
-## Preserve / supersede
+Use the approved image itself for face, skin tone, eyes, proportion, short tousled black hair, gold hoops and acting. Dark sleeveless cropped top; cream tailored shorts; brown leather belt and thigh utility strap/pouches; earth-brown draped cloak with subtle archival/map linework; weathered satchel with scrolls/records; rugged brown buckled boots, practical glove/accessories and restrained antique-brass details. Brown/cream/charcoal palette.
 
-- **Preserve human identity:** `public/media/references/neri-sheet.*`, `sera-sheet.*`, `rook-sheet.*`. Keep Neri's short broken bob, viewer-right pale barrette and under-eye mark, adult age 19, practical dark uniform, pale high collar/two fasteners and worn diagonal satchel. Keep Sera's side-part/angular coat and Rook's swept hair/open collar/earring designs for continuity; neither needs to appear in this hero shot.
-- **Improve drawing, not identity:** build believable adult anatomy, natural neck/shoulder transitions, facial planes, hands and weighted cloth. Do not rigidly trace the schematic geometry or reuse the mannequin pose. Do not change age, hairstyle, costume markers or character ethnicity through an unrelated new design.
-- **Preserve script:** all eight `public/audio/lines/*.txt` and their existing direction files remain reference sources. The spoken Pip line stays exactly: “Excuse me? I'm a legendary being of unimaginable power.” Performance must later be reconciled with the selected NFT's personality without pretending that voice/role is canonical metadata. No audio generation now.
-- **Preserve layouts:** `public/media/frames/*` and the contact sheet stay unchanged as rejected first-pass staging studies, not shipping panels. The cover/awakening/Pip-sheet depictions are **not** NFT character references. Do not feed them to a model as Pip identity inputs. Their staged story beats may inform the new shot; their fabricated traits must not.
-- Old renderer is frozen to prevent accidental regeneration of the invented mascot. Existing raster/SVG hashes remain the preservation record. The next production workflow must be new, selection-bound and separately approved.
+Neri is 19, an apprentice archivist, intelligent and curious, able to move between solemn observation and exuberant adventure. Preserve guarded intelligence and the mystery/political tension of an erased-history world without returning to a stiff school-extra face. The chosen reference resolves design; it is not permission to redesign toward a franchise character or add purple/lime patterns, Chog branding, belts/trinkets or a new costume.
 
-## Hero concept — “The record looks back”
+## One-event staging — approved L2 with L1 evidence, planning images only
 
-**Emotional turn:** Neri expects a dead record. Someone real looks back, entirely unimpressed by her alarm. The institution becomes a physical threat around an intimate, funny encounter. The shot must communicate this before the reader sees a caption.
+**Neri discovers evidence of erased history; authentic CHOG #545 becomes the unexpected intrusion of color and personality.** Story leads the frame. The approved drawing language is authored 2D adventure manga: expressive faces, strong silhouettes, existing clothing construction, confident ink and restrained cel shading, informed by the supplied One Piece references without copying characters.
 
-### Cinematic staging, depth and acting
+- **Approved L2:** plain metal filing cabinets, practical pull-out reference shelf, institutional pressure and Neri turning into the discovery.
+- **Incorporated L1 evidence:** compare the erased official index directly against the corresponding surviving file. A scraped slot alone is insufficient. L1's separate desk scene and L3 are not additional scenes.
+- Four actual planning thumbnails show absence, comparison, wide reveal and independently arranged mobile recognition. Future final-art scope remains **1920×1080 wide** plus **1200×1600 portrait**, not four finished scenes. No new names, dates or dialogue are approved.
+- Metal filing cabinets, ordinary shelves, censored papers, worn walls, desks and practical light. Deliberate negative space, readable perspective and selective detail—not visual density as a proxy for quality.
+- **Previously generated ornate fantasy archive illustrations are excluded as references and production assets.** No excessive ornament, added glowing particles, golden haze, mystical machinery or generic AI-fantasy backgrounds. This does not authorize changing the NFT's genuine colors/aura.
+- Artist supplies connected anatomy, separate hand jobs and physical desk/shelf support. A plain folder/record is sufficient; no mandatory ornate/heavy folio. No Neri-sheet cutout collage or floating token card rescued with effects.
 
-- **Camera:** close, low three-quarter view from the opened record/drawer edge, roughly a natural 35–40 mm-equivalent perspective rather than a flat frontal character lineup. Establish one coherent perspective grid. Do not use lens distortion to enlarge heads or hide anatomy errors.
-- **Foreground:** drawer lip and the near edge of a worn folio cut across the bottom diagonal. Neri's bracing hand presses the wood with credible finger contact; her other hand supports the record's weight. A few paper fibers and a lifted corner explain the disturbance. No floating book that no one is holding.
-- **Middle plane:** Neri leans back a fraction, one shoulder turned toward danger while her hand remains planted. Her wrist, elbow and torso form a readable counter-diagonal. The satchel strap has weight and tension. An asymmetric lifted brow, widened focused eyes and a breath caught behind a slightly parted mouth express surprise becoming curiosity—not the old neutral vector face or a caricature scream.
-- **Chog plane:** put the **selected token's recognizable actual artwork/appearance** at the point where Neri looks. Determine apparent size and placement only after seeing its full original and traits. Its original eye line, face, silhouette, accessories and expression take precedence over our preferred gesture; move Neri/camera to meet the token, never invent a mitten, star-head, grin or paper collar. Mischief should come from the authentic character and the timing of the reveal.
-- **Background:** three receding shelf bays, irregular book spines, ladder/desk overlap and a distant high archive opening. Thick foreground ink, clear middle-plane contours, thinner distant marks. Shelf shadows should frame—not merge with—Neri's face and the Chog silhouette. This must look like a navigable archive, not a striped box or a symmetric prison grid.
-- **Light/ink:** a hard, narrow paper-white light defines Neri's cheek, knuckles and page edge, opposed by deep structural blacks. Use expressive tapered strokes, economical cross-hatch and selective screen tone; hand-inked quality, not the old smooth polygon geometry or a blur filter over it. Hue is not a substitute for depth.
+These are the required output canvases, not existing artwork. Both views must be independently composed/exported in ChatGPT; no automatic center crop, resize or placeholder base. New scene file/preview fields remain null in `public/media/hero/selection.json` until actual private files exist. Do not report old rejected exports as this deliverable.
 
-### Authenticity and color contract
+## Authentic Pip / original-versus-fiction contract
 
-- Present the selected original image **unchanged and completely visible** beside the proposed scene in the approval packet, with onchain ID, exact display name and attribution. Preserve the file bytes separately. Do not crop, recolor, draw over, re-encode or replace that archived original while calling it unmodified.
-- First decide whether the token can appear as its original image framed on the discovered record, with the surrounding humans/space doing the cinematic acting. Display scaling/panel framing must be distinguished from changing the source art. If that produces an obvious pasted-in card rather than a coherent story shot, request approval for a clearly labeled faithful scene interpretation; do not silently redesign it.
-- Any proposed interpretation is a **scene illustration**, not the NFT artwork or a metadata update. Review it side by side against every actual trait. Preserve recognizable outline, proportions, face, expression language, colors and accessories; no generalized purple substitute. Any change of pose/occluded trait needs explicit review, not an assumed license.
-- Selective project violet belongs to a restrained page-edge reflection or memory accent. The actual token's colors take precedence: do **not** recolor authentic non-violet traits to meet our palette. Keep Neri, architecture and props monochrome, with at most a narrow reflected violet edge. No neon tunnel, purple fog or portal blob. No new Chog characters in the background.
-- Keep dialogue, nickname, provenance labels and title in accessible HTML/captions, not generated lettering. Do not identify the holder or suggest official endorsement.
+Pip is **CHOG #545 / onchain token 1053**, Monad 143, Genesis contract `0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763`. Existing independent Chain evidence and exact raw metadata/art remain in `public/media/hero/originals/` and `public/media/hero/evidence/`.
 
-### One composition, two deliberate framings
+The original WebP and JSON stay byte-identical; no NFT redraw, recolor, crop, mirrored identity, new pose/anatomy, substitute mascot, metadata rename, holder identity or endorsement claim. Preserve Happy eyes, Smile, Yellow skin, Stripes, MMGA Cap lettering, Right side, Fresh Green background, Light Purple aura and all real traits. An in-story reveal can open protective paper around a complete unchanged source display; it cannot repaint the collectible to manufacture an awakening.
 
-| Output proposed after approval | Blocking and readable information |
-| --- | --- |
-| Wide, 1920×1080 | Near folio lower center; Neri occupies the left-middle diagonal; selected authentic Chog at the right-middle focus, with a clear eye-line connection; at least three depth planes. Keep approximately 8% side breathing room. Reserve a quiet region for dialogue without covering either face, hands or original trait markers. |
-| Portrait, 1200×1600 | Re-stage camera distance and folio angle: Neri face upper-left, verified Chog to center-right, bracing hand/record below. Same event, face, costume and token identity. No automatic center crop; retain the emotional connection and contact point at 375–390 px width. If the selected art's silhouette cannot fit, change the staging rather than amputate identifying traits. |
+Keep the original file separately accessible and clearly labeled beside any fictional scene. If a model/artist is approved for human/environment work, prefer keeping the NFT out of that service entirely and incorporating the genuine source locally with explicit source-versus-scene labeling. Do not assume upload/adaptation rights from public token metadata. Any required display transform is documented as scene framing, never called the original NFT file.
 
-These are proposed delivery dimensions, **not files that exist**. Record final framing after selection, not a token-independent lock. Keep a full-resolution master and optimize WebP/PNG delivery without modifying the archived NFT original.
+## Actual delivery and approval sequence
 
-### Interaction concept for Story to implement only after art approval
+1. **Done:** receive and hash-verify the exact approved Neri reference; retain authentic Pip evidence/originals.
+2. **Done:** record actual user approval of L2 with L1 evidence; produce four requested local layout thumbnails. **Now:** deliver planning visuals and push only storyboard/workflow documentation as requested. Report the native illustration-capability and missing-input blocker before any final render. Keep final-production/export gates closed; verify the accepted external reference/export/no-new-spend handoff before starting actual drawing. No more Neri concepts, agent generation or unapproved image publication.
+3. Only after creative signoff and both bundles pass intake, render **one awakening event only**, with wide and intentionally restaged mobile assets. Make an actual review board showing approved Neri reference, unchanged original NFT and both scene compositions; record real source/output paths, dimensions and hashes.
+4. Inspect hands, anatomy/contact, reference identity, source preservation, story/action readability, depth and mobile framing. Integrity checks are not aesthetic approval.
+5. Return actual files for **separate user hero approval** before Story/Integration incorporation or any further production.
 
-One physical illustrated interaction: inspect/lift the folio to reveal the genuine token image, then let Neri's reaction and a bounded ink/page separation sell the awakening. The selected art itself remains recognizable; no morph into the rejected generic Pip. A subtle framing shift or paper occlusion can reveal more of the same original without repainting its traits. An HTML focus/tap target must correspond to the real record in the illustration. Include keyboard activation, touch feedback, a reduced-motion still state and a guest skip. These are proposed behavior, not implemented or captured features. Do not make a chain call, wallet prompt or owner claim part of the reveal.
-
-## Execution gate / no spending
-
-1. Chain supplies 3–5 verified original candidates; user chooses the specific token for Pip.
-2. Approve exact source/traits and original-versus-interpretation treatment, attribution and usage rights.
-3. Approve this one-shot staging and an execution method capable of the requested quality. No new vector stand-in is an acceptable substitute for the review's higher-fidelity requirement. Preserve human continuity references and use only the selected authentic NFT as Chog identity input.
-4. If hiring an illustrator or using image generation, approve the **specific service/model, reference-upload permission, price/maximum attempts and budget before any job**. The image tool's availability is not proof of a free allowance; unknown cost stays blocked. A genuinely no-spend local workflow also needs a documented method, not an invented claim that art exists.
-5. Produce only the one wide/portrait hero, then return to review. Supply actual paths, hashes, metadata/trait mapping, original unchanged preview, interpretation label and mobile preview. Do not expand to the remaining scenes or synthesize voice just because one render succeeded.
-6. User approves the visual result separately from NFT choice; only then hand off for controlled app integration. Integration, publication/deployment, audio and chain transactions retain separate approvals.
-
-## Approval acceptance — compare against rejected first pass
-
-- [ ] A real, explicitly user-selected token binds Pip to chain ID + collection + token ID; display name is not used as token ID.
-- [ ] Unmodified original and verification packet are present; every trait and color survives the proposed depiction. No invented mascot geometry, unauthorized accessories, owner identity or metadata rename.
-- [ ] Neri is unmistakably the same adult design, now with convincing acting, facial planes, hands, posture, anatomy and cloth weight.
-- [ ] Record contact, eye lines, perspective and at least three depth planes read without explanatory text; scene is more than a mascot on a gradient or another flat vector layout.
-- [ ] Strong black/white value structure and deliberate line quality; token colors preserved, surrounding violet controlled.
-- [ ] Wide and portrait tell the same event; faces, authentic traits, hand/record contact and interaction target survive 375–390 px review.
-- [ ] Original NFT art versus scene interpretation clearly distinguished; rights, attribution, method and any spend evidenced.
-- [ ] Exactly one hero event, no additional scenes or audio generated; user art approval recorded before shipping.
-
-**Next required input:** the user's explicit token selection from Chain's delivered four-candidate gallery (or a request for another shortlist), then selected-source/traits, rights and execution approvals. The present commit delivers safeguards and a significantly more cinematic production brief, not the conditional finished hero artwork.
+No extra scenes, audio, spending, public push/publication, deployment, merge to main, wallet writes or transactions are authorized by this character approval. Rights/attribution and release approval remain separate, unresolved gates.

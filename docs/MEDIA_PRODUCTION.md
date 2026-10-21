@@ -1,77 +1,64 @@
-# Media production — review response / Genesis selection hold
+# Media production — storyboard/workflow creative approval before final illustration
 
-## Current authority and status
+**DIRECTION APPROVED:** L2 with L1's erased-index-versus-surviving-record comparison. Four actual private PNG layout thumbnails now visualize that one event (`docs/AWAKENING_STORYBOARDS.md` v3). See workflow/capability report (`docs/AWAKENING_CREATIVE_WORKFLOW.md` v3) before any final illustration or render. The user requests a documentation-only push to `feat/media-assets`, not publication of private/source/rejected images. Neri identity and the ChatGPT/local technical method remain accepted, but do not grant composition/production approval. Final-art intake and render are blocked for current review-document versions, even if assets arrive. No spending, deployment, unrelated scenes or new art.
 
-**First creative batch reviewed, NOT approved as final.** The PR #8 review and canonical NFT override on main supersede the invented Pip design and all earlier prompts that asked for it. `docs/ART_DIRECTION.md` now includes that main override. Current one-shot brief and approval sequence: **`docs/HERO_SCENE_APPROVAL.md`**.
+## Current scope and permission
 
-All Chog characters must originate from verified Chog Genesis NFTs. **Pip is only a fictional nickname for one actual, explicitly user-selected NFT.** The fabricated violet creature in batch 01 is rejected, not a candidate, approved adaptation or token image. Keep its historical files only to preserve the review record; do not generate, integrate or use them as Chog identity references.
+User approved artwork generated in **ChatGPT using the exact approved Neri reference**, then local compositing of genuine **CHOG #545 / onchain token 1053**. New third-party services budget **$0**. No paid API, external illustration service, agent image generation/upload, SVG replacement, new package/model installation, extra scenes, audio, deployment or publication.
 
-No token selection is approved in the inspected discussions. **Chain has now delivered four candidates:** onchain 1969 → CHOG #1461, 969 → CHOG #461, 42 → CHOG #1503, 1968 → CHOG #1460. [Pinned gallery](https://github.com/emmaGH1/chog-1969/blob/9316ddd26e7a25bd2c81dcb35f9124a9a4acd9d0/docs/PIP_CANDIDATES.md). Media inspected the gallery/traits and matched all four 1000×1000 WebP originals to Chain's recorded SHA-256 hashes at that commit; no images were copied here and no new RPC/CID certification is claimed. User choice remains the blocker. Token ID 1969 / metadata display CHOG #1461 is not automatically Pip. Do not infer a token from the project title or use display numbering as onchain ID.
+Exactly **one awakening event**, with separately composed **1920×1080 wide** and **1200×1600 portrait** views. Do not derive portrait by cropping wide. Reference/character approval is complete; do not generate Neri concepts or costume variants.
 
-Branch: `feat/media-assets`. Ownership remains media/docs/media scripts only. No application/contract changes, deployment, purchases, paid generation calls, wallet actions or secrets. The pre-existing untracked `package-lock.json` remains untouched.
+**Current state: L2/L1 hybrid direction approved; four visual planning thumbnails produced privately. No finished illustration or production review render exists.** Tool audit: `docs/ILLUSTRATION_TOOL_AUDIT.md`. Node/Sharp finishing is available; no native reference-conditioned Pi generator was verified. The user-managed ChatGPT drawing step is an external dependency requiring actual reference/export/no-new-spend checks before a job. Do not use the text-only Antigravity tool, even for backgrounds. Rejected ornate fantasy archives are neither references nor production assets. The technical method is accepted, not awaiting another tool-budget decision. Creative storyboard/production-workflow signoff must come first; both actual complete inputs are required afterward. Earlier method acceptance is not this new creative approval.
 
-## Preserved references — no artwork overwritten
+## Sources / canon
 
-| Existing files | Current use |
+| Record | Actual path / role |
 | --- | --- |
-| `public/media/references/{neri,sera,rook}-sheet.{svg,webp,png}` | Retained original human identities and wardrobes, not final anatomy/illustration. Improve expression, hands, weight and spatial acting without redesigning them. |
-| `public/media/references/pip-sheet.{svg,webp,png}` | Rejected invented Chog; historical evidence only. Never a real-NFT reference or accepted character. |
-| `public/media/frames/{cover,archive,neri-closeup,pip-awakening}-{wide,portrait}.{svg,webp,png}` | Preserved first-pass compositions/staging. All are reference-only, not shipping panels. Cover and awakening contain the rejected invented Chog. |
-| `public/media/contact-sheet.png` | Original historical contact sheet, unchanged. Its embedded approval-pending caption is now outdated; gallery/manifest carry the rejection notice. |
-| `public/audio/lines/*.txt` and `*.performance.xml` | Exact existing dialogue and direction retained. No recordings. Chog role/voice interpretation remains provisional until actual NFT selection and hero approval. |
-| `scripts/build-media-assets.mjs` | Legacy geometry/source retained, but entry point is **frozen** and refuses rendering. It must not recreate generic Pip or rewrite the new policy manifest. |
+| Approved Neri canon | `docs/NERI_APPROVED_CANON.md`, unchanged from main `d0027e8d98bc31a5440eda8239a5d16eb8880259` |
+| Exact received Neri JPEG | Root `neri-approved-reference.jpg`; byte-identical canonical local copy `public/media/neri/neri-approved-reference.jpg`, 1229×1536, SHA-256 `395fe4d78c74d0a60d3c483509b3daf71d5e7241369a44973ce54101e5a5ee8e` |
+| Neri reference manifest / locks | `public/media/neri/manifest.json`, `public/media/neri/design-gate.json` |
+| Unchanged Pip original | `public/media/hero/originals/token-1053.webp`; SHA-256 `47538955fbb298e3dc0b29f3f4e4f47f6a5c15f92f0e264295b59353be317b5c` |
+| Unchanged raw metadata / Chain evidence | `public/media/hero/originals/token-1053.json`, `public/media/hero/evidence/chain-1053-verification.json` |
+| Current selected identity / output state | `public/media/hero/selection.json`; new output fields remain null until actual private drafts exist |
+| Approved workflow policy | `private-media/awakening/workflow.json` |
+| Artist/input contract and ChatGPT requests | `docs/CHATGPT_AWAKENING_HANDOFF.md` |
+| Scene/appearance contract | `docs/HERO_SCENE_APPROVAL.md` |
 
-All 36 existing SVG/raster files retain their original recorded SHA-256 values. Human designs, exact line files and all compositions are preserved. No new illustration or Chog replacement is delivered in the review-response commit.
+Original source hashes are pinned, not inferred from thumbnails or holder ownership. Media checks frozen Chain evidence, not a fresh RPC/CID verification. No holder identity or endorsement claim. Keep NFT traits/colors/artwork unchanged and distinguish the complete collectible from fictional human/archive scene illustration.
 
-## New handoff / coordination
+## Local pipeline
 
-- Chain request: [PR #7 comment](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291535061); [receipt acknowledged](https://github.com/emmaGH1/chog-1969/pull/7#issuecomment-6291795303). Pinned shortlist/provenance/screenshot links and the four candidate ID/name pairs are in `public/media/hero/selection.json`. Chain reports block 115047581 at 2026-10-20T13:05:53.713Z. Raw metadata bytes/hash and verification block hash requested as a follow-up for the eventual chosen token, not as a reason to delay user selection. No holder identity requested or reproduced.
-- Pending machine-readable record: `public/media/hero/selection.json`. Token ID, selected display name, source art, traits, verification, approvals and output paths remain **null**. No fixture or invented artwork stands in for the selection.
-- Single-hero brief: `docs/HERO_SCENE_APPROVAL.md`. A significantly more cinematic low three-quarter archive encounter with weighted hands/record contact, real depth, expressive adult Neri and the chosen authentic Chog. Proposed wide + portrait versions are one event, not a new art batch. No render exists yet.
-- Current gallery: `public/media/review.html`. Human references first; rejected invented Pip separately labeled; every legacy composition marked reference-only. It is not a candidate gallery, deployed product or integration proof.
-- Manifest: `public/media/manifest.json`. Overall status superseded/not for integration; human-reference, historical-layout and rejected-Chog statuses are explicit. Artifact hashes remain the preservation record, not approval evidence.
+`node scripts/awakening-pipeline.mjs` provides `status`, `template`, `receive`, `check`, `render` and `verify`.
 
-Open the HTML directly or serve only locally:
+Receive either a full illustrated scene with blank folio surface or registered archive + transparent Neri layers per view, optionally a transparent foreground outside the source area. Whole-source perspective placement is supplied only after inspecting the actual illustration; no guessed quad, crop, automatic resize or fallback drawing. See the handoff doc for exact packet fields and asset requirements.
 
-```sh
-python3 -m http.server 8008 --bind 127.0.0.1 --directory public
-# Open http://127.0.0.1:8008/media/review.html on this machine.
-```
-
-Current checks (no network or spend):
+Inputs and sealed receipts live in ignored `private-media/awakening/incoming/` and `received/`. Future PNG/lossless-WebP scenes, board, manifest, unchanged source copies and offline gallery live in ignored `private-media/awakening/review/`, **outside the app's `public/` directory**. No server, public preview or watcher is started. Source JPEGs remain local/untracked; do not stage artwork for the public repository.
 
 ```sh
-node scripts/check-media-assets.mjs
+node --test scripts/tests/awakening-pipeline.test.mjs
+node scripts/awakening-pipeline.mjs status
+node scripts/awakening-pipeline.mjs check --require-ready    # exit 2 while either actual illustration bundle is missing
 node scripts/check-hero-handoff.mjs
-node scripts/check-hero-handoff.mjs --require-ready  # expected exit 2 while unselected
-node scripts/prepare-voice-lines.mjs --check
-node scripts/build-media-assets.mjs all           # expected exit 2: FROZEN, no files changed
+node scripts/check-hero-handoff.mjs --require-ready         # same asset-wait gate, not missing Neri approval
+node scripts/check-hero-handoff.mjs --require-publish-ready # exit 2: no art/rights/publication approval
+node scripts/check-media-assets.mjs
+node scripts/check-pip-awakening.mjs                       # preservation of REJECTED historical exports only
+node scripts/prepare-voice-lines.mjs --check                # no voice provider calls
 ```
 
-Do not use the previous `all`/`references`/`scenes` rebuild instructions. They are superseded by the freeze. No new illustration pipeline is authorized by this commit. Old reference rasterization used Node v22.23.3, Sharp 0.34.5, libvips 8.17.3 and local DejaVu Sans; lossless WebP and 128-color PNG files are retained as delivered.
+Only after one selected layout/workflow is explicitly approved AND its actual wide/portrait bundles are sealed/valid:
 
-## Rights, source authenticity and portrayal
+```sh
+node scripts/awakening-pipeline.mjs render --confirm-private-review
+node scripts/awakening-pipeline.mjs verify
+```
 
-- Original brief: `docs/ART_DIRECTION.md`, exact voice lines in `docs/VOICE_AND_DEMO.md`; new authority is the [PR #8 review](https://github.com/emmaGH1/chog-1969/pull/8#pullrequestreview-5584906637) and canonical NFT rule from main `3438ab3`.
-- Historical batch: original code-authored SVG paths, not image-model paintings or finished hand-inked manga. Official `https://chog.xyz/chog/curious.png` and `https://chog.xyz/home/chog.png` were visual study only, not token verification or licenses. Their pixels were not bundled, traced or altered. That study **did not satisfy** the real-NFT identity requirement.
-- Future Chog identity must come from Chain's verified tokenURI, metadata, attributes and unchanged original image. Keep that original and its hash separate from any labeled scene interpretation. Do not recolor authentic traits into the project palette, add the old invented collar/head/hands, rename metadata or imply generated art is collectible art.
-- Human cast, locations and speculative story roles remain original. Preserve the human designs and exact scripts, but attach Chog roles only to actual selected tokens. No holder identity/likeness or official endorsement.
-- A public token image, blockchain ownership record or metadata URL is **not** permission to adapt or publish it. Rights, attribution and any upload of references to an image service need review. No blanket license is asserted.
-- No stock music, cloned voices, paid media or third-party font files are bundled. No audio recordings or demo footage exist.
+The renderer checks complete intake before creating review output, writes only private files, verifies original-source pixel preservation and lossless exports, then records actual paths. It never calls an image service. Missing input is HOLD, corrupt input is failure, neither becomes placeholder art. Tests use tiny abstract grids/temp files, not full-size fake story art or generated Neri/Pip illustrations.
 
-## Required approvals in order
+## Historical material / ongoing holds
 
-1. **Chain shortlist + user choice:** 3–5 genuine candidates, explicit token ID selected as Pip. Additional Chog roles also need their own verified identities; no invented witness/extra.
-2. **Source/traits and rights:** unchanged original shown beside proposed portrayal; exact traits/colors, verified provenance, permission scope, attribution and original-versus-interpretation treatment approved.
-3. **One hero execution:** approve the cinematic staging and a method that can meet the higher-fidelity review. Do not deliver another smooth schematic vector stand-in as the finished answer.
-4. **Separate spend approval:** specific provider/model or illustrator, reference-upload permissions, maximum attempts and budget **before** any paid/unknown-cost call. Tool availability does not establish free usage. No API secret requests or commits.
-5. **Art review:** one wide/portrait hero composition only, original-versus-interpretation preview, actual source/output hashes and 375–390 px readability. User NFT choice is not scene approval.
-6. **Later gates remain held:** app integration, actual phone QA, further scenes, voice synthesis/music, demo capture/publication, deployment and any chain write each require their appropriate approval. Do not close issue #3 or portray PR #8 as final manga.
+Both `scripts/build-media-assets.mjs` and `scripts/build-pip-awakening.mjs` remain frozen. `public/media/hero/awakening/*` / `hero/review.html` are the **rejected old SVG hero**, not new approved-Neri output. Root media manifest/gallery, initial references/frames/contact sheet and exact voice text/performance files are historical, unchanged references. Written Restorer/Indexer/Stack Runner concepts are superseded; none is the approved original Archivist image.
 
-## Validation scope
+Passing hashes, provenance declarations, dimensions or geometry cannot certify ChatGPT origin, character identity/acting, anatomy, hand/folio contact, depth, artistic quality or rights. Inspect actual sources and private composites; return the real wide/mobile files and comparison board for **separate user visual approval**. Check mobile at 375–390 px; image resizing is not physical product/browser QA.
 
-The updated media checker validates preservation hashes/dimensions, local gallery links, explicit rejected/reference-only statuses and the renderer freeze. A passing file check is **not art approval** or NFT verification. The hero-handoff checker reports pending inputs and fails `--require-ready` while they are absent. The exact dialogue checker still compares all eight lines to the existing brief. No new NFT verification, phone capture, art generation, recording or final hero is claimed.
-
-Review-response checks passed: legacy preservation/freeze checker; valid pending handoff; expected exit 2 for `--require-ready`; eight exact line/direction checks; current `npm run typecheck`; and direct byte comparison against reviewed commit `690aee9` for **37 art/contact files plus 16 text/performance files**, all unchanged. No new build was needed for the docs/metadata/guard-only changes.
-
-Historical local `npm run typecheck` and `npm run build` passed for batch 01, with the existing CSS `end`/`flex-end` warning. Those results are not a claim that current main is integrated, audited or deployed. This response makes no application changes.
+No additional scenes, audio, spending, integration, public push/publication, deployment, main merge or chain actions. Rights/attribution and any later release remain separate unresolved gates.
