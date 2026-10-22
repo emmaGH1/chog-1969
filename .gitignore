@@ -13,3 +13,4 @@ public/audio/*.wav
 public/audio/*.mp3
 # Local browser takes, approval attestations and validation logs. Never publish automatically.
 artifacts/demo/
+public/private-review/
