@@ -1,7 +1,7 @@
 .experience {
   --ink: #20231f; --paper: #dfd6bd; --rust: #7c382b;
   position: fixed; inset: 0; z-index: 10; background: #181c19; color: var(--paper);
-  overflow: hidden; display: flex; flex-direction: column; touch-action: none;
+  overflow: hidden; display: flex; flex-direction: column; touch-action: none; user-select: none; -webkit-user-select: none;
   font-family: Georgia, "Times New Roman", serif;
 }
 .experience button {color: inherit; border-radius: 0;}
