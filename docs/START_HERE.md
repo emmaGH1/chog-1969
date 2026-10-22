@@ -1,4 +1,6 @@
 # CHOG / 1969 — start here
+> **Current takeover and visual-reset status:** read [CURRENT_STATE.md](CURRENT_STATE.md) first. The older branch/integration/token instructions below are historical and must not override that handoff.
+
 This is a four-day competition build. No more uncontrolled feature expansion. The target is **one finished playable chapter**, one read-only genuine NFT dossier, one owner-authorized canonical write (only after tests and approval), and one <=3-minute real demo.
 
 ## Real status
