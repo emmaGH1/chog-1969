@@ -134,7 +134,7 @@
   .coverMeta {font-size: 9px;}
   .coverBottom {font-size: 7px; bottom: 4%;}
   .coverBottom > span:last-child {display: none;}
-  .world {width: 190vw; height: 126.6667vw; top: 42%; left: 50%; transform-origin: 70% 65%; transform: translate(-50%,-50%) translateX(calc(var(--camera) * -17%)) scale(calc(1 + var(--camera) * .03));}
+  .world {width: 190vw; height: 126.6667vw; top: 42%; left: 50%; transform-origin: 70% 65%; transform: translate(-50%,-50%) translateX(calc(var(--camera) * -23%)) scale(calc(1 + var(--camera) * .03));}
   .viewport {background: #040b1e;}
   .entranceCaption {left: 28%; bottom: 7%;}
   .entranceCaption p {font-size: 30px;}

@@ -25,9 +25,9 @@ The new opening uses full-color, reference-guided illustrations: cobalt stone an
 
 For 308dc20: focused opening tests 2/2; complete tests 45/45; typecheck; production build; production audit (0 vulnerabilities) passed. No lint script. Ganache emits a non-blocking native µWS fallback warning. Development dependency audit remains non-clean.
 
-Lead inspected the actual rendered cover, camera movement, desk and awakening at native 1920×1080, using real clicks/wheel/drag. Final regression recording and responsive/keyboard/reduced-motion checks for the NEW visuals are pending; older passing recordings do not prove this revision.
+Native 1920×1080 browser flow passed on b3f5db1: fresh cover, wheel approach, both clues/index, partial physical drawer movement, full awakening and continuation to legacy scene4/6, retaining Keep. Keyboard/early-release/hold and completed-save Resume passed. Actual annotated recording exists. Portrait390×844 revealed clipped shipment/index controls; the current portrait-only camera offset fix is awaiting retest. Reduced-motion and exact1440×900 tests remain pending.
 
-PulseAudio tools and null-sink capture were repaired earlier; test-tone capture is verified. Browser app sound routing and synchronized capture are still pending. Do not claim the test tone proves the app is audible.
+Actual browser synth now reaches the Pulse monitor (peak−34.1dBFS), after restarting Chrome with its existing profile and explicit PULSE_SERVER/PULSE_SINK. The synchronized A/V recording is still unverified: the simultaneous native capture emitted non-monotonic audio-timestamp warnings. Share the valid annotated visual recording, not an unverified synchronization claim. No external voice API was needed.
 
 ## Private art and reproduction
 
