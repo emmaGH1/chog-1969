@@ -5,6 +5,8 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 .experience button {color: inherit; border-radius: 0;}
+:global(body):has(.experience) > :global(.site-header),
+:global(body):has(.experience) > :global(.footer) {display: none;}
 .experience button:focus-visible, .experience a:focus-visible {outline: 3px solid #f9cd70; outline-offset: 5px;}
 .experience button:disabled {opacity: 1;}
 .toolbar {height: 68px; flex-shrink: 0; padding: 0 3%; display: flex; align-items: center; gap: 24px; background: #1b211e; z-index: 5; border-bottom: 1px solid #777d6540;}

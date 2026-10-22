@@ -3,7 +3,7 @@ on:
   push:
     branches: [main, integration/pilot, feat/story-engine, feat/nft-memory, feat/media-assets]
   pull_request:
-    branches: [main]
+    branches: [main, integration/pilot]
 jobs:
   check:
     runs-on: ubuntu-latest

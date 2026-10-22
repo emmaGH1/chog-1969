@@ -217,7 +217,7 @@ export default function ArchiveOpening() {
         <div className={styles.neri} aria-hidden="true">
           <img src="/private-review/neri.png" alt="" onError={() => setMissingArt(true)}/>
         </div>
-        <div className={styles.entranceCaption} style={{opacity: clamp(1 - camera * 2)}}>
+        <div className={styles.entranceCaption} style={{opacity: clamp(1 - camera * 2)}} aria-hidden={camera >= .5}>
           <span>VEYRA. CENTRAL ARCHIVE. AFTER HOURS.</span>
           <p>They erased a people.<br/>They missed a drawer.</p>
         </div>
@@ -267,7 +267,7 @@ export default function ArchiveOpening() {
         </div>
       </div>
 
-      <div className={styles.reaction} data-visible={beat >= 3}>
+      <div className={styles.reaction} data-visible={beat >= 3} aria-hidden={beat < 3}>
         <img src={beat >= 3 ? "/private-review/neri-curious.jpg" : "/private-review/neri-serious.jpg"} alt="Neri’s curious expression, cropped from the exact approved reference" onError={() => setMissingArt(true)}/>
         <p>…You’re supposed to be extinct.</p>
       </div>

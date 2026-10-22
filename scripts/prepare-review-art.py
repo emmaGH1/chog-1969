@@ -31,6 +31,14 @@ outline = [(132,1498),(133,1450),(155,1370),(157,1310),(175,1260),(163,1237),
            (303,1192),(294,1225),(280,1260),(270,1297),(257,1331),(253,1368),
            (268,1413),(272,1446),(261,1490),(205,1502)]
 ImageDraw.Draw(mask).polygon(outline, fill=255)
+# Remove the reference sheet's cream paper without repainting the drawing.
+pixels = sheet.load()
+alpha = mask.load()
+for y in range(sheet.height):
+    for x in range(615):
+        r, g, b, _ = pixels[x, y]
+        if r > 223 and g > 213 and b > 193:
+            alpha[x, y] = 0
 sheet.putalpha(mask)
 sheet.crop((20,40,615,1510)).save(out / "neri.png")
 original = Image.open(source)
