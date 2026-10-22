@@ -14,7 +14,7 @@ The new opening uses full-color, reference-guided illustrations: cobalt stone an
 
 - Repository: emmaGH1/chog-1969.
 - Existing branch: `feat/devin-cinematic-release`, originally from `integration/pilot`. Never use main as baseline.
-- Main visual milestone: `308dc2043a86018433ed8d676f5a19a7c9d55466`. Later commits refine framing and update this handoff.
+- Main visual milestone: `308dc2043a86018433ed8d676f5a19a7c9d55466`; current application revision: `e588647da78157bb59ef44c2a433efcbea3e85d0`. This later commit only shifts the portrait camera to keep controls inside the viewport; desktop is unchanged from b3f5db1.
 - Opening: `src/components/ArchiveOpening.tsx` and `src/components/chapter/opening.module.css`.
 - Self-hosted Barlow Condensed Black from official google/fonts repository; OFL license included.
 - New art remains ignored under `public/private-review/`, not published in Git.
@@ -25,9 +25,11 @@ The new opening uses full-color, reference-guided illustrations: cobalt stone an
 
 For 308dc20: focused opening tests 2/2; complete tests 45/45; typecheck; production build; production audit (0 vulnerabilities) passed. No lint script. Ganache emits a non-blocking native µWS fallback warning. Development dependency audit remains non-clean.
 
-Native 1920×1080 browser flow passed on b3f5db1: fresh cover, wheel approach, both clues/index, partial physical drawer movement, full awakening and continuation to legacy scene4/6, retaining Keep. Keyboard/early-release/hold and completed-save Resume passed. Actual annotated recording exists. Portrait390×844 revealed clipped shipment/index controls; the current portrait-only camera offset fix is awaiting retest. Reduced-motion and exact1440×900 tests remain pending.
+Native 1920×1080 browser flow passed on b3f5db1: fresh cover, wheel approach, both clues/index, partial physical drawer movement, full awakening and continuation to legacy scene4/6, retaining Keep. Keyboard/early-release/hold and completed-save Resume passed. The primary annotated recording is 1920×1080,19.534seconds, silent. Its desktop presentation is unchanged in e588647.
 
-Actual browser synth now reaches the Pulse monitor (peak−34.1dBFS), after restarting Chrome with its existing profile and explicit PULSE_SERVER/PULSE_SINK. The synchronized A/V recording is still unverified: the simultaneous native capture emitted non-monotonic audio-timestamp warnings. Share the valid annotated visual recording, not an unverified synchronization claim. No external voice API was needed.
+e588647 passed exact390×844 portrait emulation at zoom100%: cover, real upward swipe without text selection, both clues/index fully visible (right edges370.37px/362.49px), partial drawer drag, awakening and continuation preserving Keep. Exact1440×900 cover/desk/reveal also passed. Reduced-motion Move closer and accelerated reveal passed. No physical touchscreen was tested. Latest CSS-only build and whitespace checks passed.
+
+Actual browser synth now reaches the Pulse monitor (peak−34.1dBFS), after restarting Chrome with its existing profile and explicit PULSE_SERVER/PULSE_SINK. Synchronized A/V remains unverified: simultaneous capture had128 duplicate audio timestamps and8 gaps over100ms (largest1.377s). Share the valid silent annotated visual recording, not an unverified synchronized soundtrack. No external voice API was needed.
 
 ## Private art and reproduction
 
@@ -41,6 +43,8 @@ Three new illustrations were created with the available image tool, using the su
 - WebP scene derivatives use Pillow quality91; drawer crop quality94.
 
 Generated scenes and source uploads are private review assets. They are **not in Git**, so a clone alone lacks visuals. Restore the private asset bundle shared in the Devin session into `public/private-review/`; it includes render files and original generated PNGs. Do not regenerate them casually or publish private uploads to fix portability. The original Neri sheet is not included in that bundle. If it is needed for further pose generation, obtain the attachment securely from Emma.
+
+Recovery bundle: `chog-private-art-checkpoint.zip`, SHA256 `47fba73e064d8d8d43cf68bb82c18d8260e85a79fc51b81816bb1cec9398fa19`. Its paths are relative to the repo root, so extract there. It includes an individual-file SHA256 manifest.
 
 Session and review assets: https://app.devin.ai/sessions/45c27cfaffaa4776b21a57c3c48e6f6f
 
@@ -58,6 +62,6 @@ Session and review assets: https://app.devin.ai/sessions/45c27cfaffaa4776b21a57c
 
 The supplied video shows comic pacing, dramatic reframing, physical interactions and close-ups, not a normal website with scroll animations. CHOG's live sites provided painted environments, directional sunlight, pink controls and energetic type as reference principles. Do not copy proprietary artwork. Do not revert to warm-paper editorial backgrounds or generic purple gradients.
 
-Next: finish browser regression and native 1920×1080 recording of this revision, verify actual app audio, share the cover/opening checkpoint and private recovery bundle. Wait for Emma's visual review before propagating the direction. Keep handoff current with final code commit, actual tests and untested gaps.
+Next: Emma reviews the new cover/opening checkpoint and Neri pose consistency. Do not propagate this direction through the later chapter until reviewed. Remaining gaps: synchronized audio recording, physical touchscreen testing, final art approval and finished soundscape/narration. Preserve the private asset bundle when moving environments.
 
 Emma's deadline: 23October2026 16:00 WAT /15:00 UTC; proposed review freeze14:00 WAT. No public release, spending or main merge without explicit approval.
