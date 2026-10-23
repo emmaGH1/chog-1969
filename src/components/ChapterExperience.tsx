@@ -84,7 +84,7 @@ export default function ChapterExperience(){
      </div>}
      {index===3&&route&&<p className="unlock-message">{route==="keep"?"You save the documents, but a guard catches a glimpse of your face.":"The smoke conceals your escape, but an important record about Neri's brother is lost."}</p>}
      {index>=4&&route&&<p className="unlock-message">{route==="keep"?"In your satchel: the rescued records. Behind you: a witness who knows your face.":"In your satchel: ash where a record should be. For now, the Redactors have no face to follow."}</p>}
-     {index===4&&<><MemoryEcho line={scene.line}/><div className="interaction"><strong>THE ORIGINALS SURVIVE</strong><p>The fiction has witnesses. CHOG Genesis has real onchain records. Inspect the original collectibles without connecting a wallet; this witness's token identity is not assigned.</p><Link href="/archive" className="link">Inspect Genesis originals</Link></div></>}
+     {index===4&&<><MemoryEcho line={scene.line}/><div className="interaction"><strong>THE ORIGINALS SURVIVE</strong><p>Beyond the story: explore the original CHOG collectibles on Monad.</p><Link href="/archive" className="link">Inspect Genesis originals</Link></div></>}
      {index===5&&<div className="interaction"><strong>END OF CHAPTER ONE</strong><Photograph onMissingArt={()=>setMissingArt(true)}/><Link href="/archive" className="link">Explore the surviving seals</Link></div>}
      {index<5&&!canAdvance(progress)&&<p className={styles.gateHint}>{index===1?"Open the drawer to continue.":"Choose an escape route to continue."}</p>}
      <nav className={styles.navigation} aria-label="Story navigation">

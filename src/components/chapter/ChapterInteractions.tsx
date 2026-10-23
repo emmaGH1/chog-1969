@@ -51,7 +51,7 @@ export function MemoryEcho({line}: {line: string}) {
       {revealed?<blockquote><small>A SURVIVING MEMORY</small><p>“{line}”</p></blockquote>:<p className={styles.unheard}>A voice on the other side of the silence.</p>}
     </div>
     {!revealed&&<button type="button" className={styles.back} onClick={()=>setRevealed(true)}>Read the memory without holding</button>}
-    <small className={styles.fictionNote}>Fictional memory · no NFT unlocked or onchain action performed.</small>
+    <small className={styles.fictionNote}>A fictional memory, not an NFT unlock.</small>
   </div>;
 }
 
