@@ -57,7 +57,7 @@ export default function ArchiveOpening() {
     };
     const animate = (now: number) => {
       frame = null;
-      const blend = 1 - Math.exp(-Math.min(now - previous, 50) / 35);
+      const blend = 1 - Math.exp(-Math.max(0, Math.min(now - previous, 50)) / 35);
       previous = now;
       const distance = cameraGoal.current - cameraPosition.current;
       cameraPosition.current = Math.abs(distance) < .001
