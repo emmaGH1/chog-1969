@@ -13,6 +13,40 @@ async function open(page){
   assert.equal(await page.getByRole('button',{name:'Check owner & simulate'}).isDisabled(),true);
 }
 try {
+  const archive=await browser.newPage({viewport:{width:1280,height:900},reducedMotion:'reduce'});
+  const reads=[];
+  let fail=false;
+  await archive.route('**/api/nft/*',route=>{
+    const id=new URL(route.request().url()).pathname.split('/').pop();
+    reads.push(id);
+    return route.fulfill(fail?{status:503,json:{error:'Mock RPC unavailable'}}:{json:{
+      ...dossier,tokenId:id,
+      metadata:id==='1053'?{name:'CHOG #545',description:'Mock collection metadata',imageUrls:[],attributes:[]}:null,
+    }});
+  });
+  await archive.goto(`${base}/archive`);
+  assert.deepEqual(reads,[]);
+  await archive.getByRole('button',{name:'Inspect Pip’s onchain identity',exact:true}).click();
+  await archive.getByRole('heading',{name:'CHOG #545',exact:true}).waitFor();
+  assert.deepEqual(reads,['1053']);
+  assert.equal(await archive.getByLabel('onchain token id',{exact:true}).inputValue(),'1053');
+  assert.equal(await archive.evaluate(()=>document.activeElement?.tagName),'ARTICLE');
+  await archive.getByRole('article').getByText('Original artwork unavailable.',{exact:false}).waitFor();
+  await archive.getByText('Chain evidence and sources',{exact:true}).click();
+  await archive.getByRole('link',{name:dossier.owner,exact:true}).waitFor();
+  await archive.getByLabel('onchain token id',{exact:true}).fill('1969');
+  await archive.getByRole('button',{name:'inspect seal',exact:true}).click();
+  await archive.getByRole('article').getByText('Onchain token ID: 1969',{exact:true}).waitFor();
+  assert.deepEqual(reads,['1053','1969']);
+  fail=true;
+  await archive.getByRole('button',{name:'inspect seal',exact:true}).click();
+  await archive.getByRole('alert').filter({hasText:'Mock RPC unavailable'}).waitFor();
+  assert.equal(await archive.getByRole('article').count(),0);
+  fail=false;
+  await archive.getByRole('button',{name:'inspect seal',exact:true}).click();
+  await archive.getByRole('article').getByText('Onchain token ID: 1969',{exact:true}).waitFor();
+  await archive.close();
+  console.log('PASS archive (mocked RPC): Pip 1053, arbitrary token, result focus, evidence disclosure, absent metadata art, error and retry');
   for(const width of [375,1280]) {
     const page=await browser.newPage({viewport:{width,height:900},isMobile:width===375,hasTouch:width===375});
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
