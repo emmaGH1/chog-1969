@@ -2,7 +2,15 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current decision: continue the accepted CHOG-led direction
+## Current checkpoint: NFT-dependent reconstruction verified
+
+Emma said "resume". Application16ea398 plus the label-fit CSS correction is now browser-verified. The correction sizes the center label from the machine container rather than the viewport; no mechanics, API or save changes. Typecheck, production build including lint, and whitespace checks passed again for that correction. The earlier49/49 unit and mocked browser results below remain applicable; they were not redundantly rerun for CSS.
+
+Fresh isolated1920x1080/DPR1 production Chrome flow passed with genuine live1053: wheel approach, both clues, physical drawer drag, live identity, held ring drag, keyboard alignment, disabled Press through2/3, fictional reveal, Wake, awakening and earned chapter scene3. Receipt reload, replay reset, direct chapter re-gating and partial-ring reload passed. Existing Keep/index4 save remained unchanged. Exact1440x900 reduced-motion and390x844 keyboard/portrait checks passed; all three sizes have no horizontal overflow and the corrected RESTORED label fits. Lead reviewed corrected native,1440 and portrait screenshots. Portrait is emulation, not physical touch. No wallet prompt or non-GET browser request; config enabled:false/ledger:null.
+
+Primary registered recording: chog-16ea398-reconstruction-edited.mp4,1920x1080,30fps,22.267seconds. Silent and tool-time-compressed, NOT real-time or synchronized A/V. It shows the full successful journey with the older oversized RESTORED label; corrected screenshots chog-label-fix-1920-restored.png / chog-label-fix-1440-restored.png / chog-label-fix-390-restored.png show final sizing. Evidence stays in the session, not Git. Production3103 rebuilt and left running; original native cover restored, reduced motion off. No PR, public deployment, merge, signing or spending. Next: Emma's visual/gameplay review; the broader chapter remains linear, not a newly nonlinear game. Physical touch and synchronized sound capture remain unverified.
+
+### Implementation history (superseded pending statuses below)
 
 NEW ACTIVE TASK: Emma challenged the NFT's necessity and authorized the puzzle integration: "the hackathon requires the nft to be at the core. you can go ahead with the puzzle integration. the game still lacks in novelty and out of the box creativity, still feels like a landing page scroll". The next implementation is a full-screen physical erasure press inside the drawer. Live1053 Head/Body/Eyes values derive three rotatable rings' target positions; wrong identity, missing/ambiguous/changed traits fail closed. Align and press to recover a fictional witness fragment and awaken Pip. No signature/transaction. This is a local story gate, not cryptographic ownership proof; metadata hash remains independently unverified.
 
@@ -36,7 +44,7 @@ The archive still uses cobalt steel, amber practical lights, clue inspection, ph
 
 - Repository: emmaGH1/chog-1969.
 - Existing branch: `feat/devin-cinematic-release`, originally from `integration/pilot`. Never use main as baseline.
-- Current application revision: `612559b` (connected read-only Genesis archive). Chapter One continuation: `bbb19c9f62afe894a556073fcafcf1df0900c65d` (copy refinement), `40a58131af86ac56f35cd20236ff7ac097fda31f` (implementation). Earlier CHOG-led opening: `e84bdf89f496d5b28d55902e095bbbe46695b8e9`. Earlier Neri-led checkpoints are superseded, not approved design references.
+- Current mechanics revision: `16ea398` (NFT-dependent reconstruction), followed by the label-sizing/browser-handoff commit. Previous archive: `612559b`. Chapter One continuation: `bbb19c9f62afe894a556073fcafcf1df0900c65d` (copy refinement), `40a58131af86ac56f35cd20236ff7ac097fda31f` (implementation). Earlier CHOG-led opening: `e84bdf89f496d5b28d55902e095bbbe46695b8e9`. Earlier Neri-led checkpoints are superseded, not approved design references.
 - Opening: `src/components/ArchiveOpening.tsx` and `src/components/chapter/opening.module.css`.
 - Chapter presentation: `ChapterExperience.tsx`, `chapter.module.css`, `ChapterInteractions.tsx`. NFT API, wallet/write gates and progress parsers were not changed.
 - Camera runs requestAnimationFrame only while moving, updates the world CSS variable directly, and publishes React state only at visibility/interaction thresholds. Smoothing55ms replaces140ms; wheel input no longer caps every event at180px.
@@ -99,7 +107,7 @@ Session and review assets: https://app.devin.ai/sessions/45c27cfaffaa4776b21a57c
 - Pip = CHOG #545, onchain token1053, Monad143, Genesis `0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763`. Token1969 is NOT Pip.
 - Original Pip image SHA256: `47538955fbb298e3dc0b29f3f4e4f47f6a5c15f92f0e264295b59353be317b5c`.
 - Existing `scripts/prepare-review-art.py` validates the exact Neri source and original Pip provenance. It does NOT recreate generated scenes; use the private bundle.
-- Existing story save `chog1969:pilot`; opening save `chog1969:opening:v1`. Replay resets only the opening. Preserve later Keep/Burn choices.
+- Existing story save `chog1969:pilot`; opening save `chog1969:opening:v1`; local reconstruction `chog1969:pip-reconstruction:v1`. Opening Replay clears opening and reconstruction, preserving later Keep/Burn. Chapter Restart explicitly resets chapter and reconstruction.
 - NFT dossier and API remain read-only. MemoryLedger writes remain disabled. Provenance does not imply holder consent, licensing, endorsement or ownership identity.
 
 ## Reference principles and next action

@@ -35,7 +35,7 @@
 .workbench {min-width:0;text-align:center;}
 .machineHeading {display:flex;justify-content:space-between;gap:16px;font:10px monospace;color:#b9c9de;letter-spacing:.08em;}
 .machineHeading b {color:#ffb6cf;font-weight:normal;}
-.machine {width:min(48svh,520px,100%);aspect-ratio:1;position:relative;margin:26px auto;}
+.machine {width:min(48svh,520px,100%);aspect-ratio:1;position:relative;container-type:inline-size;margin:26px auto;}
 .machinePlate {position:absolute;inset:0;border:1px solid #9fb2cc60;border-radius:50%;background:#06142bd9;box-shadow:0 0 0 10px #021022,0 0 0 11px #9fb2cc33,0 30px 60px #0009;}
 .machinePlate::after {content:"";position:absolute;inset:21%;border:1px solid #9fb2cc66;border-radius:50%;box-shadow:0 0 0 40px #051228,0 0 0 41px #9fb2cc33;}
 .ring {position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;border:0;border-radius:50%;background:#102139;clip-path:circle(50%);touch-action:none;user-select:none;cursor:grab;color:#c0d0e8;}
@@ -55,7 +55,7 @@
 .ring[data-aligned=true] .needle {fill:#fff1cd;stroke:#fff1cd;filter:drop-shadow(0 0 3px #ffb869);}
 .imprint {position:absolute;inset:40%;width:20%;height:20%;border:2px solid #ff9fc4;border-radius:50%;background:#ff9fc4;color:#041025;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;padding:5px;}
 .imprint:disabled {opacity:1;background:#041025;color:#839bb5;border-color:#596e87;}
-.imprint > span {font:900 clamp(18px,2vw,30px) ChogDisplay,sans-serif;}
+.imprint > span {font:900 clamp(12px,4.2cqw,22px) ChogDisplay,sans-serif;}
 .imprint > small {font:clamp(5px,.45vw,8px) monospace;max-width:90%;line-height:1.5;}
 .sealed {position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transform:rotate(-9deg);pointer-events:none;}
 .sealed > span {font:900 clamp(40px,4vw,70px)/.95 ChogDisplay,sans-serif;color:#a4b5c9;letter-spacing:-.02em;border-top:3px solid #a4b5c9;border-bottom:3px solid #a4b5c9;padding:12px 8px;}
@@ -91,7 +91,7 @@
  .provenance {clear:both;}
  .machine {width:100%;max-width:440px;margin:22px auto;}
  .machineHeading {font-size:8px;}
- .imprint > span {font-size:19px;}.imprint > small {font-size:5px;}
+ .imprint > small {font-size:5px;}
  .instructions {font-size:12px;}
  .memory blockquote {font-size:34px;}
  .memory[data-restored=true] {display:block;text-align:center;}
