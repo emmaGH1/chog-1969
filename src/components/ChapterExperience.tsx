@@ -7,7 +7,7 @@ import Link from "next/link";
 const scenes=[
  {k:"s1",number:"01 / the official history",eyebrow:"VEYRA / CENTRAL ARCHIVE",headline:"HISTORY IS WRITTEN BY THE SURVIVORS.",body:"Two centuries ago, the world survived a terrible catastrophe. The Pale Accord says the Chogs caused it. Every scrap of their history was destroyed.",speaker:"neri",line:"if they're all gone, why are we still hunting them?"},
  {k:"s2",number:"02 / the sealed drawer",eyebrow:"RESTRICTED WING / AFTER DARK",headline:"SOME THINGS ARE NOT SUPPOSED TO BE FOUND.",body:"A discarded ledger points to a locked drawer. The only clue is that the first record reads 19 and the shipment label reads 69.",speaker:"neri",line:"who leaves a puzzle in a room full of forbidden records?"},
- {k:"s3",number:"03 / a familiar stranger",eyebrow:"MEMORY ANOMALY DETECTED",headline:"THE DRAWING JUST MOVED.",body:"The crude creature on the page opens one enormous eye. A splash of impossible violet spills into the monochrome archive.",speaker:"pip",line:"excuse me? i'm a legendary being of unimaginable power."},
+ {k:"s3",number:"03 / a familiar stranger",eyebrow:"MEMORY ANOMALY DETECTED",headline:"THE DRAWING JUST MOVED.",body:"The creature on the page opens its eyes. A people erased from history suddenly have a voice.",speaker:"pip",line:"excuse me? i'm a legendary being of unimaginable power."},
  {k:"s4",number:"04 / the redactors",eyebrow:"THE PALE ACCORD / PURSUIT ORDER",headline:"YOU HAVE BEEN MARKED FOR ERASURE.",body:"Captain Sera's soldiers reach the archive. Neri has seconds to choose how to escape.",speaker:"sera",line:"place the drawing on the floor. your life depends on what you do next."},
  {k:"s5",number:"05 / the sealed witness",eyebrow:"ARCHIVE ENTRY / GENESIS",headline:"SOMEONE STILL REMEMBERS.",body:"A second illustrated seal sits beneath the harbor. This time it bears the identity of a real Chog Genesis NFT. Its secrets aren't for the Accord to decide.",speaker:"memory",line:"we ran toward the sea, not away from it. we were trying to close the door."},
  {k:"s6",number:"06 / the photograph",eyebrow:"FREEWAKE HARBOR / DEPARTURE",headline:"THE TRUTH HAS A PRICE.",body:"A smuggler named Rook helps Neri escape and hands her a photograph. Her missing brother stands beside Chog drawings. Someone has been waiting for her.",speaker:"rook",line:"your brother asked me to keep this. if you're holding it, they know you're here."},
@@ -49,7 +49,7 @@ export default function ChapterExperience(){
  const scene=scenes[index];
  function next(){setProgress(advanceProgress);}
  function check(){if(code.trim()==="1969"){setProgress(p=>({...p,unlocked:true}));}else setWrong(v=>v+1);}
- if(!restored)return <section className="chapter-shell" aria-busy="true"><p role="status">Opening your chapter…</p></section>;
+ if(!restored)return <section className={styles.reader} aria-busy="true"><p role="status">Opening your chapter…</p></section>;
  return <section className={styles.reader} aria-label="Chapter One reader">
    <div className={styles.backdrop} aria-hidden="true">
      <img key={sceneArtwork[index].src} src={`/private-review/${sceneArtwork[index].src}`} alt="" onError={()=>setMissingArt(true)}/>
@@ -88,9 +88,9 @@ export default function ChapterExperience(){
      {index===5&&<div className="interaction"><strong>END OF CHAPTER ONE</strong><p>On the archive roof, a lens turns toward the harbor. Sera pins a fresh surveillance print to the wall. Neri and Pip are already circled in ink.</p><p>Next: the city that never existed.</p><Link href="/archive" className="link">explore the surviving seals ↗</Link></div>}
      {index<5&&!canAdvance(progress)&&<p className={styles.gateHint}>{index===1?"Open the drawer to continue.":"Choose an escape route to continue."}</p>}
      <nav className={styles.navigation} aria-label="Story navigation">
-       {index>0&&<button className={styles.back} onClick={()=>setProgress(p=>({...p,index:p.index-1}))}>← previous scene</button>}
-       {index<5&&<button className="btn btn-primary advance" onClick={next} disabled={!canAdvance(progress)}>continue the story <span aria-hidden="true">→</span></button>}
-       {index===5&&<Link href="/" className="btn btn-primary advance">back to cover →</Link>}
+       {index>0&&<button className={styles.back} onClick={()=>setProgress(p=>({...p,index:p.index-1}))}>Previous scene</button>}
+       {index<5&&<button className="btn btn-primary advance" onClick={next} disabled={!canAdvance(progress)}>Continue the story</button>}
+       {index===5&&<Link href="/" className="btn btn-primary advance">Back to cover</Link>}
      </nav>
    </article>
    <small className={styles.artNotice}>Scene illustration under review · independent fiction, not official CHOG canon</small>
