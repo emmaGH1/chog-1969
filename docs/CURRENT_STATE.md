@@ -2,7 +2,7 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current checkpoint: consequence encounter verified; rendered review pending
+## Current checkpoint: consequence encounter browser-verified; demo approval next
 
 Emma approved the bounded erasure encounter, meaningful Keep/Burn outcomes, sound, chapter teasers and hero-entry smoothness work. Work remains on `feat/devin-cinematic-release`; no PR, public deployment, main merge, purchases or wallet writes are authorized.
 
@@ -11,15 +11,30 @@ Emma approved the bounded erasure encounter, meaningful Keep/Burn outcomes, soun
 - The NFT reconstruction remains required. The threatened testimony is explicitly fictional; neither the onchain identity nor the NFT can be erased by this interaction.
 - Chapter causality now runs from Pip's sea memory to Freewake, Rook, the brother photograph and the missing city. Chapters 02–04 are clearly labelled planned/not playable, with no release promises.
 - A shared opt-in Web Audio provider adds synthesized archive/harbor ambience, ring/press/prop cues and pursuing steps. Quiet at the unstarted/paused/resolved choice. Mute and volume carry across client-side story navigation; reload starts muted. No paid audio, voices or external audio service.
-- Removed the cover's initial 1.5s zoom and exit 1.3s zoom; entry opacity is now .35s without delay rather than .9s plus .15s delay. Camera smoothing is 35ms instead of 55ms. The first-frame elapsed delta is clamped at zero when an rAF timestamp precedes the scheduling `performance.now()`, preventing a backwards initial camera step. Removed the remaining awakening CTA arrow. Live post-change motion measurements and visual judgment are still pending; do not claim a performance win from CSS alone.
+- Removed the cover's initial 1.5s zoom and exit 1.3s zoom; entry opacity is now .35s without delay rather than .9s plus .15s delay. Camera smoothing is 35ms instead of 55ms. The first-frame elapsed delta is clamped at zero when an rAF timestamp precedes the scheduling `performance.now()`, preventing a backwards initial camera step. Removed the remaining awakening CTA arrow. A native DPR1 live probe observed 431.6ms transition, 182.5ms trailing motion, 16.8ms p95 frame interval and zero long tasks across eight wheel events. Lead reviewed the rendered transition. These are local observations, not a controlled before/after comparison or universal performance guarantee.
 - Automated verification passed: focused consequence/reconstruction/progress tests 9/9; `npm run typecheck`; `npm run build` including lint/type validation; full `npm test` 50/50; and all three requested mocked browser suites. Chapter regressions passed at 375px and 1280px plus blocked-storage coverage; the reconstruction suite passed with mocked RPC and zero wallet calls; the holder-flow suite passed with zero real transactions. Ganache reported an unavailable µWS binary and used its NodeJS fallback.
 - The camera-clamp follow-up passed `npm run typecheck` and `npm run build` (including lint/type validation); focused and full test suites were not rerun for this one-line change.
 - The scene-four timer regression reproduced against production revision `7025128`: after 10.00 seconds of wall time it still showed 35 seconds remaining. `ErasureEncounter` now snapshots elapsed time before calling `setRemaining`, so the updater no longer closes over mutable interval state. The chapter browser suite's 10-second wall-clock assertion failed against the old build and passed after rebuild; existing 375px/1280px and blocked-storage cases passed too. Old-build evidence: `chog-old-preview-timer-regression.log` in private Documents.
 - This timer fix passed `npm run typecheck` and `npm run build` (including lint/type validation); unit and full test suites were not rerun.
-- Native Chrome capture was relaunched with the existing `/home/ubuntu/.browser_data_dir` profile and CDP port 29229 at DPR 1/fullscreen 1920×1080, matching the physical display. CSS inner/outer/screen/visual viewport metrics were 1920×1080, and the captured viewport PNG was 1920×1080 and uncropped. Chrome uses the existing local PulseAudio server and `chog_loopback` sink. This verified capture geometry only: no gameplay interaction or explicit storage edit/clear was performed, and app audio/synchronized A/V were not tested. Private screenshot evidence: `chog-1969-native-dpr1-1792745089603.png`.
+- Native Chrome capture uses the existing `/home/ubuntu/.browser_data_dir` profile and CDP port29229 at DPR1/fullscreen1920×1080, matching the physical display. CSS inner/outer/screen/visual viewport metrics and the uncropped captured PNG were1920×1080. Chrome uses the existing local PulseAudio server and `chog_loopback` sink. This initial setup verified geometry only; subsequent gameplay and app-audio verification is recorded below.
 - The production preview was rebuilt after the timer fix and left running at `http://127.0.0.1:3103` with `MEMORY_WRITES_APPROVED=false` and no ledger; `/api/awakening-config` returned `{"enabled":false,"ledger":null}`. No real wallet or transaction was used.
 
-This checkpoint is implementation, NOT final visual or synchronized A/V approval. Final rendered/gameplay review after this timer fix and live post-change motion measurements remain pending; physical touch and synchronized A/V capture are unverified. Native screenshot capture verified geometry only, not design approval. No user visual review or recording was performed in this handoff. Existing private artwork bundle is unchanged. The final submission video has not been recorded or uploaded.
+### Final browser verification and evidence
+
+Application revision `ee6f173` is pushed. The full native `7025128` journey previously passed fresh opening, physical drawer, genuine live token1053 reconstruction, pointer/keyboard rings, earned awakening, Keep pointer hold, separate Burn keyboard hold, immutable reload, both route-specific memories/photographs/pursuit notices and planned chapters. Actual 1440×900 reduced-motion and 390×844 emulation checked reachable controls and no horizontal overflow. App sound output was independently captured through Pulse; muted was silent, enabled produced output. Navigation retained mute/volume, reload returned muted. Lead reviewed both route layouts. These unchanged paths were not repeated for the timer-only fix.
+
+Focused native1920×1080 verification on `ee6f173` then passed:
+- 10.004 seconds wall time → 30 seconds remaining; continuously visible timeout at 40.001 seconds.
+- Manual pause for2.310s and genuine hidden-tab pause for2.308s froze time; return required explicit Resume.
+- Timeout preserved exact receipt/progress strings. Untimed retry remained active after41.001 seconds.
+- Single-click Burn confirmation, immutable reload, incomplete memory, missing coordinates, IDENTITY UNKNOWN and matching planned-chapter lead.
+- No captured page errors or non-GET requests. Original profile Keep/index4 strings unchanged, restored foreground at native1920×1080/DPR1 with reduced motion off. Isolated test contexts closed; preview left running.
+
+Latest registered recording: `chog-ee6f173-timer-release-edited.mp4`,1920×1080/30fps,22.267seconds, showing the repaired encounter through Burn ending. **Silent and tool-time-compressed, not real-time or synchronized A/V.** Earlier full-opening Keep recording `chog-7025128-release-keep-edited.mp4` is29.367seconds and predates the timer fix; do not treat its countdown as current. Reports/runtime JSON and screenshots remain session evidence, not committed assets.
+
+The implementation is ready for Emma's visual/gameplay review, not approved for public release. Physical touch and synchronized A/V capture remain unverified. Existing private artwork bundle is unchanged and still needed by clean clones. Final submission video has not been narrated, recorded, uploaded or submitted. No PR, public deploy, main merge, paid services or wallet writes.
+
+**Next:** approve [the current ~100-second demo script](DEMO_SCRIPT.md), rehearse and capture an honest final narration/gameplay export within Chogathon's three-minute maximum. Verify a short A/V sample before a full take; independently recorded narration must not masquerade as in-game dialogue. Public artwork delivery/deployment and upload require separate approval. Older DEMO_CHECKLIST/DEMO_CAPTURE_WORKFLOW describe an obsolete integration-pilot flow and are marked historical.
 
 ## Previous checkpoint: NFT-dependent reconstruction verified
 

@@ -1,5 +1,7 @@
 # CHOG / 1969 — 2:40 genuine-app demo plan
 
+> Historical integration-pilot plan. The current cinematic branch uses the NFT reconstruction and erasure encounter: follow [DEMO_SCRIPT.md](DEMO_SCRIPT.md) and [CURRENT_STATE.md](CURRENT_STATE.md) instead. No final submission video has been recorded or uploaded.
+
 Issue #10 · source: `integration/pilot` · **shot plan + executable no-video rehearsal prepared; no final video captured or uploaded**.
 
 Runbook and guarded real-browser tooling: [`DEMO_CAPTURE_WORKFLOW.md`](DEMO_CAPTURE_WORKFLOW.md). Start with `npm run demo:preflight` and `npm run demo:check`; final recording stays blocked until genuine visual approval and integrated approved art.

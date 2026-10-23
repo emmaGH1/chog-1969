@@ -1,5 +1,7 @@
 # Real-browser demo capture workflow
 
+> Historical automation for `integration/pilot`, not a verified capture script for the current cinematic flow. Use [DEMO_SCRIPT.md](DEMO_SCRIPT.md) for the current shot plan and [CURRENT_STATE.md](CURRENT_STATE.md) for review/approval status. Preserve the safety boundaries below; do not treat an old rehearsal as proof of the new encounter.
+
 Branch: `integration/pilot`. **Prepared and rehearsed; final recording is blocked pending authentic companion/visual approval.** No media from PR #8 is promoted. This workflow records actual Chromium frames from the running production app—not reconstructed slides, mocked metadata, DOM-swapped text or fabricated wallet success.
 
 ## Safety boundaries
