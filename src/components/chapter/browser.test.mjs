@@ -35,8 +35,16 @@ try {
     await advance.click();
     await page.reload();
     await page.getByRole('heading',{name:'SOMEONE STILL REMEMBERS.'}).waitFor();
+    await page.getByRole('button',{name:'Read the memory without holding',exact:true}).click();
+    await page.getByText('we ran toward the sea, not away from it.',{exact:false}).waitFor();
+    assert.equal(await advance.isEnabled(),true);
     await advance.click();
     await page.getByText('END OF CHAPTER ONE',{exact:true}).waitFor();
+    await page.getByRole('button',{name:'Turn photograph to read the inscription',exact:true}).click();
+    await page.getByRole('button',{name:'Turn photograph to the image',exact:true}).waitFor();
+    await page.getByText('MEANWHILE, AT THE ARCHIVE',{exact:true}).waitFor();
+    await page.getByRole('button',{name:'Turn photograph to the image',exact:true}).press('Enter');
+    await page.getByRole('button',{name:'Turn photograph to read the inscription',exact:true}).waitFor();
     assert.equal(await advance.count(),0);
     await page.getByRole('button',{name:'previous scene'}).click();
     await page.getByRole('heading',{name:'SOMEONE STILL REMEMBERS.'}).waitFor();
@@ -55,10 +63,10 @@ try {
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     // Cancel restart leaves the ending intact; confirmation clears all progress.
     page.once('dialog',d=>d.dismiss());
-    await page.getByRole('button',{name:'restart',exact:true}).click();
+    await page.getByRole('button',{name:'Restart chapter',exact:true}).click();
     await page.getByText('END OF CHAPTER ONE',{exact:true}).waitFor();
     page.once('dialog',d=>d.accept());
-    await page.getByRole('button',{name:'restart',exact:true}).click();
+    await page.getByRole('button',{name:'Restart chapter',exact:true}).click();
     await page.getByRole('heading',{name:'HISTORY IS WRITTEN BY THE SURVIVORS.'}).waitFor();
     await page.close();
     console.log(`PASS ${width}px: both routes, refresh, puzzle, focus, back, restart, malformed save, overflow`);

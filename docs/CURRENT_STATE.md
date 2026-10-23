@@ -2,7 +2,9 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current decision: new visual checkpoint awaiting Emma's review
+## Current decision: continue the accepted CHOG-led direction
+
+Emma reviewed the CHOG-led cover/erasure checkpoint and replied **"its better continue"**. Carry that direction through the remaining Chapter One scenes without expanding the plot, casting a new canonical NFT role, enabling writes or publishing. New work: distinct under-harbor seal and departure illustrations; optional hold-to-read memory with a single-click alternative; draggable/tappable/keyboard-turnable photograph and existing surveillance cliffhanger. The second witness remains unassigned rather than silently attaching a real NFT identity. Its memory is explicitly fictional, not an onchain unlock. These changes are being verified; previous checkpoint results below remain historical until the next validation update.
 
 Emma rejected the original CSS-room staging, disconnected reference cutouts and conventional UI. She explicitly rejected warm-paper backgrounds and authorized: **"create reference-guided scene/pose artwork yourself. draw inspo from our video inspo but make our illustration look like the chog arts and their theme"**. This supersedes the old art-sourcing STOP gate.
 

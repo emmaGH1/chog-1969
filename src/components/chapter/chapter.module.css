@@ -38,7 +38,7 @@
 .artNotice {display: block; margin: 24px 0 0; color: #a9b7cc; font-size: 9px; line-height: 1.6;}
 .pip {position: absolute; left: 17%; top: 36%; width: min(23vw,380px); border: 8px solid #d1b797; transform: rotate(-5deg); box-shadow: 10px 14px 30px #0008;}
 .evidence, .escapePlan {color: var(--reading-ink); margin-top: 16px;}
-.evidence svg {display: block; width: 100%; height: auto; color: #151b2a;}
+.evidenceState {font: 11px monospace; letter-spacing: .12em; color: #ffb3ce; border-top: 1px solid #99aac249; padding-top: 16px;}
 .evidenceTabs {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}
 .evidenceTabs button {border: 1px solid #8699b7; background: #101f34; color: #fff; min-height: 48px; padding: 12px; font-weight: 700;}
 .evidenceTabs button[aria-pressed="true"] {background: #304765; border-color: #ff9bc4;}
@@ -52,10 +52,41 @@
 .escapePlan button[aria-pressed="true"] {opacity: 1; color: #ffb0cc;}
 .escapePlan button[aria-pressed="true"]::after {content: "SAVED"; display: block; margin-top: 12px; font: bold 9px monospace; letter-spacing: .15em;}
 .reader input {scroll-margin-bottom: 100px;}
+.memoryEcho {margin: 24px 0;}
+.memoryEcho > p {font-size: 14px; line-height: 1.6; color: #d1dceb;}
+.sealTouch {position: absolute; top: 28vh; left: 22%; width: 170px; height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px; border: 1px solid #ffd5a066; border-radius: 50%; background: #03112718; color: #ffe0b4; cursor: pointer; touch-action: none; user-select: none; -webkit-user-select: none;}
+.sealTouch > span:first-child {background: #071322e8; padding: 8px 12px; font: bold 10px monospace; letter-spacing: .1em; white-space: nowrap;}
+.sealTouch:hover,.sealTouch:focus-visible {border-color: #ffe2bb; outline: 2px solid #ffba85; outline-offset: 8px;}
+.sealTouch[data-revealed="true"] {border-color: transparent; cursor: default;}
+.listenTrack {display: block; height: 3px; width: 90px; background: #ffffff30; margin-bottom: 10px;}
+.listenTrack > span {display: block; width: 100%; height: 100%; background: #ffd1a0; transform-origin: left;}
+.memoryWords {min-height: 140px;}
+.memoryWords blockquote {margin: 20px 0; padding: 0 0 0 22px; border-left: 3px solid #ffb3ce; animation: pageIn .4s ease-out;}
+.memoryWords blockquote small {font: bold 10px monospace; letter-spacing: .12em; color: #ffb3ce;}
+.memoryWords blockquote p {font: 900 clamp(24px,2vw,36px)/1.15 ChogDisplay,sans-serif; text-transform: uppercase; margin-top: 14px;}
+.unheard {color: #9cabbd; font-style: italic; padding: 18px 0;}
+.fictionNote {display: block; margin: 16px 0 0; color: #a9b7cc; font-size: 10px; line-height: 1.5;}
+.photoStage {position: absolute; top: 27vh; left: 11%; width: 34%; max-width: 520px; margin: 0; perspective: 1600px; transform: rotate(-6deg);}
+.photograph {position: relative; display: block; width: 100%; aspect-ratio: 1 / 1.12; padding: 0; border: 0; background: none; color: #152432; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.7,.2,1); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab;}
+.photograph[data-dragging="true"] {transition: none; cursor: grabbing;}
+.photograph:focus-visible {outline: 3px solid #ff9fc4; outline-offset: 10px;}
+.photoFront,.photoBack {position: absolute; inset: 0; display: flex; flex-direction: column; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #cbd2d6; border: 12px solid #dce1e1; box-shadow: 12px 24px 40px #0009;}
+.photoFront img {display: block; width: 100%; height: 89%; object-fit: cover; pointer-events: none;}
+.photoFront > span {flex: 1; display: grid; place-items: center; font: bold clamp(8px,.7vw,11px) monospace; letter-spacing: .13em; padding-top: 8px;}
+.photoBack {transform: rotateY(180deg); padding: 10%; align-items: flex-start; justify-content: space-between; text-align: left; background: #cbd2d6;}
+.photoBack > span:not(.photoBackRule) {font: 900 clamp(22px,2.4vw,42px)/1.15 ChogDisplay,sans-serif; text-transform: uppercase;}
+.photoBack small {font: bold 11px monospace; letter-spacing: .1em;}
+.photoBackRule {height: 2px; width: 40%; background: #53616c;}
+.photoStage figcaption {margin: 20px -20px 0; text-align: center; color: #e2e8f0; font-size: 11px; line-height: 1.6; transform: rotate(6deg); text-shadow: 0 1px 5px #000;}
+.photoAftermath {min-height: 160px; margin: 24px 0;}
+.photoAftermath > small {font: bold 10px monospace; color: #ffb3ce; letter-spacing: .12em;}
+.photoAftermath > p {font-size: 15px; line-height: 1.6; color: #d1dceb;}
+.photoAftermath > strong {font: 900 22px ChogDisplay,sans-serif; text-transform: uppercase;}
 @keyframes pageIn {from {opacity: .5;} to {opacity: 1;}}
 @media(max-width: 1100px) and (min-aspect-ratio: 1/1) {
  .scene {margin-left: 50%; padding-top: 28px;}
  .sceneHeader h1 {font-size: 40px;}
+ .sealTouch {left: 19%; width: 140px; height: 140px;}
 }
 @media(max-aspect-ratio: 1/1) {
  .reader {padding: 0 6% 40px;}
@@ -76,5 +107,11 @@
  .escapePlan :global(.choice-grid) {grid-template-columns: 1fr 1fr;}
  .escapePlan :global(.choice) {font-size: 24px;}
  .navigation {gap: 20px;}
+ .reader[data-scene="6"] .scene {padding-top: 28svh;}
+ .sealTouch {position: absolute; left: 17%; top: 23svh; width: 120px; height: 120px;}
+ .photoStage {position: relative; top: auto; left: auto; width: min(85%,360px); max-width: none; margin: 36px auto 44px;}
+ .photoFront > span {font-size: 8px;}
+ .photoBack > span:not(.photoBackRule) {font-size: clamp(26px,8vw,36px);}
+ .memoryWords {min-height: 120px;}
 }
-@media(prefers-reduced-motion: reduce) {.sceneHeader,.backdrop img {animation: none;} .progressTrack > div {transition: none;}}
+@media(prefers-reduced-motion: reduce) {.sceneHeader,.backdrop img,.memoryWords blockquote {animation: none;} .progressTrack > div,.photograph {transition: none;}}

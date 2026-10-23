@@ -1,6 +1,6 @@
 "use client";
 import {useEffect,useRef,useState} from "react";
-import {DrawerEvidence, EscapePlan} from "./chapter/ChapterInteractions";
+import {DrawerEvidence, EscapePlan, MemoryEcho, Photograph} from "./chapter/ChapterInteractions";
 import styles from "./chapter/chapter.module.css";
 import {advanceProgress, canAdvance, INITIAL_PROGRESS, parseProgress, SAVE_KEY} from "./chapter/progress";
 import Link from "next/link";
@@ -9,7 +9,7 @@ const scenes=[
  {k:"s2",number:"02 / the sealed drawer",eyebrow:"RESTRICTED WING / AFTER DARK",headline:"SOME THINGS ARE NOT SUPPOSED TO BE FOUND.",body:"A discarded ledger points to a locked drawer. The only clue is that the first record reads 19 and the shipment label reads 69.",speaker:"neri",line:"who leaves a puzzle in a room full of forbidden records?"},
  {k:"s3",number:"03 / a familiar stranger",eyebrow:"MEMORY ANOMALY DETECTED",headline:"THE DRAWING JUST MOVED.",body:"The creature on the page opens its eyes. A people erased from history suddenly have a voice.",speaker:"pip",line:"excuse me? i'm a legendary being of unimaginable power."},
  {k:"s4",number:"04 / the redactors",eyebrow:"THE PALE ACCORD / PURSUIT ORDER",headline:"YOU HAVE BEEN MARKED FOR ERASURE.",body:"Captain Sera's soldiers reach the archive. Neri has seconds to choose how to escape.",speaker:"sera",line:"place the drawing on the floor. your life depends on what you do next."},
- {k:"s5",number:"05 / the sealed witness",eyebrow:"ARCHIVE ENTRY / GENESIS",headline:"SOMEONE STILL REMEMBERS.",body:"A second illustrated seal sits beneath the harbor. This time it bears the identity of a real Chog Genesis NFT. Its secrets aren't for the Accord to decide.",speaker:"memory",line:"we ran toward the sea, not away from it. we were trying to close the door."},
+ {k:"s5",number:"05 / the sealed witness",eyebrow:"BENEATH FREEWAKE / THE SEALED WITNESS",headline:"SOMEONE STILL REMEMBERS.",body:"Beneath the harbor, another memory is sealed away. The Accord erased the names. It could not silence every witness.",speaker:"memory",line:"we ran toward the sea, not away from it. we were trying to close the door."},
  {k:"s6",number:"06 / the photograph",eyebrow:"FREEWAKE HARBOR / DEPARTURE",headline:"THE TRUTH HAS A PRICE.",body:"A smuggler named Rook helps Neri escape and hands her a photograph. Her missing brother stands beside Chog drawings. Someone has been waiting for her.",speaker:"rook",line:"your brother asked me to keep this. if you're holding it, they know you're here."},
 ] as const;
 const sceneArtwork = [
@@ -17,8 +17,8 @@ const sceneArtwork = [
  {src:"archive-scene.webp",alt:"The restricted blue filing cabinet and its sealed drawer."},
  {src:"awakening-reaction.webp",alt:"Neri reacts to the awakening of the living drawing."},
  {src:"redactors-scene.webp",alt:"Neri shelters behind the archive cabinet as Redactor silhouettes enter the doorway."},
- {src:"chog-ensemble.webp",alt:"An illustrative interpretation of four Genesis CHOGs overlooking the harbor, not the collectible originals."},
- {src:"chog-ensemble.webp",alt:"The CHOG outcasts above Veyra's harbor."},
+ {src:"harbor-witness.webp",alt:"A bronze memory seal in a flooded blue-stone vault beneath the harbor."},
+ {src:"harbor-departure.webp",alt:"Neri receives a photograph beside a moored boat at Freewake harbor."},
 ] as const;
 export default function ChapterExperience(){
  const [progress,setProgress]=useState(INITIAL_PROGRESS);
@@ -50,7 +50,7 @@ export default function ChapterExperience(){
  function next(){setProgress(advanceProgress);}
  function check(){if(code.trim()==="1969"){setProgress(p=>({...p,unlocked:true}));}else setWrong(v=>v+1);}
  if(!restored)return <section className={styles.reader} aria-busy="true"><p role="status">Opening your chapter…</p></section>;
- return <section className={styles.reader} aria-label="Chapter One reader">
+ return <section className={styles.reader} data-scene={index+1} aria-label="Chapter One reader">
    <div className={styles.backdrop} aria-hidden="true">
      <img key={sceneArtwork[index].src} src={`/private-review/${sceneArtwork[index].src}`} alt="" onError={()=>setMissingArt(true)}/>
    </div>
@@ -66,7 +66,7 @@ export default function ChapterExperience(){
    <article className={styles.story}>
      <div className="eyebrow">ACT I / {scene.number}</div>
      <p className="story-copy">{scene.body}</p>
-     <div className="speech"><span className="speech-speaker">{scene.speaker}</span><p>“{scene.line}”</p></div>
+     {index!==4&&<div className="speech"><span className="speech-speaker">{scene.speaker}</span><p>“{scene.line}”</p></div>}
      {index===1&&<DrawerEvidence unlocked={unlocked}/>}
      {index===1&&!unlocked&&<div className="interaction">
        <strong>INSPECT THE DRAWER</strong><p id="drawer-help">Place the two record numbers side by side. Enter four digits.</p>
@@ -84,8 +84,8 @@ export default function ChapterExperience(){
      </div>}
      {index===3&&route&&<p className="unlock-message">{route==="keep"?"You save the documents, but a guard catches a glimpse of your face.":"The smoke conceals your escape, but an important record about Neri's brother is lost."}</p>}
      {index>=4&&route&&<p className="unlock-message">{route==="keep"?"In your satchel: the rescued records. Behind you: a witness who knows your face.":"In your satchel: ash where a record should be. For now, the Redactors have no face to follow."}</p>}
-     {index===4&&<div className="interaction"><strong>A REAL CHOG SEAL</strong><p>The Genesis collection exists on Monad. You can inspect its authentic onchain identity. We will only activate holder decisions after the contract and wallet flow are tested.</p><Link href="/archive" className="link">inspect a real Genesis token ↗</Link></div>}
-     {index===5&&<div className="interaction"><strong>END OF CHAPTER ONE</strong><p>On the archive roof, a lens turns toward the harbor. Sera pins a fresh surveillance print to the wall. Neri and Pip are already circled in ink.</p><p>Next: the city that never existed.</p><Link href="/archive" className="link">explore the surviving seals ↗</Link></div>}
+     {index===4&&<><MemoryEcho line={scene.line}/><div className="interaction"><strong>THE ORIGINALS SURVIVE</strong><p>The fiction has witnesses. CHOG Genesis has real onchain records. Inspect the original collectibles without connecting a wallet; this witness's token identity is not assigned.</p><Link href="/archive" className="link">Inspect Genesis originals</Link></div></>}
+     {index===5&&<div className="interaction"><strong>END OF CHAPTER ONE</strong><Photograph onMissingArt={()=>setMissingArt(true)}/><Link href="/archive" className="link">Explore the surviving seals</Link></div>}
      {index<5&&!canAdvance(progress)&&<p className={styles.gateHint}>{index===1?"Open the drawer to continue.":"Choose an escape route to continue."}</p>}
      <nav className={styles.navigation} aria-label="Story navigation">
        {index>0&&<button className={styles.back} onClick={()=>setProgress(p=>({...p,index:p.index-1}))}>Previous scene</button>}
