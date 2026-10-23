@@ -6,7 +6,13 @@ Updated 2026-10-23 UTC. Read before older planning documents.
 
 Emma next said **"lets continue"**. This bounded pass connects the existing read-only Genesis archive to the Chapter One visual world, without expanding the plot. The old purple lookup page is replaced with cobalt harbor art, pink ink-edged controls, unchanged original Pip artwork and a one-click lookup of onchain token1053 (display CHOG #545). Arbitrary token lookup remains; the original default1969 is explicitly distinguished from Pip. Successful reads focus/scroll to the dossier (reduced-motion aware). Chain evidence is accessible in a native disclosure, with all existing sources, provenance warnings, holder controls and disabled-write gates retained.
 
-This archive pass reuses the existing private bundle; no new artwork, casting or asset hash changes. API, wallet logic and story/save gates are unchanged. Code checks pass:45/45 unit tests, typecheck, production build including lint, whitespace check. Updated mocked browser regression verifies1053 selection, arbitrary token lookup, result focus, evidence disclosure, unavailable art, error/retry, and existing wallet safety at375/1280px. Full mocked holder-flow regression also passes; these are not real transactions. Direct rendered review confirmed a live1053 read returned CHOG #545 and original metadata artwork. Formal native landscape/portrait/recording checks are pending at this implementation checkpoint. The final reduced-motion CSS override will be included in that production build.
+This archive pass reuses the existing private bundle; no new artwork, casting or asset hash changes. API, wallet logic and story/save gates are unchanged. Code checks pass:45/45 unit tests, typecheck, production build including lint, whitespace check. Updated mocked browser regression verifies1053 selection, arbitrary token lookup, result focus, evidence disclosure, unavailable art, error/retry, and existing wallet safety at375/1280px. Full mocked holder-flow regression also passes; these are not real transactions.
+
+Final612559b production UI checks passed with live reads, not mocked responses: saved scene5 to archive,1053 returning CHOG #545, default1969 returning CHOG #1461, original metadata artwork, keyboard evidence disclosure, focused result, and return to unchanged saved chapter. Exact1920×1080,1440×900 and390×844 DPR1 checks passed with no overflow. Reduced motion uses one jump, HTML scroll-behavior:auto and no dossier animation. Config remains enabled:false/ledger:null; no real wallet was connected. Save strings/storage keys are unchanged; final index4/unlocked:true/route:keep. Production3103 remains running; browser left native1920×1080 on saved scene5.
+
+Latest archive recording: chog-612559b-archive-edited.mp4,1920×1080,30fps,15.367seconds. Registered, silent and tool-time-compressed: NOT real-time or synchronized A/V. Native intro and live Pip/evidence screenshots are attached in the session. Portrait is emulated; physical touchscreen, screen-reader and real-wallet signing were not tested. Await Emma's next visual checkpoint; no public deployment, merge, new plot or wallet writes.
+
+Production dependency audit passed with0vulnerabilities. CI does not trigger this feature branch; no PR was opened. A knowledge-only blueprint addition for read-only production restart and native visible-size restoration is proposed, awaiting approval; existing native recording/audio knowledge remains saved.
 
 Emma reviewed the CHOG-led cover/erasure checkpoint and replied **"its better continue"**. The continuation is implemented and browser-verified: distinct under-harbor seal and departure illustrations; optional hold-to-read memory with a single-click alternative; draggable/tappable/keyboard-turnable photograph and existing surveillance cliffhanger. The second witness remains unassigned rather than silently attaching a real NFT identity. Its memory is explicitly fictional, not an onchain unlock. No plot expansion, new canonical casting, writes or publication.
 
@@ -22,7 +28,7 @@ The archive still uses cobalt steel, amber practical lights, clue inspection, ph
 
 - Repository: emmaGH1/chog-1969.
 - Existing branch: `feat/devin-cinematic-release`, originally from `integration/pilot`. Never use main as baseline.
-- Current application revision: `bbb19c9f62afe894a556073fcafcf1df0900c65d` (copy refinement); continuation implementation: `40a58131af86ac56f35cd20236ff7ac097fda31f`. Earlier CHOG-led opening revision: `e84bdf89f496d5b28d55902e095bbbe46695b8e9`. Earlier Neri-led checkpoints are superseded, not approved design references.
+- Current application revision: `612559b` (connected read-only Genesis archive). Chapter One continuation: `bbb19c9f62afe894a556073fcafcf1df0900c65d` (copy refinement), `40a58131af86ac56f35cd20236ff7ac097fda31f` (implementation). Earlier CHOG-led opening: `e84bdf89f496d5b28d55902e095bbbe46695b8e9`. Earlier Neri-led checkpoints are superseded, not approved design references.
 - Opening: `src/components/ArchiveOpening.tsx` and `src/components/chapter/opening.module.css`.
 - Chapter presentation: `ChapterExperience.tsx`, `chapter.module.css`, `ChapterInteractions.tsx`. NFT API, wallet/write gates and progress parsers were not changed.
 - Camera runs requestAnimationFrame only while moving, updates the world CSS variable directly, and publishes React state only at visibility/interaction thresholds. Smoothing55ms replaces140ms; wheel input no longer caps every event at180px.
@@ -31,7 +37,7 @@ The archive still uses cobalt steel, amber practical lights, clue inspection, ph
 - No PR, public deployment, main merge, wallet signatures, real transactions, contract writes or new purchases.
 - Private authenticated preview: https://chog-private-archive-review--2hkgr7rx.preview.devinapps.com
 
-## Verified status and remaining checks
+## Previous Chapter One checkpoint (retained evidence)
 
 Latest continuation: focused opening/progress6/6 and full tests45/45 passed at40a5813. Final bbb19c9 copy-only revision passed typecheck, production build including lint/type validation, and whitespace checks. No dependency changes. GitHub CI does not trigger for this feature branch; no PR was opened. Production server remains on3103.
 
