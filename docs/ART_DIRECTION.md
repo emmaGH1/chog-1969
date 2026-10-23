@@ -1,4 +1,6 @@
 # Visual direction — manga x Chog
+> Current direction: read CURRENT_STATE.md first. Emma rejected the warm-paper/purple reader described below and the subsequent Neri-led cover. The hero must center CHOG outcasts/misfits, not Neri; no decorative title slash or CTA arrow. Use immersive illustrated environments, intentional light, bold type and connected interactive manga framing. The historical palette/layout proposal below is NOT approved direction. The canonical NFT rule remains binding: generated scene interpretations must be distinguished from unmodified collectible originals.
+
 Concept: the human world was drained of its memory and color. Chog awakens as vibrant violet re-enters the page. A Chog-native UI frames an authored monochrome adventure manga. Never reskin the original collectible or impersonate its metadata.
 
 Palette: deep ink #161220, Chog violet #794CFA, paper #F8F3E8, lilac #E5D5FF, warm pink #FF7FC7. These are OUR proposed colors, not official hex codes.
