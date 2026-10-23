@@ -1,6 +1,7 @@
 // Standalone browser check: see docs/STORY_ENGINE.md for prerequisites and command.
 import assert from 'node:assert/strict';
 import {mkdir} from 'node:fs/promises';
+import {pipDossier,solvePip} from '../../../tests/pip-fixture.mjs';
 const {chromium} = await import(process.env.PLAYWRIGHT_MODULE || 'playwright-core');
 const browser = await chromium.launch({executablePath: process.env.CHROME_PATH || undefined, args:['--no-sandbox']});
 const base = process.env.STORY_BASE_URL || 'http://127.0.0.1:3101';
@@ -11,6 +12,7 @@ try {
   for (const width of [375,1280]) {
     const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'});
     page.on('pageerror',e=>errors.push(e.message));
+    await page.route('**/api/nft/1053',route=>route.fulfill({json:pipDossier}));
     await page.goto(`${base}/chapter/1`);
     const advance=page.getByRole('button',{name:'continue the story'});
     await advance.click();
@@ -27,7 +29,9 @@ try {
     await page.reload();
     await page.getByText('The drawer clicks open.',{exact:false}).waitFor();
     await advance.click();
+    await solvePip(page);
     await page.getByRole('heading',{name:'THE DRAWING JUST MOVED.'}).waitFor();
+    await page.waitForFunction(()=>document.activeElement?.getAttribute('aria-labelledby')==='scene-heading');
     assert.equal(await page.evaluate(()=>document.activeElement?.getAttribute('aria-labelledby')),'scene-heading');
     await advance.click();
     assert.equal(await advance.isDisabled(),true);

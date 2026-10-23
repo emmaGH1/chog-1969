@@ -41,6 +41,7 @@ jobs:
           curl --silent --fail "$STORY_BASE_URL" > /dev/null
           node tests/holder.browser.mjs
           node tests/holder-flow.browser.mjs
+          node tests/pip-reconstruction.browser.mjs
           node src/components/chapter/browser.test.mjs
       - uses: actions/upload-artifact@v4
         if: always()

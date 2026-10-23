@@ -5,10 +5,13 @@ import {useEffect, useRef, useState, type CSSProperties} from "react";
 import {INITIAL_OPENING, OPENING_KEY, parseOpening} from "./chapter/opening-progress";
 import {parseProgress, SAVE_KEY} from "./chapter/progress";
 import styles from "./chapter/opening.module.css";
+import PipReconstruction from "./chapter/PipReconstruction";
+import {usePipReconstruction} from "./chapter/usePipReconstruction";
 
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
 
 export default function ArchiveOpening() {
+  const reconstruction=usePipReconstruction();
   const [save, setSave] = useState({...INITIAL_OPENING});
   const [ready, setReady] = useState(false);
   const [saveError, setSaveError] = useState(false);
@@ -124,7 +127,7 @@ export default function ArchiveOpening() {
         world.current?.style.setProperty("--camera", "1");
         cameraStageRef.current = 2; setCameraStage(2);
       }
-      if (restored.opened) {setPull(1); setBeat(4);}
+      if (restored.opened) setPull(1);
     } catch {setSaveError(true);}
     setReady(true);
     const preference = matchMedia("(prefers-reduced-motion: reduce)");
@@ -145,7 +148,7 @@ export default function ArchiveOpening() {
   }, [save, ready]);
 
   useEffect(() => {
-    if (!save.opened || beat === 4) return;
+    if (!entered || !save.opened || !reconstruction.receipt || beat === 4) return;
     const timers = [
       setTimeout(() => {setBeat(1); cue(150, .3);}, reduced ? 0 : 500),
       setTimeout(() => {setBeat(2); cue(330, 1);}, reduced ? 100 : 1500),
@@ -155,7 +158,7 @@ export default function ArchiveOpening() {
     return () => timers.forEach(clearTimeout);
     // A single timeline starts when the drawer opens, not on each beat.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [save.opened, reduced]);
+  }, [entered, save.opened, reduced, reconstruction.receipt]);
 
   useEffect(() => {
     const element = root.current;
@@ -205,6 +208,7 @@ export default function ArchiveOpening() {
   }
 
   function continueChapter(event: React.MouseEvent<HTMLAnchorElement>) {
+    if(!reconstruction.receipt){event.preventDefault();return;}
     try {
       const progress = parseProgress(localStorage.getItem(SAVE_KEY));
       localStorage.setItem(SAVE_KEY, JSON.stringify({...progress, unlocked: true, index: Math.max(2, progress.index)}));
@@ -220,6 +224,7 @@ export default function ArchiveOpening() {
     if (!confirm("Replay this opening? Your later chapter choices will not be erased.")) return;
     stopHold();
     openRef.current = false;
+    reconstruction.reset();
     setSave({...INITIAL_OPENING});
     cameraGoal.current = 0;
     cameraPosition.current = 0;
@@ -236,6 +241,10 @@ export default function ArchiveOpening() {
     : beat < 4 ? "That is not an empty record."
     : "Footsteps. We are no longer alone.";
   const sceneStyle = {"--pull": pull} as CSSProperties;
+
+  if(entered && save.opened && reconstruction.ready && !reconstruction.receipt) {
+    return <PipReconstruction onRecovered={receipt=>{reconstruction.complete(receipt);setBeat(0);cue(150,1,.04);}} onLeave={()=>setEntered(false)}/>;
+  }
 
   return <div ref={root} className={styles.experience} style={sceneStyle} data-entered={entered} data-beat={beat} data-opened={save.opened} data-ready={ready}
     onPointerDown={event => {
@@ -267,7 +276,7 @@ export default function ArchiveOpening() {
         <p className={styles.kicker}>OUTCASTS. NOT FORGOTTEN.</p>
         <h1>CHOG<span>1969</span></h1>
         <p className={styles.premise}>Branded monsters. Erased from history.<br/>The misfits still have a story to tell.</p>
-        <button className={styles.enter} onClick={() => setEntered(true)} disabled={!ready}>{save.record || save.shipment ? "RESUME THE STORY" : "ENTER THE STORY"}</button>
+        <button className={styles.enter} onClick={() => setEntered(true)} disabled={!ready || !reconstruction.ready}>{save.record || save.shipment ? "RESUME THE STORY" : "ENTER THE STORY"}</button>
         <p className={styles.coverMeta}>Their history is forbidden. Go find it.<br/>An interactive manga. No wallet needed.</p>
       </div>
       <div className={styles.coverBottom}><span>A STORY FOR THE ONES WHO NEVER FIT IN.</span><span>INSPIRED BY CHOG GENESIS · INDEPENDENT FICTION</span></div>
@@ -347,15 +356,16 @@ export default function ArchiveOpening() {
       {!atDesk && <button onClick={() => moveCamera(cameraGoal.current + (reduced ? 1 : .34))}>Move closer ↓</button>}
       <small>ART DIRECTION REVIEW · NOT FINAL APPROVAL</small>
     </footer>
-    {(saveError || soundError || missingArt) && <div className={styles.warning} role="status">
+    {(saveError || reconstruction.storageError || soundError || missingArt) && <div className={styles.warning} role="status">
       {missingArt ? "Private review artwork is missing. Run the documented local art preparation; no substitute is shown. " : ""}
-      {saveError ? "Storage unavailable. Keep this tab open; the saved chapter may require its original puzzle again. " : ""}
+      {saveError || reconstruction.storageError ? "Storage unavailable. Keep this tab open; a reload may require the puzzles again. " : ""}
       {soundError ? "Audio unavailable. The story remains playable without sound." : ""}
     </div>}
     {help && <aside className={styles.guide} aria-label="Reader guide">
       <button onClick={() => setHelp(false)}>Close guide ×</button>
       <h2>Leave no record.</h2>
       <p>Scroll, swipe upward, or use “Move closer” to enter. Inspect both papers. Set 19 + 69 on the brass index. Drag the handle downward, or hold it for a second. Keyboard: Tab to the handle and hold Enter or Space.</p>
+      <p>Inside the drawer, read Pip’s actual Genesis record. Drag the three identity rings until each pink needle meets its blue mark, then press to restore him. Click a ring to turn one stop; keyboard users can use the arrow keys. The memory is fiction; the traits are real. Replay also resets this local reconstruction.</p>
       <p>Sound is opt-in: original synthesized mechanical cues, not a finished soundscape. Reduced-motion settings are respected. Replay resets only this opening, not your later keep/burn choice.</p>
       <p>Scene illustrations are awaiting visual approval. The cover interprets Genesis CHOG #1340 (token 1848), #4 (512), #920 (1428) and #1112 (1620); it is not their original collectible artwork or an approved story casting. Neri’s supplied design guides the archive scenes; Pip’s CHOG #545 remains the unchanged original. No rights, holder consent or official endorsement inferred.</p>
       <Link href="/archive">Read-only Genesis archive ↗</Link>

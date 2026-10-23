@@ -1,5 +1,5 @@
 import { createPublicClient, defineChain, http, parseAbi } from "viem";
-export const GENESIS_CONTRACT = "0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763" as const;
+export {GENESIS_CONTRACT} from "./genesis";
 export const monad = defineChain({
   id: 143,
   name: "Monad Mainnet",

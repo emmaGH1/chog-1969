@@ -1,0 +1,70 @@
+// Mocked RPC only; no wallet calls. Live verification is a separate review.
+import assert from 'node:assert/strict';
+import {pipDossier,solvePip} from './pip-fixture.mjs';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'playwright-core');
+const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||undefined,args:['--no-sandbox']});
+const base=process.env.STORY_BASE_URL||'http://127.0.0.1:3103';
+const receiptKey='chog1969:pip-reconstruction:v1';
+const chapter=JSON.stringify({version:1,index:4,unlocked:true,route:'burn'});
+try {
+  const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.addInitScript(({chapter})=>{
+    if(!localStorage.getItem('chog1969:pilot'))localStorage.setItem('chog1969:pilot',chapter);
+    window.walletCalls=[];
+    window.ethereum={request:async({method})=>{window.walletCalls.push(method);throw new Error('Unexpected wallet call');}};
+  },{chapter});
+  let response={...pipDossier,tokenId:'1969'};
+  await page.route('**/api/nft/1053',route=>route.fulfill({json:response}));
+  await page.goto(base+'/chapter/1');
+  await page.getByRole('heading',{name:'MAKE HIM EXIST AGAIN.'}).waitFor();
+  assert.equal(await page.getByRole('button',{name:'Continue the story',exact:true}).count(),0);
+  await page.getByRole('button',{name:'READ PIP’S GENESIS RECORD',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'not Pip'}).waitFor();
+  assert.equal(await page.getByRole('slider').count(),0);
+  response={...pipDossier,metadata:null};
+  await page.getByRole('button',{name:'READ PIP’S GENESIS RECORD',exact:true}).click();
+  await page.getByRole('status').filter({hasText:'metadata is unavailable'}).waitFor();
+  assert.equal(await page.getByRole('slider').count(),0);
+  response=pipDossier;
+  await page.getByRole('button',{name:'READ PIP’S GENESIS RECORD',exact:true}).click();
+  await page.getByRole('slider',{name:'Head identity ring',exact:true}).waitFor();
+  assert.equal(await page.getByRole('button',{name:'Press to restore Pip’s erased record',exact:true}).isDisabled(),true);
+  // Partial adjustments are not a completion receipt.
+  await page.getByRole('slider',{name:'Head identity ring',exact:true}).press('ArrowRight');
+  assert.equal(await page.evaluate(key=>localStorage.getItem(key),receiptKey),null);
+  await page.reload();
+  await solvePip(page);
+  await page.getByRole('heading',{name:'SOMEONE STILL REMEMBERS.'}).waitFor();
+  assert.equal(await page.evaluate(()=>localStorage.getItem('chog1969:pilot')),chapter);
+  const saved=await page.evaluate(key=>localStorage.getItem(key),receiptKey);
+  assert.equal(JSON.parse(saved).tokenId,'1053');
+  await page.reload();
+  await page.getByRole('heading',{name:'SOMEONE STILL REMEMBERS.'}).waitFor();
+  assert.deepEqual(await page.evaluate(()=>window.walletCalls),[]);
+  assert.deepEqual(errors,[]);
+  await page.close();
+
+  const opening=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});
+  await opening.route('**/api/nft/1053',route=>route.fulfill({json:pipDossier}));
+  await opening.goto(base);
+  await opening.getByRole('button',{name:'ENTER THE STORY',exact:true}).click();
+  await opening.getByRole('button',{name:'Move closer',exact:false}).click();
+  await opening.getByRole('button',{name:'Inspect first record',exact:true}).click();
+  await opening.getByRole('button',{name:'Inspect shipment label',exact:true}).click();
+  await opening.getByRole('button',{name:'Combine 19 and 69 to set drawer index',exact:true}).click();
+  const handle=opening.getByRole('button',{name:'Pull drawer handle; drag down or hold Enter',exact:true});
+  const box=await handle.boundingBox();
+  await opening.mouse.move(box.x+box.width/2,box.y+box.height/2);
+  await opening.mouse.down();
+  await opening.mouse.move(box.x+box.width/2,box.y+box.height/2+140,{steps:10});
+  await opening.mouse.up();
+  await opening.getByRole('heading',{name:'MAKE HIM EXIST AGAIN.'}).waitFor();
+  assert.equal(await opening.getByRole('link',{name:'Hide the drawing.',exact:false}).count(),0);
+  await solvePip(opening);
+  await opening.getByRole('link',{name:'Hide the drawing.',exact:false}).click();
+  await opening.getByRole('heading',{name:'THE DRAWING JUST MOVED.'}).waitFor();
+  assert.equal(await opening.getByRole('slider').count(),0);
+  await opening.close();
+  console.log('PASS reconstruction: wrong identity, missing metadata, partial reset, preserved Burn, keyboard rings, reload, physical drawer gate, awakening, zero wallet calls (mocked RPC)');
+} finally {await browser.close();}

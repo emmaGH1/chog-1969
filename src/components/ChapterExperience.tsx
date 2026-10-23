@@ -4,6 +4,8 @@ import {DrawerEvidence, EscapePlan, MemoryEcho, Photograph} from "./chapter/Chap
 import styles from "./chapter/chapter.module.css";
 import {advanceProgress, canAdvance, INITIAL_PROGRESS, parseProgress, SAVE_KEY} from "./chapter/progress";
 import Link from "next/link";
+import PipReconstruction from "./chapter/PipReconstruction";
+import {usePipReconstruction} from "./chapter/usePipReconstruction";
 const scenes=[
  {k:"s1",number:"01 / the official history",eyebrow:"VEYRA / CENTRAL ARCHIVE",headline:"HISTORY IS WRITTEN BY THE SURVIVORS.",body:"Two centuries ago, the world survived a terrible catastrophe. The Pale Accord says the Chogs caused it. Every scrap of their history was destroyed.",speaker:"neri",line:"if they're all gone, why are we still hunting them?"},
  {k:"s2",number:"02 / the sealed drawer",eyebrow:"RESTRICTED WING / AFTER DARK",headline:"SOME THINGS ARE NOT SUPPOSED TO BE FOUND.",body:"A discarded ledger points to a locked drawer. The only clue is that the first record reads 19 and the shipment label reads 69.",speaker:"neri",line:"who leaves a puzzle in a room full of forbidden records?"},
@@ -21,6 +23,7 @@ const sceneArtwork = [
  {src:"harbor-departure.webp",alt:"Neri receives a photograph beside a moored boat at Freewake harbor."},
 ] as const;
 export default function ChapterExperience(){
+ const reconstruction=usePipReconstruction();
  const [progress,setProgress]=useState(INITIAL_PROGRESS);
  const sceneRef=useRef<HTMLDivElement>(null);
  const previousIndex=useRef<number | null>(null);
@@ -47,15 +50,16 @@ export default function ChapterExperience(){
    previousIndex.current=index;
  },[index,restored]);
  const scene=scenes[index];
- function next(){setProgress(advanceProgress);}
+ function next(){if(index>=2&&!reconstruction.receipt)return;setProgress(advanceProgress);}
  function check(){if(code.trim()==="1969"){setProgress(p=>({...p,unlocked:true}));}else setWrong(v=>v+1);}
- if(!restored)return <section className={styles.reader} aria-busy="true"><p role="status">Opening your chapter…</p></section>;
+ if(!restored || !reconstruction.ready)return <section className={styles.reader} aria-busy="true"><p role="status">Opening your chapter…</p></section>;
+ if(index>=2&&!reconstruction.receipt)return <PipReconstruction onRecovered={receipt=>{reconstruction.complete(receipt);requestAnimationFrame(()=>sceneRef.current?.focus({preventScroll:true}));}}/>;
  return <section className={styles.reader} data-scene={index+1} aria-label="Chapter One reader">
    <div className={styles.backdrop} aria-hidden="true">
      <img key={sceneArtwork[index].src} src={`/private-review/${sceneArtwork[index].src}`} alt="" onError={()=>setMissingArt(true)}/>
    </div>
-   <div className={styles.chapterTop}><Link href="/" className={styles.brand}>CHOG <span>1969</span></Link><div>CHAPTER 01 <span>{String(index+1).padStart(2,"0")} / 06</span></div><button onClick={()=>{if(window.confirm("Restart Chapter One? This replaces your saved progress.")){setProgress({...INITIAL_PROGRESS});setCode("");setWrong(0);}}}>Restart chapter</button></div>
-   <p className={styles.saveStatus} role="status">{saveError?"Progress could not be saved on this device. Keep this tab open to continue.":"Progress saved on this device · no sound required"}</p>
+   <div className={styles.chapterTop}><Link href="/" className={styles.brand}>CHOG <span>1969</span></Link><div>CHAPTER 01 <span>{String(index+1).padStart(2,"0")} / 06</span></div><button onClick={()=>{if(window.confirm("Restart Chapter One? This replaces your saved progress and local reconstruction.")){reconstruction.reset();setProgress({...INITIAL_PROGRESS});setCode("");setWrong(0);}}}>Restart chapter</button></div>
+   <p className={styles.saveStatus} role="status">{saveError || reconstruction.storageError?"Progress could not be saved on this device. Keep this tab open to continue.":"Progress saved on this device · no sound required"}</p>
    <div className={styles.progressTrack} role="progressbar" aria-label="Chapter progress" aria-valuemin={1} aria-valuemax={6} aria-valuenow={index+1}><div style={{width:((index+1)/6*100)+"%"}}/></div>
    {missingArt&&<p role="status" className={styles.artNotice}>Private scene artwork is missing. Restore the review asset bundle; no substitute is shown.</p>}
    <div ref={sceneRef} className={styles.scene} tabIndex={-1} aria-labelledby="scene-heading">
