@@ -21,7 +21,7 @@ export default function ErasureEncounter({route,onChoose}:{route:EscapeRoute;onC
   useEffect(()=>{
     if(phase!=="active"||!timed||route)return;
     let last=performance.now();
-    const interval=setInterval(()=>{const now=performance.now();setRemaining(v=>Math.max(0,v-(now-last)/1000));last=now;},100);
+    const interval=setInterval(()=>{const now=performance.now(),elapsed=(now-last)/1000;last=now;setRemaining(v=>Math.max(0,v-elapsed));},100);
     return ()=>clearInterval(interval);
   },[phase,timed,route]);
   useEffect(()=>{

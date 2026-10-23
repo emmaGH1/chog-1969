@@ -38,6 +38,13 @@ try {
     await page.getByRole('button',{name:'Sound off',exact:true}).click();
     await page.getByRole('button',{name:'Sound on',exact:true}).waitFor();
     await page.getByRole('button',{name:'Begin interception',exact:false}).click();
+    if(width===1280){
+      const started=performance.now();
+      await page.waitForTimeout(10000);
+      const clock=await page.getByText(/^\d+ SECONDS UNTIL THE REDACTORS ARRIVE$/).textContent();
+      const elapsed=(performance.now()-started)/1000;
+      assert.ok(Math.abs(Number.parseInt(clock,10)-(40-elapsed))<2,`Countdown must follow wall time: ${clock}, ${elapsed.toFixed(2)} seconds elapsed`);
+    }
     await page.getByRole('button',{name:'Pause encounter',exact:true}).click();
     assert.equal(await page.getByRole('button',{name:'Keep the evidence'}).isDisabled(),true);
     await page.getByRole('button',{name:'Resume encounter',exact:true}).click();
