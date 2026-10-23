@@ -1,28 +1,80 @@
-.reader { --reading-ink: #161220; }
-.saveStatus { margin: 0 0 14px; color: #c9bed7; font-size: 12px; line-height: 1.5; }
-.scene { scroll-margin-top: 20px; }
-.scene:focus { outline: none; }
-.scene:focus-visible { outline: 3px solid #ff7fc7; outline-offset: 4px; }
-.sceneHeader { animation: pageIn 240ms ease-out both; }
-@keyframes pageIn { from { opacity: .5; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.navigation { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
-.navigation button { min-height: 48px; }
-.back { color: #54317f; border: 1px solid #9274b5; background: transparent; padding: 12px 18px; border-radius: 8px; font-weight: 700; }
-.gateHint { font-size: 13px; line-height: 1.5; color: #5b466f; }
-.artNotice { display: block; padding: 8px 14px; background: #25202c; color: #d2c6df; font-size: 11px; line-height: 1.5; }
-.evidence, .escapePlan { color: var(--reading-ink); margin-top: 16px; }
-.evidence svg, .escapePlan svg { display: block; width: 100%; height: auto; }
-.evidenceTabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.evidenceTabs button { border: 2px solid #161220; background: #fffdf6; color: #161220; min-height: 48px; padding: 12px; font-weight: 750; box-shadow: 3px 3px 0 #161220; }
-.evidenceTabs button[aria-pressed="true"] { background: #e5d5ff; box-shadow: none; }
-.evidenceNote { min-height: 3em; line-height: 1.6; font-size: 14px; }
-.escapePlan button:disabled { color: #161220; opacity: .7; }
-.escapePlan button[aria-pressed="true"] { border: 2px solid #794cfa; background: #e5d5ff; opacity: 1; }
-.reader input { scroll-margin-bottom: 100px; }
-.reader :global(.manga-stage) { align-items: flex-end; }
-.reader :global(.chapter-top) { flex-wrap: wrap; }
-.reader :global(.quiet) { min-height: 44px; padding: 10px; }
-.reader :global(.story-panel .link) { color: #5e329c; }
-.reader :global(.advance:hover) { background: #5431af; color: white; }
-@media(max-width: 400px) { .evidenceTabs { grid-template-columns: 1fr; } }
-@media(prefers-reduced-motion: reduce) { .sceneHeader { animation: none; } }
+@font-face {font-family: ChogDisplay; src: url("/fonts/BarlowCondensed-Black.ttf") format("truetype"); font-display: swap; font-weight: 900;}
+.reader {--reading-ink: #e6e9f4; position: relative; isolation: isolate; min-height: 100dvh; padding: 0 5% 32px; color: #fff; background: #040d20; font-family: Arial,sans-serif;}
+:global(body):has(.reader) > :global(.site-header), :global(body):has(.reader) > :global(.footer) {display: none;}
+.backdrop {position: fixed; inset: 0; z-index: -1; background: #040d20; pointer-events: none;}
+.backdrop img {width: 100%; height: 100%; object-fit: cover; object-position: 35% 45%; animation: pageIn .35s ease-out both;}
+.backdrop::after {content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,transparent 22%,#030c2040 40%,#030c20d9 62%,#030c20f2),linear-gradient(#02091899,transparent 18%,transparent 85%,#020918a0);}
+.chapterTop {min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 24px;}
+.brand {font: 900 30px ChogDisplay,sans-serif; white-space: nowrap;}
+.brand span {color: #ff8dbc; font-size: 20px;}
+.chapterTop > div {font: 10px monospace; letter-spacing: .12em; margin-left: auto;}
+.chapterTop > div span {margin-left: 20px; color: #ffb3ce;}
+.chapterTop button {border: 0; background: none; color: #f1f3ff; min-height: 44px; font-size: 10px; text-transform: uppercase; letter-spacing: .06em;}
+.saveStatus {margin: 0 0 12px; color: #d1d7e6; font-size: 10px; text-align: right;}
+.progressTrack {height: 2px; background: #ffffff25;}
+.progressTrack > div {height: 100%; background: #ff8dbc; transition: width .2s;}
+.scene {margin-left: 56%; padding-top: 6vh; scroll-margin-top: 24px;}
+.scene:focus {outline: none;}
+.scene:focus-visible {outline: 2px solid #ff8dbc; outline-offset: 8px;}
+.sceneHeader {animation: pageIn .25s ease-out both;}
+.sceneHeader > small {font: bold 10px monospace; letter-spacing: .13em; color: #ffafc7;}
+.sceneHeader h1 {font: 900 clamp(38px,3.5vw,70px)/.95 ChogDisplay,Impact,sans-serif; margin: 18px 0 24px; max-width: 670px; letter-spacing: -.015em;}
+.story :global(.eyebrow) {display: none;}
+.story :global(.story-copy) {font-size: clamp(14px,1.05vw,18px); line-height: 1.65; max-width: 600px; color: #dbe3ee; margin: 0 0 24px;}
+.story :global(.speech) {background: none; border: 0; border-left: 2px solid #ec8da9; border-radius: 0; padding: 0 0 0 20px; margin: 26px 0;}
+.story :global(.speech-speaker) {color: #ffabc8; font: bold 10px monospace; letter-spacing: .16em;}
+.story :global(.speech p) {font-size: clamp(17px,1.3vw,23px); font-weight: 500; line-height: 1.45; margin-top: 8px;}
+.story :global(.interaction) {padding: 20px 0 0; border: 0; border-top: 1px solid #99aac249; background: none; margin: 24px 0 16px;}
+.story :global(.interaction > strong) {font: 900 22px ChogDisplay,sans-serif; letter-spacing: .025em;}
+.story :global(.interaction > p) {font-size: 13px; line-height: 1.6; color: #cdd6e6;}
+.story :global(.unlock-message) {padding: 12px 0; border-radius: 0; background: none; color: #f7bdce; font-size: 13px; line-height: 1.6;}
+.story :global(.link) {color: #ffafc7;}
+.navigation {display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 24px;}
+.navigation button {min-height: 48px;}
+.back {color: #c4d1e6; border: 0; border-bottom: 1px solid #c4d1e655; background: transparent; padding: 12px 0; font-size: 12px;}
+.reader :global(.btn-primary) {border: 2px solid #071123; border-radius: 3px; box-shadow: 4px 5px 0 #071123; background: #ff8dbc; color: #101b30; font: 900 22px ChogDisplay,sans-serif; letter-spacing: .02em; padding: 14px 24px; margin-top: 0;}
+.reader :global(.btn-primary:hover) {background: #ffc4d9;}
+.gateHint {font-size: 12px; line-height: 1.5; color: #d5deed;}
+.artNotice {display: block; margin: 24px 0 0; color: #a9b7cc; font-size: 9px; line-height: 1.6;}
+.pip {position: absolute; left: 17%; top: 36%; width: min(23vw,380px); border: 8px solid #d1b797; transform: rotate(-5deg); box-shadow: 10px 14px 30px #0008;}
+.evidence, .escapePlan {color: var(--reading-ink); margin-top: 16px;}
+.evidence svg {display: block; width: 100%; height: auto; color: #151b2a;}
+.evidenceTabs {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+.evidenceTabs button {border: 1px solid #8699b7; background: #101f34; color: #fff; min-height: 48px; padding: 12px; font-weight: 700;}
+.evidenceTabs button[aria-pressed="true"] {background: #304765; border-color: #ff9bc4;}
+.evidenceNote {min-height: 3em; line-height: 1.6; font-size: 14px;}
+.escapePlan :global(.choice-grid) {gap: 16px;}
+.escapePlan :global(.choice) {border: 0; border-top: 3px solid #ffb0cc; border-radius: 0; padding: 20px 0; background: none; color: #fff; font: 900 27px/1.1 ChogDisplay,sans-serif; text-transform: uppercase; transition: color .15s;}
+.escapePlan :global(.choice:last-child) {border-color: #f5a06e;}
+.escapePlan :global(.choice span) {color: #ccd6e8; font: 12px/1.6 Arial,sans-serif; text-transform: none; margin-top: 10px;}
+.escapePlan :global(.choice:hover:not(:disabled)) {color: #ff9dc6;}
+.escapePlan button:disabled {opacity: .5;}
+.escapePlan button[aria-pressed="true"] {opacity: 1; color: #ffb0cc;}
+.escapePlan button[aria-pressed="true"]::after {content: "SAVED"; display: block; margin-top: 12px; font: bold 9px monospace; letter-spacing: .15em;}
+.reader input {scroll-margin-bottom: 100px;}
+@keyframes pageIn {from {opacity: .5;} to {opacity: 1;}}
+@media(max-width: 1100px) and (min-aspect-ratio: 1/1) {
+ .scene {margin-left: 50%; padding-top: 28px;}
+ .sceneHeader h1 {font-size: 40px;}
+}
+@media(max-aspect-ratio: 1/1) {
+ .reader {padding: 0 6% 40px;}
+ .chapterTop {min-height: 72px; gap: 12px; flex-wrap: wrap;}
+ .chapterTop > div {font-size: 8px;}
+ .chapterTop > div span {margin-left: 8px;}
+ .chapterTop button {font-size: 8px;}
+ .brand {font-size: 24px;}
+ .brand span {font-size: 16px;}
+ .saveStatus {font-size: 9px; text-align: left;}
+ .backdrop {position: absolute; height: 70svh;}
+ .backdrop img {object-position: 25% 25%;}
+ .backdrop::after {background: linear-gradient(#02091880,transparent 20%,#040d2070 55%,#040d20 98%);}
+ .scene {margin-left: 0; padding-top: 35svh;}
+ .sceneHeader h1 {font-size: clamp(40px,10vw,60px); margin-bottom: 22px;}
+ .story :global(.story-copy) {font-size: 16px;}
+ .pip {position: absolute; top: 160px; left: 45%; width: 40%; max-height: 26svh; object-fit: contain;}
+ .escapePlan :global(.choice-grid) {grid-template-columns: 1fr 1fr;}
+ .escapePlan :global(.choice) {font-size: 24px;}
+ .navigation {gap: 20px;}
+}
+@media(prefers-reduced-motion: reduce) {.sceneHeader,.backdrop img {animation: none;} .progressTrack > div {transition: none;}}

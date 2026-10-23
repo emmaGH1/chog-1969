@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: "CHOG / 1969 — the world forgot",
+  title: "CHOG 1969 — the world forgot",
   description: "An interactive manga about the Chogs erased from history.",
 };
 export default function RootLayout({children}:{children:React.ReactNode}){
   return <html lang="en"><body>
-    <header className="site-header"><Link href="/" className="wordmark">CHOG<span className="slash">/</span>1969</Link>
+    <header className="site-header"><Link href="/" className="wordmark">CHOG 1969</Link>
       <nav aria-label="Main navigation"><Link href="/chapter/1">read the story</Link><Link href="/archive">the seals</Link></nav>
       <span className="header-status">the world forgot.</span>
     </header>

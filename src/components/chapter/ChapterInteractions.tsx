@@ -26,16 +26,6 @@ export function DrawerEvidence({unlocked}: {unlocked: boolean}) {
 
 export function EscapePlan({route,onChoose}: {route: EscapeRoute; onChoose: (route: Exclude<EscapeRoute,null>)=>void}) {
   return <div className={styles.escapePlan}>
-    <svg viewBox="0 0 600 220" role="img" aria-label={route==="keep"?"Chosen escape: maintenance passage, keeping the records.":route==="burn"?"Chosen escape: smoke-covered stairwell, burning the records.":"Archive floor plan: maintenance passage on the left, stairwell on the right. Redactors approach from the south."}>
-      <path d="M28 22H572V198H28Z M210 22V150 M390 22V150 M28 95H210 M390 95H572" fill="#f8f3e8" stroke="currentColor" strokeWidth="4"/>
-      <path d="M300 132V55H115V158" fill="none" stroke={route==="keep"?"#794cfa":"#9a8c7d"} strokeWidth={route==="keep"?8:3} strokeDasharray="9 6"/>
-      <path d="M300 132V55H485V158" fill="none" stroke={route==="burn"?"#794cfa":"#9a8c7d"} strokeWidth={route==="burn"?8:3} strokeDasharray="9 6"/>
-      <circle cx="300" cy="132" r="10" fill="#161220"/>
-      <text x="300" y="162" textAnchor="middle" fontSize="13" fontFamily="monospace">YOU ARE HERE</text>
-      <text x="115" y="185" textAnchor="middle" fontSize="12" fontFamily="monospace">MAINTENANCE</text>
-      <text x="485" y="185" textAnchor="middle" fontSize="12" fontFamily="monospace">STAIRWELL</text>
-      <path d="M275 220L300 200L325 220" fill="#161220"/>
-    </svg>
     <div className="choice-grid" role="group" aria-label="Choose Neri's escape route">
       <button onClick={()=>onChoose("keep")} disabled={route!==null} aria-pressed={route==="keep"} className="choice">Keep the evidence <span>Take maintenance · your face may be seen</span></button>
       <button onClick={()=>onChoose("burn")} disabled={route!==null} aria-pressed={route==="burn"} className="choice">Burn the records <span>Take the stairs · lose a clue to your brother</span></button>

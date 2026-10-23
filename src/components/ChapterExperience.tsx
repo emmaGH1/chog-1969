@@ -12,6 +12,14 @@ const scenes=[
  {k:"s5",number:"05 / the sealed witness",eyebrow:"ARCHIVE ENTRY / GENESIS",headline:"SOMEONE STILL REMEMBERS.",body:"A second illustrated seal sits beneath the harbor. This time it bears the identity of a real Chog Genesis NFT. Its secrets aren't for the Accord to decide.",speaker:"memory",line:"we ran toward the sea, not away from it. we were trying to close the door."},
  {k:"s6",number:"06 / the photograph",eyebrow:"FREEWAKE HARBOR / DEPARTURE",headline:"THE TRUTH HAS A PRICE.",body:"A smuggler named Rook helps Neri escape and hands her a photograph. Her missing brother stands beside Chog drawings. Someone has been waiting for her.",speaker:"rook",line:"your brother asked me to keep this. if you're holding it, they know you're here."},
 ] as const;
+const sceneArtwork = [
+ {src:"archive-scene.webp",alt:"Neri investigates the erased CHOG records in the forbidden archive."},
+ {src:"archive-scene.webp",alt:"The restricted blue filing cabinet and its sealed drawer."},
+ {src:"awakening-reaction.webp",alt:"Neri reacts to the awakening of the living drawing."},
+ {src:"redactors-scene.webp",alt:"Neri shelters behind the archive cabinet as Redactor silhouettes enter the doorway."},
+ {src:"chog-ensemble.webp",alt:"An illustrative interpretation of four Genesis CHOGs overlooking the harbor, not the collectible originals."},
+ {src:"chog-ensemble.webp",alt:"The CHOG outcasts above Veyra's harbor."},
+] as const;
 export default function ChapterExperience(){
  const [progress,setProgress]=useState(INITIAL_PROGRESS);
  const sceneRef=useRef<HTMLDivElement>(null);
@@ -19,6 +27,7 @@ export default function ChapterExperience(){
  const {index,unlocked,route}=progress;
  const [code,setCode]=useState(""),[wrong,setWrong]=useState(0);
  const [restored,setRestored]=useState(false),[saveError,setSaveError]=useState(false);
+ const [missingArt,setMissingArt]=useState(false);
  useEffect(()=>{
    try {setProgress(parseProgress(localStorage.getItem(SAVE_KEY)));}
    catch {setSaveError(true);}
@@ -41,19 +50,20 @@ export default function ChapterExperience(){
  function next(){setProgress(advanceProgress);}
  function check(){if(code.trim()==="1969"){setProgress(p=>({...p,unlocked:true}));}else setWrong(v=>v+1);}
  if(!restored)return <section className="chapter-shell" aria-busy="true"><p role="status">Opening your chapter…</p></section>;
- return <section className={`chapter-shell ${styles.reader}`} aria-label="Chapter One reader">
-   <div className="chapter-top"><Link href="/" className="link">← back to cover</Link><div className="progress-meta">CHAPTER 01 <span>{index+1} / 6</span></div><button className="quiet" onClick={()=>{if(window.confirm("Restart Chapter One? This replaces your saved progress.")){setProgress({...INITIAL_PROGRESS});setCode("");setWrong(0);}}}>restart</button></div>
-   <p className={styles.saveStatus} role="status">{saveError?"Progress could not be saved on this device. Keep this tab open to continue.":"Progress saved on this device · no sound required"}</p>
-   <div className="progress-track" role="progressbar" aria-label="Chapter progress" aria-valuemin={1} aria-valuemax={6} aria-valuenow={index+1}><div style={{width:((index+1)/6*100)+"%"}}/></div>
-   <div ref={sceneRef} className={styles.scene} tabIndex={-1} aria-labelledby="scene-heading">
-   <div key={scene.k} className={`manga-stage manga-${scene.k} ${styles.sceneHeader}`}>
-     <div className="manga-corner">REDACTED HISTORY / ARCHIVE 1969</div>
-     <div className="manga-sigil" aria-hidden="true">{index===2?"✺":index===4?"✷":index===5?"≋":"◈"}</div>
-     <div className="manga-caption"><small>{scene.eyebrow}</small><h1 id="scene-heading">{scene.headline}</h1></div>
-     {index===2&&<div className="pip-burst" aria-label="Violet appears in the world">✷</div>}
+ return <section className={styles.reader} aria-label="Chapter One reader">
+   <div className={styles.backdrop} aria-hidden="true">
+     <img key={sceneArtwork[index].src} src={`/private-review/${sceneArtwork[index].src}`} alt="" onError={()=>setMissingArt(true)}/>
    </div>
-   <small className={styles.artNotice}>Layout preview · narrative illustrations pending art approval</small>
-   <article className="story-panel">
+   <div className={styles.chapterTop}><Link href="/" className={styles.brand}>CHOG <span>1969</span></Link><div>CHAPTER 01 <span>{String(index+1).padStart(2,"0")} / 06</span></div><button onClick={()=>{if(window.confirm("Restart Chapter One? This replaces your saved progress.")){setProgress({...INITIAL_PROGRESS});setCode("");setWrong(0);}}}>Restart chapter</button></div>
+   <p className={styles.saveStatus} role="status">{saveError?"Progress could not be saved on this device. Keep this tab open to continue.":"Progress saved on this device · no sound required"}</p>
+   <div className={styles.progressTrack} role="progressbar" aria-label="Chapter progress" aria-valuemin={1} aria-valuemax={6} aria-valuenow={index+1}><div style={{width:((index+1)/6*100)+"%"}}/></div>
+   {missingArt&&<p role="status" className={styles.artNotice}>Private scene artwork is missing. Restore the review asset bundle; no substitute is shown.</p>}
+   <div ref={sceneRef} className={styles.scene} tabIndex={-1} aria-labelledby="scene-heading">
+   {index===2&&<img className={styles.pip} src="/private-review/pip.webp" alt="Unchanged original CHOG #545, token 1053, in the fictional role of Pip" onError={()=>setMissingArt(true)}/>}
+   <div key={scene.k} className={styles.sceneHeader}>
+     <small>{scene.eyebrow}</small><h1 id="scene-heading">{scene.headline}</h1>
+   </div>
+   <article className={styles.story}>
      <div className="eyebrow">ACT I / {scene.number}</div>
      <p className="story-copy">{scene.body}</p>
      <div className="speech"><span className="speech-speaker">{scene.speaker}</span><p>“{scene.line}”</p></div>
@@ -83,6 +93,7 @@ export default function ChapterExperience(){
        {index===5&&<Link href="/" className="btn btn-primary advance">back to cover →</Link>}
      </nav>
    </article>
+   <small className={styles.artNotice}>Scene illustration under review · independent fiction, not official CHOG canon</small>
    </div>
  </section>;
 }

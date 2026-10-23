@@ -12,9 +12,13 @@ export default function ArchiveOpening() {
   const [save, setSave] = useState({...INITIAL_OPENING});
   const [ready, setReady] = useState(false);
   const [saveError, setSaveError] = useState(false);
-  const [camera, setCamera] = useState(0);
+  const [cameraStage, setCameraStage] = useState(0);
   const [entered, setEntered] = useState(false);
   const cameraGoal = useRef(0);
+  const cameraPosition = useRef(0);
+  const cameraStageRef = useRef(0);
+  const animateCamera = useRef<() => void>(() => {});
+  const world = useRef<HTMLDivElement>(null);
   const [pull, setPull] = useState(0);
   const [beat, setBeat] = useState(0);
   const [sound, setSound] = useState(false);
@@ -31,27 +35,51 @@ export default function ArchiveOpening() {
   const travelStart = useRef<number | null>(null);
   const openRef = useRef(false);
   const handle = useRef<HTMLButtonElement>(null);
-  const atDesk = camera >= .98;
+  const atDesk = cameraStage === 2;
 
   function moveCamera(value: number) {
     cameraGoal.current = clamp(value);
-    if (reduced) setCamera(cameraGoal.current);
+    animateCamera.current();
   }
 
   useEffect(() => {
-    if (!entered) return;
-    let frame: number;
+    let frame: number | null = null;
     let previous = performance.now();
-    const animate = (now: number) => {
-      const blend = reduced ? 1 : 1 - Math.exp(-Math.min(now - previous, 50) / 140);
-      previous = now;
-      setCamera(value => Math.abs(cameraGoal.current - value) < .001
-        ? cameraGoal.current : value + (cameraGoal.current - value) * blend);
-      frame = requestAnimationFrame(animate);
+    const publish = () => {
+      world.current?.style.setProperty("--camera", String(cameraPosition.current));
+      const stage = cameraPosition.current >= .98 ? 2 : cameraPosition.current >= .5 ? 1 : 0;
+      if (stage !== cameraStageRef.current) {
+        cameraStageRef.current = stage;
+        setCameraStage(stage);
+      }
     };
-    frame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(frame);
-  }, [entered, reduced]);
+    const animate = (now: number) => {
+      frame = null;
+      const blend = 1 - Math.exp(-Math.min(now - previous, 50) / 55);
+      previous = now;
+      const distance = cameraGoal.current - cameraPosition.current;
+      cameraPosition.current = Math.abs(distance) < .001
+        ? cameraGoal.current : cameraPosition.current + distance * blend;
+      publish();
+      if (cameraPosition.current !== cameraGoal.current) frame = requestAnimationFrame(animate);
+    };
+    animateCamera.current = () => {
+      if (!entered || help || save.opened) return;
+      if (reduced) {
+        cameraPosition.current = cameraGoal.current;
+        publish();
+      } else if (frame === null) {
+        previous = performance.now();
+        frame = requestAnimationFrame(animate);
+      }
+    };
+    publish();
+    if (cameraPosition.current !== cameraGoal.current) animateCamera.current();
+    return () => {
+      if (frame !== null) cancelAnimationFrame(frame);
+      animateCamera.current = () => {};
+    };
+  }, [entered, reduced, help, save.opened]);
 
   function cue(frequency: number, duration: number, volume = .035) {
     const ctx = audio.current;
@@ -91,7 +119,11 @@ export default function ArchiveOpening() {
       const restored = parseOpening(localStorage.getItem(OPENING_KEY));
       setSave(restored);
       openRef.current = restored.opened;
-      if (restored.record || restored.shipment) {setCamera(1); cameraGoal.current = 1;}
+      if (restored.record || restored.shipment) {
+        cameraPosition.current = 1; cameraGoal.current = 1;
+        world.current?.style.setProperty("--camera", "1");
+        cameraStageRef.current = 2; setCameraStage(2);
+      }
       if (restored.opened) {setPull(1); setBeat(4);}
     } catch {setSaveError(true);}
     setReady(true);
@@ -132,7 +164,7 @@ export default function ArchiveOpening() {
       if (!entered || help || save.opened) return;
       event.preventDefault();
       const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? innerHeight : 1);
-      cameraGoal.current = clamp(cameraGoal.current + Math.max(-180, Math.min(180, delta)) / 1500);
+      moveCamera(cameraGoal.current + delta / 1500);
     };
     element.addEventListener("wheel", wheel, {passive: false});
     return () => element.removeEventListener("wheel", wheel);
@@ -190,8 +222,11 @@ export default function ArchiveOpening() {
     openRef.current = false;
     setSave({...INITIAL_OPENING});
     cameraGoal.current = 0;
+    cameraPosition.current = 0;
+    cameraStageRef.current = 0;
+    world.current?.style.setProperty("--camera", "0");
     setEntered(false);
-    setCamera(0); setPull(0); setBeat(0); setInspected(null);
+    setCameraStage(0); setPull(0); setBeat(0); setInspected(null);
   }
 
   const instruction = !atDesk ? "Scroll to enter. Something was left behind."
@@ -200,7 +235,7 @@ export default function ArchiveOpening() {
     : !save.opened ? "Pull the handle toward you. Or hold to open."
     : beat < 4 ? "That is not an empty record."
     : "Footsteps. We are no longer alone.";
-  const sceneStyle = {"--camera": camera, "--pull": pull} as CSSProperties;
+  const sceneStyle = {"--pull": pull} as CSSProperties;
 
   return <div ref={root} className={styles.experience} style={sceneStyle} data-entered={entered} data-beat={beat} data-opened={save.opened} data-ready={ready}
     onPointerDown={event => {
@@ -217,31 +252,31 @@ export default function ArchiveOpening() {
     onPointerUp={() => {travelStart.current = null;}}
     onPointerCancel={() => {travelStart.current = null;}}>
     <nav className={styles.toolbar} aria-label="Reader controls">
-      <span className={styles.brand}>CHOG<span> / 1969</span></span>
+      <span className={styles.brand}>CHOG <span>1969</span></span>
       <span className={styles.chapterLabel}>{entered ? "CHAPTER 01 / THE FORBIDDEN ARCHIVE" : "AN INTERACTIVE MANGA"}</span>
       <button onClick={toggleSound} aria-pressed={sound}>{sound ? "Sound on" : "Sound off"}</button>
       <button onClick={() => setHelp(!help)} aria-expanded={help}>Guide</button>
       <button onClick={restart}>Replay</button>
-      <Link href="/archive">The Genesis ↗</Link>
+      <Link href="/archive">The Genesis</Link>
     </nav>
 
     <section className={styles.cover} aria-label="CHOG 1969 story cover" aria-hidden={entered} inert={entered || help}>
-      <img className={styles.coverArt} src="/private-review/cover-scene.webp" alt="Neri at the forbidden archive overlooking Veyra's sunlit coast" onError={() => setMissingArt(true)}/>
+      <img className={styles.coverArt} src="/private-review/chog-ensemble.webp" alt="Four CHOG outcasts together above Veyra: a bubblegum-blowing crowned Chog, a goggled Chog, a clown-nosed Chog and a bucket-hat Chog. Scene interpretation of Genesis characters, not original collectible artwork." onError={() => setMissingArt(true)}/>
       <div className={styles.coverShade}/>
       <div className={styles.coverCopy}>
-        <p className={styles.kicker}><span/> THE WORLD FORGOT. THE CHAIN DIDN’T.</p>
-        <h1>CHOG<span>1969<i>/</i></span></h1>
-        <p className={styles.premise}>They erased an entire people.<br/>One drawing refused to disappear.</p>
-        <button className={styles.enter} onClick={() => setEntered(true)} disabled={!ready}>{save.record || save.shipment ? "RESUME THE STORY" : "ENTER THE STORY"}<span aria-hidden="true">↗</span></button>
-        <p className={styles.coverMeta}>A living manga. A real Genesis identity.<br/>No wallet needed to begin.</p>
+        <p className={styles.kicker}>OUTCASTS. NOT FORGOTTEN.</p>
+        <h1>CHOG<span>1969</span></h1>
+        <p className={styles.premise}>Branded monsters. Erased from history.<br/>The misfits still have a story to tell.</p>
+        <button className={styles.enter} onClick={() => setEntered(true)} disabled={!ready}>{save.record || save.shipment ? "RESUME THE STORY" : "ENTER THE STORY"}</button>
+        <p className={styles.coverMeta}>Their history is forbidden. Go find it.<br/>An interactive manga. No wallet needed.</p>
       </div>
-      <div className={styles.coverBottom}><span>01 — THE DRAWING THAT REMEMBERED</span><span>SCROLL. DISCOVER. CHANGE THE STORY.</span></div>
+      <div className={styles.coverBottom}><span>A STORY FOR THE ONES WHO NEVER FIT IN.</span><span>INSPIRED BY CHOG GENESIS · INDEPENDENT FICTION</span></div>
     </section>
 
     <div className={styles.viewport} aria-label="Forbidden archive, interactive opening" aria-hidden={!entered} inert={!entered || help}>
-      <div className={styles.world}>
+      <div ref={world} className={styles.world}>
         <img className={styles.sceneArt} src="/private-review/archive-scene.webp" alt="Neri investigates a blue steel filing cabinet under an amber desk lamp" onError={() => setMissingArt(true)}/>
-        <div className={styles.entranceCaption} style={{opacity: clamp(1 - camera * 2)}} aria-hidden={camera >= .5}>
+        <div className={styles.entranceCaption} aria-hidden={cameraStage >= 1}>
           <span>VEYRA. CENTRAL ARCHIVE. AFTER HOURS.</span>
           <p>Some stories<br/>refuse to stay buried.</p>
         </div>
@@ -307,7 +342,7 @@ export default function ArchiveOpening() {
     </div>
 
     <footer className={styles.readerFooter} aria-hidden={!entered} inert={!entered || help}>
-      <div className={styles.position}><span>{save.opened ? "03" : atDesk ? "02" : "01"}</span> / 03 <i style={{width: (save.opened ? 100 : atDesk ? 66 : 5 + camera * 55) + "%"}}/></div>
+      <div className={styles.position}><span>{save.opened ? "03" : atDesk ? "02" : "01"}</span> / 03 <i style={{width: (save.opened ? 100 : atDesk ? 66 : 5 + cameraStage * 30) + "%"}}/></div>
       <p role="status">{instruction}</p>
       {!atDesk && <button onClick={() => moveCamera(cameraGoal.current + (reduced ? 1 : .34))}>Move closer ↓</button>}
       <small>ART DIRECTION REVIEW · NOT FINAL APPROVAL</small>
@@ -322,7 +357,7 @@ export default function ArchiveOpening() {
       <h2>Leave no record.</h2>
       <p>Scroll, swipe upward, or use “Move closer” to enter. Inspect both papers. Set 19 + 69 on the brass index. Drag the handle downward, or hold it for a second. Keyboard: Tab to the handle and hold Enter or Space.</p>
       <p>Sound is opt-in: original synthesized mechanical cues, not a finished soundscape. Reduced-motion settings are respected. Replay resets only this opening, not your later keep/burn choice.</p>
-      <p>New reference-guided scene and pose illustrations are awaiting visual approval. Neri’s supplied design guides the art; CHOG #545 is the unchanged original. No rights or holder consent inferred. The later chapter retains its previous presentation.</p>
+      <p>Scene illustrations are awaiting visual approval. The cover interprets Genesis CHOG #1340 (token 1848), #4 (512), #920 (1428) and #1112 (1620); it is not their original collectible artwork or an approved story casting. Neri’s supplied design guides the archive scenes; Pip’s CHOG #545 remains the unchanged original. No rights, holder consent or official endorsement inferred.</p>
       <Link href="/archive">Read-only Genesis archive ↗</Link>
     </aside>}
   </div>;
