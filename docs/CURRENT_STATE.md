@@ -2,7 +2,19 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current checkpoint: full narrated demo ready for private review
+## Current checkpoint: cinematic demo rebuild completed
+
+Emma found the continuous walkthrough too still and asked for a complete demo-ready rebuild, skipping another sample to conserve credits. The new cut is `CHOG-1969-Cinematic-Demo.mp4` in `/home/ubuntu/Documents/chog-demo-production/rebuild/`: 140.5seconds, 1920×1080, 30fps, H.264/AAC, 51.4MB. It supersedes the155.6second walkthrough below as the recommended demo.
+
+The approved340-word Brian narration and existing artwork are reused without new paid generation. The edit now combines25 shots: animated typography/redaction, slow illustrated camera moves, clue/evidence close-ups, real NFT reconstruction, the timed Keep choice, memory, photograph, clearly planned chapters and a title ending. This is explicitly an edited story/demo, not an uncut performance benchmark. Navigation/RPC waiting is trimmed; retained gameplay intervals stay at original speed. No API responses, saves, outcomes or application features were fabricated. Editorial sequences are separate from gameplay, and the ending identifies the mixed format.
+
+An original locally synthesized minor-key instrumental score, pulse/percussion and editorial paper/stamp sounds supplement synchronized source gameplay audio. Music ducks below narration, drops before “This time, she keeps it,” then returns for the harbor and closing question. No external music samples, paid music service or new ElevenLabs request was used. All71 caption phrases and approved words remain, without subtitle boxes, borders or em dashes. The reconstruction paragraph was retimed to align with the successful press; the press result is visibly retained before awakening.
+
+Native frames reviewed the final title, redaction, completed press, caption clearance, photograph and planned-chapter treatment. Full-cut review informed corrections; final mixed audio passed a separate clarity/completeness check. Export metadata is saved in `rebuild/export.json`; exact editorial intervals and caption times are in `rebuild/edit.json`. `build.py`, `score.py`, `render.py`, `titles.ass`, separate audio stems and source clips are preserved locally. Media/production artifacts are not committed. No application code changed.
+
+Next: Emma reviews the rebuilt cut. No public upload/submission, deployment, PR, main merge, wallet transaction or additional purchase has occurred. Preserve frozen media rather than regenerating narration. Older walkthrough/audio-pending statuses below are historical.
+
+## Previous checkpoint: full narrated walkthrough
 
 Emma approved Brian and the subtitle audition with “yes go ahead.” The full 340-word approved narration is now produced, with the existing opening/context take reused and one new 1495-character remainder request. Voice/settings remain unchanged; no subscription changes or purchases.
 
