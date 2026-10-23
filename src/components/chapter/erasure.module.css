@@ -6,11 +6,12 @@
 .docket {position:relative;overflow:hidden;border-top:1px solid #b4d3e277;border-bottom:1px solid #b4d3e277;padding:18px 0;}
 .docketHeader {display:flex;justify-content:space-between;gap:10px;color:#a7c7da;}
 .docket p {font:900 clamp(22px,2.3vw,38px)/1.1 ChogDisplay,sans-serif;margin:18px 0;}
-.docket p span {display:block;}
-.redaction {position:absolute;inset:44px 0 18px;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 13px,#040b15 13px 32px);transform:scaleX(var(--loss));transform-origin:left;opacity:.9;}
-.encounter[data-phase=ready] .redaction {transform:scaleX(0);}
-.encounter[data-route=keep] .redaction {transform:scaleX(0);}
-.encounter[data-route=burn] .redaction {transform:scaleX(1);}
+.testimonyLine {display:block;}
+.word {display:inline-block;border-radius:2px;transition:color .2s,background-color .2s;}
+.word[data-erased=true] {color:transparent;background:#030913;}
+.loss {display:block;color:#ffb5cd;font:10px monospace;letter-spacing:.08em;min-height:12px;}
+.encounter[data-route=keep] .word {color:#c6ffed;}
+@media(prefers-reduced-motion:reduce){.word {transition:none;}}
 .stamp {position:absolute;right:12px;bottom:22px;transform:rotate(-7deg);padding:5px 9px;background:#081b2e;color:#9be6df;border:2px solid currentColor;font:900 20px ChogDisplay,sans-serif;}
 .encounter[data-route=burn] .stamp {color:#ffb494;}
 .clock {display:flex;align-items:center;justify-content:space-between;gap:16px;color:#ffb5cd;min-height:48px;margin:12px 0;}

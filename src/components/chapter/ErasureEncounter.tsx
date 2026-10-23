@@ -1,8 +1,9 @@
 "use client";
 
-import {useEffect,useRef,useState,type CSSProperties} from "react";
+import {useEffect,useRef,useState} from "react";
 import type {EscapeRoute} from "./progress";
 import {consequence} from "./consequences";
+import {testimony,erasureStage,isWordErased} from "./erasure";
 import {useStoryAudio,useSoundscape} from "../StoryAudio";
 import styles from "./erasure.module.css";
 
@@ -14,6 +15,11 @@ export default function ErasureEncounter({route,onChoose}:{route:EscapeRoute;onC
   const {cue}=useStoryAudio();
   useSoundscape(!route&&phase==="active"?"pursuit":"quiet");
   const result=consequence(route);
+  const stage=erasureStage(remaining,timed),previousStage=useRef(0);
+  useEffect(()=>{
+    if(stage>previousStage.current&&phase==="active"&&!route)cue(95,.09,.055);
+    previousStage.current=stage;
+  },[stage,phase,route,cue]);
   useEffect(()=>{
     function hide(){if(document.hidden){setPhase(p=>p==="active"?"paused":p);setHolding(false);setHeld(0);}}
     document.addEventListener("visibilitychange",hide);return ()=>document.removeEventListener("visibilitychange",hide);
@@ -37,12 +43,16 @@ export default function ErasureEncounter({route,onChoose}:{route:EscapeRoute;onC
   function finish(){if(!selected||phase!=="active"||remaining<=0||committed.current||route)return;committed.current=true;setHolding(false);setHeld(1);onChoose(selected);cue(selected==="keep"?360:85,.8,.06);}
   finishRef.current=finish;
   function release(){setHolding(false);setHeld(0);}
-  return <section className={styles.encounter} aria-label="The erasure encounter" data-phase={route?"resolved":phase} data-route={route??"none"} style={{"--loss":timed?1-remaining/40:.35} as CSSProperties}>
+  return <section className={styles.encounter} aria-label="The erasure encounter" data-phase={route?"resolved":phase} data-route={route??"none"}>
     <div className={styles.identity}><span>IDENTITY ANCHOR / GENESIS 1053</span><strong>CHOG #545 STILL EXISTS.</strong><small>The live record restored Pip. These threatened memories are fiction—not data stored in his NFT.</small></div>
     <div className={styles.docket}>
       <div className={styles.docketHeader}><span>TESTIMONY / 545</span><span>{result?result.evidence:phase==="active"?"ERASURE IN PROGRESS":"INTERCEPTED"}</span></div>
-      <p><span>WE WERE NOT THE CAUSE.</span><span>WE WERE TRYING TO CLOSE THE DOOR.</span><span>HER BROTHER WAS THERE.</span></p>
-      <div className={styles.redaction} aria-hidden="true"/>
+      <p aria-label={testimony.flat().join(" ")}>
+        {testimony.map((line,index)=><span className={styles.testimonyLine} key={index} aria-hidden="true">
+          {line.map((word,i)=><span key={i}><span className={styles.word} data-erased={isWordErased(word,stage,route)}>{word}</span>{i<line.length-1?" ":""}</span>)}
+        </span>)}
+      </p>
+      {!result&&phase!=="ready"&&<small className={styles.loss} aria-live="polite">{timed?`${stage} OF 4 KEY WORDS ERASED` : "UNTIMED / TESTIMONY REMAINS READABLE"}</small>}
       {result&&<strong className={styles.stamp}>{route==="keep"?"TESTIMONY SECURED":"IDENTIFYING RECORD BURNED"}</strong>}
     </div>
     {result?<div className={styles.outcome} role="status"><small>{result.notice}</small><h2>{route==="keep"?"THE TRUTH SURVIVES. YOUR COVER DOESN’T.":"YOU DISAPPEAR. SO DOES THE CLUE."}</h2><p>{result.lead}</p><p>Pip escaped with you. This choice is saved on this device.</p></div>:<>
