@@ -1,6 +1,6 @@
 # CHOG 1969 | Approved walkthrough narration
 
-Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Emma approved the exact spoken wording below with “yeah this is good go ahead.” This supersedes both the cinematic-trailer draft and the first-person founder walkthrough. She subsequently approved ElevenLabs access with “i approve unlimited access.” Brian's opening audition and a clean 20.3-second subtitled sample now exist; the full narration and final demo remain pending voice review.
+Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Emma approved the exact spoken wording below with “yeah this is good go ahead.” This supersedes both the cinematic-trailer draft and the first-person founder walkthrough. She subsequently approved ElevenLabs access with “i approve unlimited access” and Brian's voice/subtitle audition with “yes go ahead.” The full narrated Keep-route demo now exists for private review; see the completed-export checkpoint below.
 
 ## Direction
 
@@ -73,7 +73,7 @@ Keep opt-in game ambience beneath the narrator, leaving space for press, footste
 
 ## Approval and capture gates
 
-1. Wording and ElevenLabs use are approved. Brian's opening audition is generated; get Emma's verdict on its voice before producing the full track. Do not repeat the resolved credit-permission question.
+1. Wording, ElevenLabs use and Brian's opening audition are approved. The full track is generated. Do not repeat resolved permission questions.
 2. Verified source: ElevenLabs premade Brian (`nPczCjzI2devNBz1zQrb`), not a celebrity clone. Two requests totaling 847 input characters produced the audition; account usage increased by 339 credits. No subscription changes, purchases or overage.
 3. Rehearse Keep from a fresh isolated save without altering Emma's progress. Retain raw live-read footage and timestamp.
 4. Verify a short clean 1920×1080 picture/sound/subtitle sample before the full take. Testing clips are not submission masters.
@@ -84,4 +84,14 @@ Keep opt-in game ambience beneath the narrator, leaving space for press, footste
 
 The real-time 1920×1080/30fps opening sample is 20.3 seconds. Source footage was freshly captured from an isolated, initially empty browser context: genuine Enter and wheel input, no saved-state injection or test overlays. Narration is added in post; the app is muted in this audition, so synchronized in-game audio is still unverified. Ten phrase cues follow the provider's character timing with an 800ms narration lead-in. Soft-white 44px text uses an 80px bottom margin and a restrained shadow, no box, outline or em dashes. The margin was adjusted after rendered review to clear the entrance caption and footer.
 
-Session artifacts live in `/home/ubuntu/Documents/chog-demo-production/`: `CHOG-1969-voice-and-subtitle-sample.mp4`, `CHOG-1969-Brian-audition.mp3`, `subtitle-layout.png`, `opening.ass`, alignment JSON, raw capture, request settings and credit receipt. These are local, not Git assets. Reuse the frozen audio/alignment rather than regenerating. The first take had a suspected clipped ending; a second contextual take included the next approved paragraph as headroom, and the sample trims before it begins. The final sample's complete last word, timing and rendered subtitle clearance were reviewed. The whole walkthrough and game-audio mix remain pending.
+Session artifacts live in `/home/ubuntu/Documents/chog-demo-production/`: `CHOG-1969-voice-and-subtitle-sample.mp4`, `CHOG-1969-Brian-audition.mp3`, `subtitle-layout.png`, `opening.ass`, alignment JSON, raw capture, request settings and credit receipt. These are local, not Git assets. Reuse the frozen audio/alignment rather than regenerating. The first take had a suspected clipped ending; a second contextual take included the next approved paragraph as headroom, and the sample trims before it begins. The final sample's complete last word, timing and rendered subtitle clearance were reviewed. The completed walkthrough below supersedes this opening-only checkpoint.
+
+### Completed export for private review
+
+`CHOG-1969-Chapter-One-Demo.mp4`: 155.6 seconds, 1920×1080, 30fps, H.264/AAC, approximately25.4MB. Reused the complete three-paragraph contextual Brian take; generated the remaining1495 characters once with the same settings. All340 approved words are retained. Narration remains an editorial storyteller track, not in-game dialogue.
+
+Fresh isolated native capture completes the genuine Keep route with live token1053/block115882548, physical ring input, the actual timer and hold, memory, photograph and planned chapters. No speed change, save injection, API substitution or alternate-route splice. Native game audio was recorded simultaneously and reviewed against visible interactions, then mixed beneath the narrator. Export includes only leading/trailing capture trims and a final fade.
+
+71 character-aligned phrase cues use soft-white44px Lato and80px bottom clearance without boxes, outlines or em dashes. Later cues move to the lower-left beneath the illustration to avoid the right-column controls and evidence; two lines maximum. Native rendered frames were reviewed. `CHOG-1969-subtitles.srt`, `full.ass`, `full-timing.json`, frozen narration, raw capture, `full-capture-receipt.json`, `final-export.json` and production scripts are in the private media directory. No application code changed for this production step.
+
+Emma's review of this finished cut is next. No public upload, submission, deployment, PR or merge has been performed or newly authorized.

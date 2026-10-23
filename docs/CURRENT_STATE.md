@@ -2,7 +2,19 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current checkpoint: consequence encounter browser-verified; demo approval next
+## Current checkpoint: full narrated demo ready for private review
+
+Emma approved Brian and the subtitle audition with “yes go ahead.” The full 340-word approved narration is now produced, with the existing opening/context take reused and one new 1495-character remainder request. Voice/settings remain unchanged; no subscription changes or purchases.
+
+Final deliverable: `CHOG-1969-Chapter-One-Demo.mp4` in `/home/ubuntu/Documents/chog-demo-production/`, H.264 1920×1080, 30fps, AAC, 155.6 seconds (about 2:36), 25.4MB. It uses a fresh isolated browser context, real Enter/wheel/clue/drawer actions, a genuine live token1053 read, physical ring drags, earned awakening, actual running countdown and Keep hold, harbor memory, photograph and planned chapters. No injected save, substituted API response, speed ramps, browser chrome or testing annotations. Only capture lead-in/tail trimming, narration/subtitle post-production and an end fade were applied. Original profile progress is untouched.
+
+The captured identity receipt records block115882548, checked2026-10-23T11:13:06.388Z; Head MMGA Cap, Body Stripes, Eyes Happy. Final isolated save is index5/Keep. Writes remain disabled and ledger null. Authentic app provenance/review labels remain visible.
+
+Synchronized game sound is captured with native x11/Pulse and mixed below Brian. A short sound-toggle probe and the full-cut review checked sound against visible interactions. Final native frames were reviewed for caption clearance. The 71 phrase-based captions preserve all approved words, contain no em dashes, boxes or outlines, and remain low: centered initially, lower-left during the later right-column gameplay so controls, testimony, photograph and chapter cards remain unobscured. Supporting SRT: `CHOG-1969-subtitles.srt`. The raw gameplay, frozen audio/alignment, `full-capture-receipt.json`, `full-live-nft-read.json`, `full-timing.json`, `final-export.json`, scripts and native review frames remain in the same private directory, not Git. An interrupted rehearsal and a superseded subtitle-review proxy are not deliverables.
+
+Next: Emma reviews the finished video. Public artwork delivery, deployment, public upload/submission, PR creation and main merge remain unauthorized. Physical touchscreen testing remains outstanding. Preserve the frozen media instead of generating another voice take. Older pending-demo/audio statements below describe historical checkpoints.
+
+## Implementation checkpoint and history
 
 Emma approved the bounded erasure encounter, meaningful Keep/Burn outcomes, sound, chapter teasers and hero-entry smoothness work. Work remains on `feat/devin-cinematic-release`; no PR, public deployment, main merge, purchases or wallet writes are authorized.
 
@@ -42,7 +54,7 @@ The resulting opening-only sample is20.3seconds,1920×1080/30fps with AAC narrat
 
 Local recovery directory: `/home/ubuntu/Documents/chog-demo-production/`. Deliverables: `CHOG-1969-voice-and-subtitle-sample.mp4`, `CHOG-1969-Brian-audition.mp3`, `subtitle-layout.png`; supporting raw video, frozen audio/alignment, ASS, generation settings and usage receipt. Media are not committed. The preview remains3103 with writes disabled. Chrome's reset DPR2 geometry was repaired to native1920×1080/DPR1 while preserving `/home/ubuntu/.browser_data_dir` and Pulse; only an isolated context visited the app for this sample.
 
-**Next:** Emma reviews the voice/sample, then produce the full approved340-word narration and clean Keep-route walkthrough under three minutes. Do not treat the opening audition as the completed demo. Full subtitle clearance, game-audio mixing, physical touch, public artwork delivery/deployment and public upload remain pending. Older DEMO_CHECKLIST/DEMO_CAPTURE_WORKFLOW describe an obsolete integration-pilot flow and are marked historical.
+**Opening-sample gate is resolved:** Emma approved it with “yes go ahead”; the full walkthrough described at the top supersedes this audition. Older DEMO_CHECKLIST/DEMO_CAPTURE_WORKFLOW describe an obsolete integration-pilot flow and are marked historical.
 
 ## Previous checkpoint: NFT-dependent reconstruction verified
 
