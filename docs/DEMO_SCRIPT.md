@@ -1,6 +1,6 @@
 # CHOG 1969 | Approved walkthrough narration
 
-Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Emma approved the exact spoken wording below with “yeah this is good go ahead.” This supersedes both the cinematic-trailer draft and the first-person founder walkthrough. Voice selection and a bounded credit allowance remain to be approved. No narration or final video has been produced.
+Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Emma approved the exact spoken wording below with “yeah this is good go ahead.” This supersedes both the cinematic-trailer draft and the first-person founder walkthrough. She subsequently approved ElevenLabs access with “i approve unlimited access.” Brian's opening audition and a clean 20.3-second subtitled sample now exist; the full narration and final demo remain pending voice review.
 
 ## Direction
 
@@ -10,7 +10,7 @@ One continuous narrative, one earned Keep route. No alternate-run montage, featu
 
 ## Voice
 
-An original male narrator with a deep, warm, resonant baritone. Conversational and clear, with the confidence of a good gameplay presenter explaining a story as it unfolds. Natural breaths and restrained emotion, without long theatrical pauses. No celebrity imitation or cloned voice, exaggerated trailer growl, or announcer delivery. Audition the opening before generating the full narration. An existing ElevenLabs key is available, but its saved restriction requires script, voice and credit approval before use. Do not generate or purchase credits without the remaining approval.
+An original male narrator with a deep, warm, resonant baritone. Conversational and clear, with the confidence of a good gameplay presenter explaining a story as it unfolds. Natural breaths and restrained emotion, without long theatrical pauses. No celebrity imitation or cloned voice, exaggerated trailer growl, or announcer delivery. Audition the opening before generating the full narration. Emma approved ElevenLabs use after the Brian audition proposal. Brian is verified available in her account; the audition uses `eleven_multilingual_v2`, stability 0.45, similarity 0.75, speed 1.0 and no style exaggeration. Do not change subscriptions or purchase add-ons. Review the resulting voice before producing the full script.
 
 ## Spoken narration
 
@@ -73,9 +73,15 @@ Keep opt-in game ambience beneath the narrator, leaving space for press, footste
 
 ## Approval and capture gates
 
-1. Wording is approved. Next obtain approval for the candidate voice and a capped use of existing ElevenLabs credits, then produce a short audition, not the full track.
-2. Confirm an authorized voice source. No celebrity clone, paid generation or new credentials are assumed.
+1. Wording and ElevenLabs use are approved. Brian's opening audition is generated; get Emma's verdict on its voice before producing the full track. Do not repeat the resolved credit-permission question.
+2. Verified source: ElevenLabs premade Brian (`nPczCjzI2devNBz1zQrb`), not a celebrity clone. Two requests totaling 847 input characters produced the audition; account usage increased by 339 credits. No subscription changes, purchases or overage.
 3. Rehearse Keep from a fresh isolated save without altering Emma's progress. Retain raw live-read footage and timestamp.
 4. Verify a short clean 1920×1080 picture/sound/subtitle sample before the full take. Testing clips are not submission masters.
 5. Check final runtime under three minutes, dimensions, sound synchronization, subtitle timing, readability and clearance. Check no em dashes in the actual subtitle file. Timed subtitles cannot be finalized before narration exists.
 6. Public artwork delivery, deployment and upload still require separate approval. A clean clone needs the ignored private artwork bundle restored.
+
+### Opening sample checkpoint
+
+The real-time 1920×1080/30fps opening sample is 20.3 seconds. Source footage was freshly captured from an isolated, initially empty browser context: genuine Enter and wheel input, no saved-state injection or test overlays. Narration is added in post; the app is muted in this audition, so synchronized in-game audio is still unverified. Ten phrase cues follow the provider's character timing with an 800ms narration lead-in. Soft-white 44px text uses an 80px bottom margin and a restrained shadow, no box, outline or em dashes. The margin was adjusted after rendered review to clear the entrance caption and footer.
+
+Session artifacts live in `/home/ubuntu/Documents/chog-demo-production/`: `CHOG-1969-voice-and-subtitle-sample.mp4`, `CHOG-1969-Brian-audition.mp3`, `subtitle-layout.png`, `opening.ass`, alignment JSON, raw capture, request settings and credit receipt. These are local, not Git assets. Reuse the frozen audio/alignment rather than regenerating. The first take had a suspected clipped ending; a second contextual take included the next approved paragraph as headroom, and the sample trims before it begins. The final sample's complete last word, timing and rendered subtitle clearance were reviewed. The whole walkthrough and game-audio mix remain pending.
