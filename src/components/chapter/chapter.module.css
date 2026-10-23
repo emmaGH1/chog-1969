@@ -36,6 +36,23 @@
 .reader :global(.btn-primary:hover) {background: #ffc4d9;}
 .gateHint {font-size: 12px; line-height: 1.5; color: #d5deed;}
 .artNotice {display: block; margin: 24px 0 0; color: #a9b7cc; font-size: 9px; line-height: 1.6;}
+.reader[data-scene="4"] .scene {padding-top:2vh;margin-left:50%;}
+.reader[data-scene="4"] .sceneHeader h1 {font-size:clamp(36px,3vw,58px);margin:12px 0 16px;}
+.reader[data-scene="4"] .story :global(.story-copy) {font-size:14px;line-height:1.5;margin-bottom:12px;}
+.reader[data-scene="4"] .story :global(.interaction) {margin-top:12px;padding-top:12px;}
+.casebook {border-top:1px solid #9fc9e366;padding:24px 0;margin-top:24px;}
+.casebook > small {font:9px/1.7 monospace;color:#b4d8e6;letter-spacing:.07em;}
+.casebook h2 {font:900 clamp(26px,2.5vw,42px)/1.05 ChogDisplay,sans-serif;color:#ffb0ce;}
+.casebook > p {color:#bed3e6;font:14px/1.6 Arial,sans-serif;}
+.casebook ol {list-style:none;padding:0;margin:24px 0;}
+.casebook li {display:flex;gap:22px;border-top:1px solid #b5d9ef30;padding:18px 0;}
+.casebook li > span {font:900 38px ChogDisplay,sans-serif;color:#82bac9;}
+.casebook strong {font:900 25px ChogDisplay,sans-serif;}
+.casebook li p {font:12px/1.6 Arial,sans-serif;color:#b6cada;margin:6px 0 0;}
+.pursuitNotice {border:1px solid #ffb3ce88;padding:18px;margin:16px 0;color:#ffb3ce;transform:rotate(-1deg);}
+.pursuitNotice > span,.pursuitNotice p {font:10px/1.6 monospace;display:block;}
+.pursuitNotice strong {font:900 38px ChogDisplay,sans-serif;}
+.pursuitNotice[data-route=burn] {color:#a5c8dc;border-color:#a5c8dc88;}
 .pip {position: absolute; left: 17%; top: 36%; width: min(23vw,380px); border: 8px solid #d1b797; transform: rotate(-5deg); box-shadow: 10px 14px 30px #0008;}
 .evidence, .escapePlan {color: var(--reading-ink); margin-top: 16px;}
 .evidenceState {font: 11px monospace; letter-spacing: .12em; color: #ffb3ce; border-top: 1px solid #99aac249; padding-top: 16px;}
@@ -111,7 +128,8 @@
  .sealTouch {position: absolute; left: 17%; top: 23svh; width: 120px; height: 120px;}
  .photoStage {position: relative; top: auto; left: auto; width: min(85%,360px); max-width: none; margin: 36px auto 44px;}
  .photoFront > span {font-size: 8px;}
- .photoBack > span:not(.photoBackRule) {font-size: clamp(26px,8vw,36px);}
+ .photoBack > span:not(.photoBackRule) {font-size: clamp(23px,6vw,30px);}
+ .reader[data-scene="4"] .scene {margin-left:0;padding-top:30svh;}
  .memoryWords {min-height: 120px;}
 }
 @media(prefers-reduced-motion: reduce) {.sceneHeader,.backdrop img,.memoryWords blockquote {animation: none;} .progressTrack > div,.photograph {transition: none;}}

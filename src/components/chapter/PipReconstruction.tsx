@@ -3,6 +3,7 @@ import {useEffect,useRef,useState,type PointerEvent as ReactPointerEvent} from "
 import Link from "next/link";
 import {PIP_TOKEN,readPipIdentity,reconstruct,STOPS,wrapStop,type PipIdentity,type Reconstruction} from "./pip-reconstruction";
 import styles from "./reconstruction.module.css";
+import {StorySoundControl,useStoryAudio,useSoundscape} from "../StoryAudio";
 
 function IdentityRing({kind,value,target,position,index,onChange}:{kind:string;value:string;target:number;position:number;index:number;onChange:(value:number)=>void}) {
   const drag=useRef<{id:number;angle:number;distance:number;start:number}|null>(null);
@@ -53,6 +54,8 @@ function IdentityRing({kind,value,target,position,index,onChange}:{kind:string;v
 }
 
 export default function PipReconstruction({onRecovered,onLeave}:{onRecovered:(receipt:Reconstruction)=>void;onLeave?:()=>void}) {
+  const {cue}=useStoryAudio();
+  useSoundscape("press");
   const [identity,setIdentity]=useState<PipIdentity|null>(null);
   const [positions,setPositions]=useState<number[]>([]);
   const [loading,setLoading]=useState(false);
@@ -82,7 +85,7 @@ export default function PipReconstruction({onRecovered,onLeave}:{onRecovered:(re
   const matched=identity?.traits.filter((trait,index)=>positions[index]===trait.target).length??0;
   const receipt=identity?reconstruct(identity,positions):null;
   return <section className={styles.press} aria-label="Pip identity reconstruction">
-    <header className={styles.header}><Link href="/" onClick={onLeave?event=>{event.preventDefault();onLeave();}:undefined}>CHOG <span>1969</span></Link><span>THE ERASURE PRESS / INSIDE THE DRAWER</span><small>READ ONLY · NO WALLET</small></header>
+    <header className={styles.header}><Link href="/" onClick={onLeave?event=>{event.preventDefault();onLeave();}:undefined}>CHOG <span>1969</span></Link><span>THE ERASURE PRESS / INSIDE THE DRAWER</span><StorySoundControl/><small>READ ONLY · NO WALLET</small></header>
     <div className={styles.layout}>
       <aside className={styles.source}>
         <span className={styles.eyebrow}>THE ACCORD SAYS HE NEVER EXISTED.</span>
@@ -111,9 +114,9 @@ export default function PipReconstruction({onRecovered,onLeave}:{onRecovered:(re
         <div className={styles.machine} data-ready={!!identity} data-complete={matched===3}>
           <div className={styles.machinePlate}/>
           {identity?identity.traits.map((trait,index)=><IdentityRing key={trait.kind} {...trait} position={positions[index]} index={index}
-            onChange={value=>{setPositions(current=>current.map((position,i)=>i===index?value:position));setRestored(false);}}/>)
+            onChange={value=>{setPositions(current=>current.map((position,i)=>i===index?value:position));setRestored(false);if(value!==positions[index])cue(240+index*80,.07,.02);}}/>)
             :<div className={styles.sealed}><span>NO RECORD<br/>EXISTS.</span><small>PALE ACCORD / ORDER 1969</small></div>}
-          {identity&&<button className={styles.imprint} disabled={!receipt} onClick={()=>setRestored(true)} aria-label="Press to restore Pip’s erased record"><span>{restored?"RESTORED":receipt?"PRESS":"ALIGN"}</span><small>{restored?"ERASURE REVERSED":receipt?"REVERSE THE ERASURE":"THREE IDENTITY MARKS"}</small></button>}
+          {identity&&<button className={styles.imprint} disabled={!receipt} onClick={()=>{setRestored(true);cue(100,.7,.08);}} aria-label="Press to restore Pip’s erased record"><span>{restored?"RESTORED":receipt?"PRESS":"ALIGN"}</span><small>{restored?"ERASURE REVERSED":receipt?"REVERSE THE ERASURE":"THREE IDENTITY MARKS"}</small></button>}
         </div>
         <p id="press-instructions" className={styles.instructions}>{identity?"Drag each ring until its pink needle meets its blue identity mark. Click to turn one stop; keyboard: Tab to a ring, then arrow keys. All three must align before you press.":"The press cannot turn without his real identity. Read Pip’s Genesis record to begin."}</p>
         <div className={styles.memory} aria-live="polite" data-restored={restored}>

@@ -1,0 +1,33 @@
+.encounter {color:#dae6f3;max-width:720px;font:14px/1.6 Arial,sans-serif;}
+.identity {border-left:2px solid #8ddde6;padding-left:16px;display:flex;flex-direction:column;margin-bottom:24px;}
+.identity > span,.docketHeader,.clock,.outcome small {font:10px monospace;letter-spacing:.08em;}
+.identity strong {font:900 clamp(24px,2.4vw,38px)/1.1 ChogDisplay,sans-serif;color:#a5eced;margin:8px 0;}
+.identity small {font-size:11px;max-width:500px;color:#aec1d7;}
+.docket {position:relative;overflow:hidden;border-top:1px solid #b4d3e277;border-bottom:1px solid #b4d3e277;padding:18px 0;}
+.docketHeader {display:flex;justify-content:space-between;gap:10px;color:#a7c7da;}
+.docket p {font:900 clamp(22px,2.3vw,38px)/1.1 ChogDisplay,sans-serif;margin:18px 0;}
+.docket p span {display:block;}
+.redaction {position:absolute;inset:44px 0 18px;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 13px,#040b15 13px 32px);transform:scaleX(var(--loss));transform-origin:left;opacity:.9;}
+.encounter[data-phase=ready] .redaction {transform:scaleX(0);}
+.encounter[data-route=keep] .redaction {transform:scaleX(0);}
+.encounter[data-route=burn] .redaction {transform:scaleX(1);}
+.stamp {position:absolute;right:12px;bottom:22px;transform:rotate(-7deg);padding:5px 9px;background:#081b2e;color:#9be6df;border:2px solid currentColor;font:900 20px ChogDisplay,sans-serif;}
+.encounter[data-route=burn] .stamp {color:#ffb494;}
+.clock {display:flex;align-items:center;justify-content:space-between;gap:16px;color:#ffb5cd;min-height:48px;margin:12px 0;}
+.clock button,.alternative {background:transparent;border:0;border-bottom:1px solid #8ba6be77;color:#c0d2e5;font:12px Arial,sans-serif;min-height:44px;cursor:pointer;}
+.choices {display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0;}
+.choices button {text-align:left;padding:16px;background:#061427b8;border:1px solid #97b1c577;color:#edf1f8;cursor:pointer;}
+.choices b {font:900 25px ChogDisplay,sans-serif;display:block;margin-bottom:8px;}
+.choices span {font:12px/1.6 Arial,sans-serif;color:#b9cce0;}
+.choices button[aria-pressed=true] {border-color:#ffa5c6;box-shadow:inset 4px 0 #ffa5c6;background:#173049;}
+.choices button:disabled {opacity:.65;cursor:default;}
+.actions {display:flex;align-items:center;flex-wrap:wrap;gap:14px;min-height:70px;}
+.primary,.commit {border:2px solid #ff9fc4;background:#ff9fc4;color:#071428;font:900 23px ChogDisplay,sans-serif;padding:13px 20px;min-height:54px;cursor:pointer;}
+.commit {position:relative;overflow:hidden;touch-action:none;user-select:none;}
+.commit span {position:relative;z-index:1;}
+.commit i {position:absolute;inset:0;background:#fff0c8;transform-origin:left;}
+.commit:disabled,.alternative:disabled {opacity:.5;cursor:default;}
+.outcome h2 {font:900 clamp(26px,2.8vw,42px)/1 ChogDisplay,sans-serif;color:#ffb5cd;}
+.outcome small {color:#a2e4ec;display:block;margin-top:24px;}
+.outcome p {color:#c1d5e8;}
+@media(max-width:700px){.choices {gap:10px;}.choices button {padding:12px;}.choices b {font-size:23px;}.identity strong {font-size:28px;}.docket p {font-size:24px;}.docketHeader {font-size:8px;}.primary {font-size:20px;}.stamp {font-size:16px;}.clock {font-size:9px;}}

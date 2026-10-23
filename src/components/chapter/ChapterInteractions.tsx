@@ -3,6 +3,8 @@
 import {useEffect,useRef,useState} from "react";
 import type {EscapeRoute} from "./progress";
 import styles from "./chapter.module.css";
+import {consequence} from "./consequences";
+import {useStoryAudio} from "../StoryAudio";
 
 /** Interactive ink props, not a substitute for the approved character/scene art. */
 export function DrawerEvidence({unlocked}: {unlocked: boolean}) {
@@ -18,9 +20,11 @@ export function DrawerEvidence({unlocked}: {unlocked: boolean}) {
 }
 
 export function MemoryEcho({line}: {line: string}) {
+  const {cue}=useStoryAudio();
   const [holding,setHolding]=useState(false);
   const [revealed,setRevealed]=useState(false);
   const [elapsed,setElapsed]=useState(0);
+  useEffect(()=>{if(revealed)cue(330,1,.035);},[revealed,cue]);
   useEffect(()=>{
     if(!holding||revealed)return;
     let frame=0;
@@ -55,7 +59,9 @@ export function MemoryEcho({line}: {line: string}) {
   </div>;
 }
 
-export function Photograph({onMissingArt}: {onMissingArt: ()=>void}) {
+export function Photograph({route,onMissingArt}: {route:EscapeRoute;onMissingArt: ()=>void}) {
+  const outcome=consequence(route);
+  const {cue}=useStoryAudio();
   const [turn,setTurn]=useState(0);
   const [drag,setDrag]=useState(0);
   const [dragging,setDragging]=useState(false);
@@ -64,6 +70,7 @@ export function Photograph({onMissingArt}: {onMissingArt: ()=>void}) {
   const ignoreClick=useRef(false);
   const flipped=Math.abs(turn%2)===1;
   function turnPhoto(direction:number){
+    cue(180,.18,.025);
     setTurn(value=>value+direction);
     setExamined(true);
   }
@@ -101,7 +108,7 @@ export function Photograph({onMissingArt}: {onMissingArt: ()=>void}) {
         </span>
         <span className={styles.photoBack} aria-hidden={!flipped}>
           <small>FOR NERI</small>
-          <span>“If you’re holding it,<br/>they know you’re here.”</span>
+          <span>{outcome?.inscription}</span>
           <span className={styles.photoBackRule}/>
           <small>KEEP LOOKING.</small>
         </span>
@@ -109,16 +116,7 @@ export function Photograph({onMissingArt}: {onMissingArt: ()=>void}) {
       <figcaption id="photo-instruction">Drag sideways or tap to turn. Keyboard: Enter or Space.</figcaption>
     </figure>
     <div className={styles.photoAftermath} role="status">
-      {examined?<><small>MEANWHILE, AT THE ARCHIVE</small><p>A lens turns toward the harbor. Sera pins a fresh surveillance print to the wall. Neri and Pip are already circled in ink.</p><strong>Next: the city that never existed.</strong></>:<p>Turn the photograph. Her brother left more than an image.</p>}
+      {examined?<><small>MEANWHILE, AT THE ARCHIVE</small><div className={styles.pursuitNotice} data-route={route}><span>{outcome?.notice}</span><strong>{route==="keep"?"WANTED":"IDENTITY UNKNOWN"}</strong><p>{route==="keep"?"NERI / CHOG 545 / LAST SEEN: FREEWAKE":"NO RELIABLE DESCRIPTION / SEARCH THE HARBOR"}</p></div><p>{outcome?.aftermath}</p><strong>Next: the city that never existed.</strong></>:<p>Turn the photograph. Her brother left more than an image.</p>}
     </div>
   </>;
-}
-
-export function EscapePlan({route,onChoose}: {route: EscapeRoute; onChoose: (route: Exclude<EscapeRoute,null>)=>void}) {
-  return <div className={styles.escapePlan}>
-    <div className="choice-grid" role="group" aria-label="Choose Neri's escape route">
-      <button onClick={()=>onChoose("keep")} disabled={route!==null} aria-pressed={route==="keep"} className="choice">Keep the evidence <span>Take maintenance · your face may be seen</span></button>
-      <button onClick={()=>onChoose("burn")} disabled={route!==null} aria-pressed={route==="burn"} className="choice">Burn the records <span>Take the stairs · lose a clue to your brother</span></button>
-    </div>
-  </div>;
 }

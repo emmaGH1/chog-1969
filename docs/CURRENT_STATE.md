@@ -2,7 +2,22 @@
 
 Updated 2026-10-23 UTC. Read before older planning documents.
 
-## Current checkpoint: NFT-dependent reconstruction verified
+## Current checkpoint: consequence encounter verified; rendered review pending
+
+Emma approved the bounded erasure encounter, meaningful Keep/Burn outcomes, sound, chapter teasers and hero-entry smoothness work. Work remains on `feat/devin-cinematic-release`; no PR, public deployment, main merge, purchases or wallet writes are authorized.
+
+- Scene four is a deliberate, user-started 40-second interception. Read both costs first, then begin or play untimed. Select a route and hold its stamp (pointer/keyboard), or use the single-click accessible confirmation. Pause/resume and hidden-tab pause are supported. Timeout offers a local checkpoint retry without erasing any save or NFT.
+- Existing version-1 `route` is the source of truth: complete testimony/known coordinates/identified pursuit for Keep; incomplete testimony/missing coordinates/unidentified search for Burn. No new incompatible save schema. The harbor seal, photograph interpretation, pursuit notice and final lead derive from the same route. Old saved choices retain their consequences.
+- The NFT reconstruction remains required. The threatened testimony is explicitly fictional; neither the onchain identity nor the NFT can be erased by this interaction.
+- Chapter causality now runs from Pip's sea memory to Freewake, Rook, the brother photograph and the missing city. Chapters 02–04 are clearly labelled planned/not playable, with no release promises.
+- A shared opt-in Web Audio provider adds synthesized archive/harbor ambience, ring/press/prop cues and pursuing steps. Quiet at the unstarted/paused/resolved choice. Mute and volume carry across client-side story navigation; reload starts muted. No paid audio, voices or external audio service.
+- Removed the cover's initial 1.5s zoom and exit 1.3s zoom; entry opacity is now .35s without delay rather than .9s plus .15s delay. Camera smoothing is 35ms instead of 55ms. Removed the remaining awakening CTA arrow. Live post-change motion measurements and visual judgment are still pending; do not claim a performance win from CSS alone.
+- Automated verification passed: focused consequence/reconstruction/progress tests 9/9; `npm run typecheck`; `npm run build` including lint/type validation; full `npm test` 50/50; and all three requested mocked browser suites. Chapter regressions passed at 375px and 1280px plus blocked-storage coverage; the reconstruction suite passed with mocked RPC and zero wallet calls; the holder-flow suite passed with zero real transactions. Ganache reported an unavailable µWS binary and used its NodeJS fallback.
+- The production preview was rebuilt and left running at `http://127.0.0.1:3103` with writes disabled and no ledger; `/api/awakening-config` returned `{"enabled":false,"ledger":null}`. No real wallet or transaction was used.
+
+This checkpoint is implementation, NOT final visual or synchronized A/V approval. Rendered/gameplay review and live post-change motion measurements remain pending; physical touch and synchronized A/V capture are unverified. No UI review or recording was performed in this handoff. Existing private artwork bundle is unchanged. The final submission video has not been recorded or uploaded.
+
+## Previous checkpoint: NFT-dependent reconstruction verified
 
 Emma said "resume". Application16ea398 plus the label-fit CSS correction is now browser-verified. The correction sizes the center label from the machine container rather than the viewport; no mechanics, API or save changes. Typecheck, production build including lint, and whitespace checks passed again for that correction. The earlier49/49 unit and mocked browser results below remain applicable; they were not redundantly rerun for CSS.
 

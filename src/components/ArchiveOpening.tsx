@@ -7,10 +7,12 @@ import {parseProgress, SAVE_KEY} from "./chapter/progress";
 import styles from "./chapter/opening.module.css";
 import PipReconstruction from "./chapter/PipReconstruction";
 import {usePipReconstruction} from "./chapter/usePipReconstruction";
+import {StorySoundControl,useStoryAudio,useSoundscape} from "./StoryAudio";
 
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
 
 export default function ArchiveOpening() {
+  const {cue}=useStoryAudio();
   const reconstruction=usePipReconstruction();
   const [save, setSave] = useState({...INITIAL_OPENING});
   const [ready, setReady] = useState(false);
@@ -24,21 +26,18 @@ export default function ArchiveOpening() {
   const world = useRef<HTMLDivElement>(null);
   const [pull, setPull] = useState(0);
   const [beat, setBeat] = useState(0);
-  const [sound, setSound] = useState(false);
-  const [soundError, setSoundError] = useState(false);
   const [missingArt, setMissingArt] = useState(false);
   const [help, setHelp] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [inspected, setInspected] = useState<"record" | "shipment" | null>(null);
   const root = useRef<HTMLDivElement>(null);
-  const audio = useRef<AudioContext | null>(null);
-  const audioOn = useRef(false);
   const hold = useRef<ReturnType<typeof setInterval> | null>(null);
   const dragStart = useRef<number | null>(null);
   const travelStart = useRef<number | null>(null);
   const openRef = useRef(false);
   const handle = useRef<HTMLButtonElement>(null);
   const atDesk = cameraStage === 2;
+  useSoundscape(entered&&save.opened&&!reconstruction.receipt?"press":"archive");
 
   function moveCamera(value: number) {
     cameraGoal.current = clamp(value);
@@ -58,7 +57,7 @@ export default function ArchiveOpening() {
     };
     const animate = (now: number) => {
       frame = null;
-      const blend = 1 - Math.exp(-Math.min(now - previous, 50) / 55);
+      const blend = 1 - Math.exp(-Math.min(now - previous, 50) / 35);
       previous = now;
       const distance = cameraGoal.current - cameraPosition.current;
       cameraPosition.current = Math.abs(distance) < .001
@@ -84,39 +83,6 @@ export default function ArchiveOpening() {
     };
   }, [entered, reduced, help, save.opened]);
 
-  function cue(frequency: number, duration: number, volume = .035) {
-    const ctx = audio.current;
-    if (!ctx || !audioOn.current || ctx.state !== "running") return;
-    const oscillator = ctx.createOscillator();
-    const gain = ctx.createGain();
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(frequency, ctx.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(frequency * .6, ctx.currentTime + duration);
-    gain.gain.setValueAtTime(volume, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + duration);
-    oscillator.connect(gain).connect(ctx.destination);
-    oscillator.start();
-    oscillator.stop(ctx.currentTime + duration);
-    oscillator.onended = () => {oscillator.disconnect(); gain.disconnect();};
-  }
-
-  async function toggleSound() {
-    if (sound) {
-      audioOn.current = false;
-      setSound(false);
-      await audio.current?.suspend();
-      return;
-    }
-    try {
-      if (!audio.current || audio.current.state === "closed") audio.current = new AudioContext();
-      await audio.current.resume();
-      audioOn.current = true;
-      setSound(true);
-      setSoundError(false);
-      cue(90, 1.2, .02);
-    } catch {setSoundError(true);}
-  }
-
   useEffect(() => {
     try {
       const restored = parseOpening(localStorage.getItem(OPENING_KEY));
@@ -137,7 +103,6 @@ export default function ArchiveOpening() {
     return () => {
       preference.removeEventListener("change", update);
       if (hold.current) clearInterval(hold.current);
-      void audio.current?.close();
     };
   }, []);
 
@@ -248,7 +213,7 @@ export default function ArchiveOpening() {
 
   return <div ref={root} className={styles.experience} style={sceneStyle} data-entered={entered} data-beat={beat} data-opened={save.opened} data-ready={ready}
     onPointerDown={event => {
-      if (!entered || help || (event.target as HTMLElement).closest("button,a,aside") || save.opened) return;
+      if (!entered || help || (event.target as HTMLElement).closest("button,a,aside,input,label") || save.opened) return;
       travelStart.current = event.clientY;
       event.currentTarget.setPointerCapture(event.pointerId);
     }}
@@ -263,7 +228,7 @@ export default function ArchiveOpening() {
     <nav className={styles.toolbar} aria-label="Reader controls">
       <span className={styles.brand}>CHOG <span>1969</span></span>
       <span className={styles.chapterLabel}>{entered ? "CHAPTER 01 / THE FORBIDDEN ARCHIVE" : "AN INTERACTIVE MANGA"}</span>
-      <button onClick={toggleSound} aria-pressed={sound}>{sound ? "Sound on" : "Sound off"}</button>
+      <StorySoundControl/>
       <button onClick={() => setHelp(!help)} aria-expanded={help}>Guide</button>
       <button onClick={restart}>Replay</button>
       <Link href="/archive">The Genesis</Link>
@@ -344,7 +309,7 @@ export default function ArchiveOpening() {
           : "“If they’re all gone, why are we still hunting them?”"}</p>
       </div>
       {beat >= 4 && <div className={styles.nextBeat}>
-        <Link href="/chapter/1" onClick={continueChapter}>Hide the drawing. Someone’s coming. <span>→</span></Link>
+        <Link href="/chapter/1" onClick={continueChapter}>Hide the drawing. Someone’s coming.</Link>
         <a href="https://opensea.io/item/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1053" target="_blank" rel="noreferrer">Original CHOG #545 · token 1053 ↗</a>
         <small>Fictional awakening. No wallet or onchain action.</small>
       </div>}
@@ -356,17 +321,16 @@ export default function ArchiveOpening() {
       {!atDesk && <button onClick={() => moveCamera(cameraGoal.current + (reduced ? 1 : .34))}>Move closer ↓</button>}
       <small>ART DIRECTION REVIEW · NOT FINAL APPROVAL</small>
     </footer>
-    {(saveError || reconstruction.storageError || soundError || missingArt) && <div className={styles.warning} role="status">
+    {(saveError || reconstruction.storageError || missingArt) && <div className={styles.warning} role="status">
       {missingArt ? "Private review artwork is missing. Run the documented local art preparation; no substitute is shown. " : ""}
       {saveError || reconstruction.storageError ? "Storage unavailable. Keep this tab open; a reload may require the puzzles again. " : ""}
-      {soundError ? "Audio unavailable. The story remains playable without sound." : ""}
     </div>}
     {help && <aside className={styles.guide} aria-label="Reader guide">
       <button onClick={() => setHelp(false)}>Close guide ×</button>
       <h2>Leave no record.</h2>
       <p>Scroll, swipe upward, or use “Move closer” to enter. Inspect both papers. Set 19 + 69 on the brass index. Drag the handle downward, or hold it for a second. Keyboard: Tab to the handle and hold Enter or Space.</p>
       <p>Inside the drawer, read Pip’s actual Genesis record. Drag the three identity rings until each pink needle meets its blue mark, then press to restore him. Click a ring to turn one stop; keyboard users can use the arrow keys. The memory is fiction; the traits are real. Replay also resets this local reconstruction.</p>
-      <p>Sound is opt-in: original synthesized mechanical cues, not a finished soundscape. Reduced-motion settings are respected. Replay resets only this opening, not your later keep/burn choice.</p>
+      <p>Sound is opt-in: synthesized ambience and mechanical cues, not recorded voices. Your sound setting follows the story until you reload. Reduced-motion settings are respected. Replay resets only this opening, not your later keep/burn choice.</p>
       <p>Scene illustrations are awaiting visual approval. The cover interprets Genesis CHOG #1340 (token 1848), #4 (512), #920 (1428) and #1112 (1620); it is not their original collectible artwork or an approved story casting. Neri’s supplied design guides the archive scenes; Pip’s CHOG #545 remains the unchanged original. No rights, holder consent or official endorsement inferred.</p>
       <Link href="/archive">Read-only Genesis archive ↗</Link>
     </aside>}
