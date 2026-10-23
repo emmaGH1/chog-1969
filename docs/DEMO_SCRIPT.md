@@ -1,85 +1,55 @@
-# CHOG 1969 | A witness worth remembering
+# CHOG 1969 | Approved walkthrough narration
 
-Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Revised after Emma requested a narrated story walkthrough rather than a product pitch. Draft awaiting wording and voice approval. No narration or final video has been produced.
+Application checkpoint: `ee6f173`, branch `feat/devin-cinematic-release`. Emma approved the exact spoken wording below with “yeah this is good go ahead.” This supersedes both the cinematic-trailer draft and the first-person founder walkthrough. Voice selection and a bounded credit allowance remain to be approved. No narration or final video has been produced.
 
 ## Direction
 
-Target roughly 140-165 seconds including breathing room, landscape 1920×1080. Do not rush a measured storyteller to fit the former 100-second pitch. The official Chogathon video limit is three minutes: https://chogathon.chog.xyz/ (checked 23 October 2026). Final timing depends on the voice audition and actual playthrough.
+Landscape 1920×1080, under three minutes, following the official Chogathon limit: https://chogathon.chog.xyz/ (checked 23 October 2026). Start with the game and a short lore introduction, introduce characters when they enter, and explain gameplay through Neri's actions. No design-intention commentary, “I wanted to build,” first-person clicking narration, or detached movie-trailer delivery. Final timing follows the recorded voice and actual gameplay, not a forced target.
 
 One continuous narrative, one earned Keep route. No alternate-run montage, feature tour or spoken testing commentary. Show the genuine live Genesis identity and source traits legibly, then the actual reconstruction. Preserve local-save and fiction disclosures. The real collectible identifies Pip; his recovered testimony is fiction, not data stored in the NFT. No wallet signature, transaction or permanent token memory should be implied.
 
 ## Voice
 
-An original male narrator with a deep, warm, resonant baritone. Patient, intimate storytelling and quiet authority. Someone remembering something consequential, not selling a product. Natural breaths, restrained emotion, space between ideas. Tighten the rhythm during pursuit without shouting; return to a reflective register at the harbor. No celebrity imitation or cloned voice, exaggerated trailer growl, or announcer delivery. Audition the opening before generating the full narration. No service access or spending is assumed.
+An original male narrator with a deep, warm, resonant baritone. Conversational and clear, with the confidence of a good gameplay presenter explaining a story as it unfolds. Natural breaths and restrained emotion, without long theatrical pauses. No celebrity imitation or cloned voice, exaggerated trailer growl, or announcer delivery. Audition the opening before generating the full narration. An existing ElevenLabs key is available, but its saved restriction requires script, voice and credit approval before use. Do not generate or purchase credits without the remaining approval.
 
 ## Spoken narration
 
-They said the Chogs brought the world to ruin.
+This is CHOG 1969, an interactive mystery about a people blamed for a catastrophe, and the history being erased to keep their side of the story buried.
 
-So they burned the records. Erased the names.
+Two hundred years ago, the Pale Accord blamed the Chogs for nearly destroying the world. Their records were destroyed. Now, even remembering them is dangerous.
 
-Two hundred years later, they were still hunting them.
+Neri is an apprentice archivist who starts finding gaps in that official history. Inside the restricted archive, she discovers two records that point to a locked drawer. Together, their numbers form the combination: 1969.
 
-Neri wanted to know why.
+Inside is Pip, a Chog who might remember what really happened.
 
-Deep inside the forbidden archive, two numbers led her to a drawer nobody was meant to open.
+But before he can tell her anything, Neri has to reconstruct his identity. This is where the actual NFT becomes essential. Pip is CHOG number 545, token 1053 on Monad. His Genesis traits determine how these three rings line up. Match them, press the seal, and the drawing wakes.
 
-Inside, a little drawing smiled back.
+Pip remembers a door by the sea, and another witness beneath Freewake harbor. But restoring his testimony alerts the archive. The Redactors, the Accord’s enforcers, are coming to erase it again.
 
-Pip.
+Neri can keep the testimony, including coordinates left by her missing brother, but the Redactors will identify her. Or she can burn the record and escape unidentified, losing those coordinates with it.
 
-His testimony had been erased. But his Genesis identity remained.
+This time, she keeps it.
 
-Neri matched the surviving traits. Turned the rings. And pressed.
+At Freewake, that decision lets her recover the complete account. The Chogs were trying to close a door, and her brother was helping the last of them through. The coordinates survived. But so did the evidence of who carried them out. The Accord now knows whom to hunt.
 
-The drawing woke.
+Then Rook, a smuggler sheltering witnesses, gives Neri a photograph of her missing brother beside the Chogs.
 
-Pip remembered the sea. A door. Someone beneath the harbor who knew the rest.
+The people she was taught to blame are beginning to look like witnesses. And her brother was helping them disappear.
 
-Then the footsteps stopped outside.
-
-The Redactors had come for the record.
-
-Keep it, and they would know her face. Burn it, and her brother's coordinates would disappear with it.
-
-She kept it.
-
-Some truths are worth being hunted for.
-
-Beneath Freewake, the witness remembered.
-
-They had not been fleeing the sea. They had been trying to close a door.
-
-And Neri's brother had held it open for the last of them.
-
-Platform nineteen. Tide sixty-nine.
-
-At the departure pier, a smuggler placed a photograph in her hand.
-
-Her missing brother. Beside the people history had condemned.
-
-Behind her, the Accord knew whom to hunt.
-
-Ahead lay a city the maps had forgotten.
-
-The question was no longer whether the Chogs had been witnesses.
-
-It was why her brother had helped them disappear.
+Chapter One ends there, with a lead to a city missing from the maps. The planned chapters follow that lead, another witness’s account, and the question at the heart of the story: who gets remembered, and who pays for the truth?
 
 ## Gameplay choreography
 
 Timing is provisional. Fit the voice to observed gameplay, not fabricated or sped-up actions.
 
-| Approximate time | Actual gameplay and narration anchor |
+| Scene | Actual gameplay and narration anchor |
 |---|---|
-| 0-17s | CHOG ensemble, Enter, archive approach. Opening through “Neri wanted to know why.” |
-| 17-33s | Inspect both clues, enter 1969, physically pull the drawer. “Two numbers” through “Pip.” |
-| 33-55s | Complete genuine live token 1053 read. Hold its identity and Head/Body/Eyes on screen; align rings and press. “His testimony” through “The drawing woke.” Narrate actions when they happen. |
-| 55-66s | Awakening and sea clue; enter Redactor scene. A beat before the footsteps line. |
-| 66-90s | Show both costs before starting the actual timed encounter. Begin, select Keep, hold to commit. Say “She kept it” only after successful commitment. |
-| 90-116s | Reach Freewake, hold seal, reveal complete memory. Pause on Platform 19/Tide 69 as the coordinates are spoken. |
-| 116-141s | Turn photograph, reveal inscription and WANTED outcome. The brother and the price of keeping the record share this beat. |
-| 141-156s | Planned-chapter casebook, ending on the missing-city lead and final question. Leave a quiet hold. |
+| 01 / Game and lore | CHOG-led cover for the first sentence, then Enter and approach the archive as the Accord's history is introduced. |
+| 02 / Neri and the drawer | Investigate both records, enter1969 and physically pull the drawer as Neri and Pip are introduced. |
+| 03 / Genesis reconstruction | Complete genuine live token1053 read. Hold identity and Head/Body/Eyes legibly, rotate rings, press and awaken Pip. Align “Match them, press the seal” to the real action, not an animation substituted in editing. |
+| 04 / Pursuit and choice | Pip's sea clue, then Redactors. Let costs be read before starting the actual timer. Select Keep and hold to commit. Say “This time, she keeps it” only after the saved result. |
+| 05 / Freewake and the cost | Hold harbor seal, reveal complete account. The spoken identity cost can bridge into the photograph/WANTED reveal, but do not show that result before it is earned. |
+| 06 / Photograph and continuation | Turn photograph when Rook gives it to Neri. Show the WANTED notice, then planned-chapter casebook, keeping “planned/not yet playable” legible. End with the final question. |
 
 Keep the actual planned/not-playable labels visible. If needed, a minimal closing credit outside the spoken story can read “CHOG 1969 | Chapter One” and “Live CHOG Genesis identity on Monad. Fictional testimony. Choices saved locally.” Not a pop-up over gameplay. Omit extra credits if the existing disclosures and submission description already provide sufficient clarity.
 
@@ -103,7 +73,7 @@ Keep opt-in game ambience beneath the narrator, leaving space for press, footste
 
 ## Approval and capture gates
 
-1. Emma approves revised narrative tone and wording, then a short voice audition.
+1. Wording is approved. Next obtain approval for the candidate voice and a capped use of existing ElevenLabs credits, then produce a short audition, not the full track.
 2. Confirm an authorized voice source. No celebrity clone, paid generation or new credentials are assumed.
 3. Rehearse Keep from a fresh isolated save without altering Emma's progress. Retain raw live-read footage and timestamp.
 4. Verify a short clean 1920×1080 picture/sound/subtitle sample before the full take. Testing clips are not submission masters.
