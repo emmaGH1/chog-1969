@@ -34,7 +34,9 @@ Latest registered recording: `chog-ee6f173-timer-release-edited.mp4`,1920×1080/
 
 The implementation is ready for Emma's visual/gameplay review, not approved for public release. Physical touch and synchronized A/V capture remain unverified. Existing private artwork bundle is unchanged and still needed by clean clones. Final submission video has not been narrated, recorded, uploaded or submitted. No PR, public deploy, main merge, paid services or wallet writes.
 
-**Next:** approve [the current ~100-second demo script](DEMO_SCRIPT.md), rehearse and capture an honest final narration/gameplay export within Chogathon's three-minute maximum. Verify a short A/V sample before a full take; independently recorded narration must not masquerade as in-game dialogue. Public artwork delivery/deployment and upload require separate approval. Older DEMO_CHECKLIST/DEMO_CAPTURE_WORKFLOW describe an obsolete integration-pilot flow and are marked historical.
+**Demo direction revised by Emma:** narrated story walkthrough, not a product pitch. Original deep, warm male storytelling voice with cinematic gravitas, not a celebrity clone. One continuous Keep route; no alternate-run feature montage. Low, well-formatted subtitles without em dashes, boxes or borders, clear of gameplay. “Timer release” and other test-recording annotations must never appear in the final export; actual gameplay UI remains. The registered review clips are not suitable final source footage.
+
+**Next:** approve [the rewritten narrative script](DEMO_SCRIPT.md), then audition an authorized voice and capture a clean synchronized sample with subtitles before the final take. Provisional140-165seconds, within Chogathon's three-minute maximum; no voice generated or final subtitles timed yet. Fluidity requires genuine continuous actions or honest scene-transition edits, not sped-up timers or fabricated gameplay. Public artwork delivery/deployment and upload require separate approval. Older DEMO_CHECKLIST/DEMO_CAPTURE_WORKFLOW describe an obsolete integration-pilot flow and are marked historical.
 
 ## Previous checkpoint: NFT-dependent reconstruction verified
 
