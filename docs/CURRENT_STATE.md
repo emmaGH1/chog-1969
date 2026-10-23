@@ -33,11 +33,11 @@ e84bdf8 browser checks passed: fresh ensemble cover, actual wheel approach, clue
 
 Exact390×844 portrait emulation at100% zoom passed: recognizable CHOGs, reachable Enter and chapter choices/navigation, no horizontal overflow. Exact1440×900 cover/erasure art/headline/choices/navigation fit passed. No physical touchscreen was tested.
 
-Current review recording: `chog-e84bdf8-native-unretimed-60fps.mp4`, genuine1920×1080, nominal60fps,5706frames,95.099seconds, silent. Raw segments were stream-copied without retiming. Do NOT substitute the old accelerated/paused19.534second edited recording. Key screenshots and the new recording are attached to the session.
+Current deliverable recording: `chog-e84bdf8-native-review-edited.mp4`,1920×1080,60fps,17.717seconds, silent, with structured test annotations. IMPORTANT: the screen-recording tool accelerates this playback from a95.099-second capture. It is NOT real-time evidence of scroll pacing; assess pacing in the live preview and use the measured probe observations below. The native unretimed export is retained on the VM, but the attachment system rejected it because only the tool's registered annotated output is accepted for app demonstrations. Do not claim the unretimed export was delivered. The old19.534second video is superseded.
 
 Live scroll probes observed a roughly769ms trailing movement in the old version and295ms in the new, with p95frame interval roughly16.8ms in both and no long tasks in either short sample. These are observations, not a controlled performance benchmark: the old probe missed two earlier wheel events. Do not advertise a percentage speedup or general device performance guarantee. Both raw probes are retained in the session VM under Documents/chog-camera-before.json and chog-camera-after.json.
 
-Actual browser synth previously reached the Pulse monitor (peak−34.1dBFS), after restarting Chrome with its existing profile and explicit PULSE_SERVER/PULSE_SINK. Synchronized A/V remains unverified: simultaneous capture had128 duplicate audio timestamps and8 gaps over100ms (largest1.377s). Share the valid silent unretimed recording, not an unverified synchronized soundtrack. No external voice API was needed.
+Actual browser synth previously reached the Pulse monitor (peak−34.1dBFS), after restarting Chrome with its existing profile and explicit PULSE_SERVER/PULSE_SINK. Synchronized A/V remains unverified: simultaneous capture had128 duplicate audio timestamps and8 gaps over100ms (largest1.377s). Share the current registered silent annotated recording with its playback-timing limitation disclosed, not an unverified synchronized soundtrack. No external voice API was needed.
 
 ## Private art and reproduction
 
